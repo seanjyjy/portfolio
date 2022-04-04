@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "fe:start": "yarn workspace @sean/frontend start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanjyjy/portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "workspaces": {
+    "packages": [
+      "frontend",
+      "backend/*"
+    ],
+    "nohoist": [
+      "**/jest"
+    ]
+  }
+}
