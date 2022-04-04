@@ -8,7 +8,8 @@
     "start": "webpack serve --config webpack.config.js --open",
     "watch": "webpack --watch",
     "build": "NODE_ENV=production webpack",
-    "prod-serve": "http-server ./dist -o / -a localhost"
+    "prod-serve": "http-server ./dist -o / -a localhost",
+    "prepare": "cd .. && husky install frontend/.husky"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +33,8 @@
     "css-minimizer-webpack-plugin": "^3.4.1",
     "fork-ts-checker-webpack-plugin": "^7.2.3",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.4.12",
     "postcss-loader": "^6.2.1",
