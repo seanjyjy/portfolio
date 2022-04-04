@@ -5,11 +5,10 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "webpack serve --config webpack.config.js --open",
-    "watch": "webpack --watch",
-    "build": "NODE_ENV=production webpack",
-    "prod-serve": "http-server ./dist -o / -a localhost",
-    "prepare": "cd .. && husky install frontend/.husky"
+    "start": "./node_modules/.bin/webpack serve --config webpack.config.js --open",
+    "watch": "./node_modules/.bin/webpack --watch",
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack",
+    "prod-serve": "http-server ./dist -o / -a localhost"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +16,7 @@
     "http-server": "^14.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0",
     "typescript": "^4.6.3"
   },
   "devDependencies": {
@@ -27,6 +27,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
+    "@types/react-router-dom": "^5.3.3",
     "babel-loader": "^8.2.4",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",

@@ -127,7 +127,7 @@ module.exports = {
     isDevelopment && new ReactRefreshWebpackPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
+      filename: "[name].css",
     }),
     new HtmlWebpackPlugin(htmlPluginConfig),
     new HtmlWebpackPlugin({
