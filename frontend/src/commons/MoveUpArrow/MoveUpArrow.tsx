@@ -9,6 +9,10 @@ import "./MoveUpArrow.scss";
 const MoveUpArrow = () => {
   const [show, setIsShow] = useState(false);
 
+  function scrollTop() {
+    window.scrollTo(0, 0);
+  }
+
   useEffect(() => {
     function getScrollPercent() {
       var h = document.documentElement,
@@ -45,7 +49,11 @@ const MoveUpArrow = () => {
   }, []);
 
   return (
-    <div className="moveUpArrow" style={{ opacity: show ? 1 : 0 }}>
+    <div
+      className="moveUpArrow"
+      style={{ opacity: show ? 1 : 0 }}
+      onClick={scrollTop}
+    >
       <img src={navArrow} alt="" />
     </div>
   );
