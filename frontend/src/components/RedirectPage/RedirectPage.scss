@@ -1,0 +1,65 @@
+@use '../../styles/colors' as c;
+@use '../../styles/commonStyles' as cs;
+
+.redirectPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.redirect {
+  display: flex;
+
+  & .redirectText {
+    width: 590px;
+  }
+
+  & > img {
+    height: 300px;
+    width: 300px;
+  }
+
+  & .redirectTextHeader {
+    @include cs.headerFont;
+    font-size: 2.5em;
+    color: c.$header-text;
+    margin: 35px 0;
+  }
+
+  & .redirectTextError {
+    @include cs.bodyFont;
+    font-weight: 600;
+    margin: 25px 0;
+
+    & > span {
+      color: c.$small-text;
+      font-weight: 400;
+    }
+  }
+
+  & .redirectTextMessage {
+    @include cs.bodyFont;
+    font-size: 0.9em;
+  }
+
+  & .redirectTextResult {
+    @include cs.bodyFont;
+    font-size: 0.9em;
+    color: c.$small-text;
+    margin-bottom: 30px;
+  }
+
+  & .redirectTextLink {
+    @include cs.bodyFont;
+    color: c.$header-text;
+    font-weight: 500;
+
+    & > a {
+      color: c.$blue-primary;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+  }
+}

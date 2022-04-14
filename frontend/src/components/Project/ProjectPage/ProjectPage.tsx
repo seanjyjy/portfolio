@@ -1,22 +1,21 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, Route, useParams } from "react-router-dom";
 
 import IconList from "@commons/IconList";
 import LightBox from "@commons/LightBox/LightBox";
+import Player from "@commons/Player";
 
 import { projects, allProjects } from "../../../constants";
 import { projectObj } from "../../../constants";
 
 import "./ProjectPage.scss";
-import Player from "@commons/Player";
 
 const ProjectPage = () => {
   const { project: projectName } = useParams();
   const project = projectName ?? "";
 
   if (!Boolean(projects.find((listedProject) => listedProject === project))) {
-    // TODO: redirect
-    return <div>No such project!</div>;
+    return <Navigate to={"redirect"} />;
   }
 
   // confirm to have found it

@@ -13,6 +13,10 @@ dotenv.config({
   path: __dirname + "/.env",
 });
 
+//Webpack Analyzer
+const WebpackBundleAnalyzer = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
+
 const isDevelopment = process.env.NODE_ENV !== "production";
 
 let mode = "development";
@@ -143,7 +147,7 @@ module.exports = {
     isDevelopment && new ReactRefreshWebpackPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "[name].[contenthash].css",
     }),
     new HtmlWebpackPlugin(htmlPluginConfig),
     new HtmlWebpackPlugin({
@@ -169,6 +173,7 @@ module.exports = {
         process.env.REACT_APP_EMAILJS_USER
       ),
     }),
+    isDevelopment && new WebpackBundleAnalyzer(),
   ].filter(Boolean),
   devServer: {
     static: {
