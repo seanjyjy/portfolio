@@ -1,0 +1,121 @@
+.player-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  & .video-react-volume-menu-button-horizontal,
+  & .video-react-fullscreen-control {
+    display: none !important;
+  }
+
+  & video::-webkit-media-controls-panel {
+    display: none;
+  }
+
+  &:hover .player-controls {
+    transform: translateY(0);
+  }
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  background-color: #2d323b9a;
+  bottom: 0;
+  padding: 0 20px 0 10px;
+  transform: translateY(100%);
+  transition: all 0.3s ease-in-out;
+
+  & button {
+    background: none;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 10px;
+
+    & img {
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  & .player-control-timeline-bg {
+    height: 4px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #c4c4c4;
+    cursor: pointer;
+
+    & .player-control-timeline {
+      height: 4px;
+      background-color: white;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: white;
+        position: absolute;
+        right: -6px;
+        top: -4px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.macbook-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  & .macbook-header {
+    display: flex;
+    align-items: center;
+    background-color: #dfe1e5;
+    height: 40px;
+    padding: 0 25px;
+    z-index: 10;
+    width: 100%;
+
+    & .header-dot {
+      height: 13px;
+      width: 13px;
+      margin-right: 8px;
+      border-radius: 50%;
+
+      &.r-1 {
+        background-color: #ff5f57;
+        border: 1px solid #b03736;
+      }
+
+      &.y-2 {
+        background-color: #febc2e;
+        border: 1px solid #998d7a;
+      }
+
+      &.g-3 {
+        background-color: #28c840;
+        border: 1px solid #0b8624;
+      }
+    }
+  }
+}
+
+.rp-loading {
+  height: 0px;
+  width: 0px;
+}

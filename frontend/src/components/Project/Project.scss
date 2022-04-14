@@ -1,3 +1,93 @@
-.project-test {
-  color: "green";
+@use '../../styles/colors' as c;
+@use '../../styles/commonStyles' as cs;
+
+.projectPage {
+  width: 100%;
+  padding: 20px;
+}
+
+.projectContainer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.myProject {
+  font-size: 1em;
+  color: c.$highlight-text;
+  @include cs.proseHeaderFont;
+}
+
+.projectProse {
+  font-size: 1.4em;
+  margin: 20px 0 30px 0;
+  color: c.$header-text;
+}
+
+.featuredProjects {
+  color: c.$header-text;
+  letter-spacing: 1.5px;
+  font-family: Inter;
+  font-weight: 500;
+}
+
+.showMoreLessContainer {
+  @include cs.flexAlignCenter;
+  padding: 0px 20px;
+
+  & > div {
+    cursor: pointer;
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .projectContainer {
+    max-width: 90%;
+  }
+
+  .featuredProjects {
+    font-size: 1.4em;
+    margin: 55px 0;
+    text-align: center;
+  }
+
+  .projectProse {
+    font-size: 2em;
+  }
+
+  #mouseScrollContainer {
+    @include cs.flexCenter;
+    width: 100%;
+    transform: translateY(-30px);
+    transition: all linear 1s;
+    opacity: 1;
+  }
+
+  .myProject {
+    font-size: 1.2em;
+  }
+
+  .projectProse {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .projectContainer {
+    max-width: 85%;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .projectContainer {
+    max-width: 75%;
+  }
+
+  .myProject {
+    font-size: 1.4em;
+  }
+
+  .projectProse {
+    font-size: 1.8em;
+  }
 }

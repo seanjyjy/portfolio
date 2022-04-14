@@ -1,0 +1,36 @@
+@use '../../../styles/colors' as c;
+@use '../../../styles/commonStyles' as cs;
+
+.testimonialPage {
+  padding: 80px 0px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.testimonialPageHeader {
+  text-align: center;
+  color: c.$header-text;
+  font-size: 1.4em;
+  margin: 20px 0 30px 0;
+  @include cs.headerFont;
+}
+
+.testimonialPageProse {
+  text-align: center;
+  font-size: 1em;
+  color: c.$highlight-text;
+  @include cs.bodyFont;
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 1600px) {
+  .testimonialPage {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .testimonialPage {
+    width: 75%;
+  }
+}

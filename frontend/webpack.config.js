@@ -7,6 +7,11 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const ReactRefreshTypeScript = require("react-refresh-typescript");
+const webpack = require("webpack");
+const dotenv = require("dotenv");
+dotenv.config({
+  path: __dirname + "/.env",
+});
 
 const isDevelopment = process.env.NODE_ENV !== "production";
 
@@ -82,6 +87,17 @@ module.exports = {
         ],
       },
       {
+        test: /\.(mov|mp4)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+            },
+          },
+        ],
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: [
@@ -139,6 +155,20 @@ module.exports = {
         removeComments: true,
       },
     }),
+    new webpack.ProvidePlugin({
+      process: "process/browser",
+    }),
+    new webpack.DefinePlugin({
+      "process.env.REACT_APP_EMAILJS_SERVICE": JSON.stringify(
+        process.env.REACT_APP_EMAILJS_SERVICE
+      ),
+      "process.env.REACT_APP_EMAILJS_TEMPLATE": JSON.stringify(
+        process.env.REACT_APP_EMAILJS_TEMPLATE
+      ),
+      "process.env.REACT_APP_EMAILJS_USER": JSON.stringify(
+        process.env.REACT_APP_EMAILJS_USER
+      ),
+    }),
   ].filter(Boolean),
   devServer: {
     static: {
@@ -148,6 +178,20 @@ module.exports = {
     historyApiFallback: true,
   },
   resolve: {
+    modules: [path.resolve(process.cwd(), "src"), "node_modules"],
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
+    alias: {
+      process: "process/browser",
+      "@components": path.resolve(__dirname, "/src/components/"),
+      "@commons": path.resolve(__dirname, "/src/commons/"),
+      "@context": path.resolve(__dirname, "/src/context"),
+      "@images": path.resolve(__dirname, "/src/images"),
+      "@utils": path.resolve(__dirname, "/src/utils"),
+      "@hooks": path.resolve(__dirname, "/src/hooks/index.ts"),
+      "@types": path.resolve(__dirname, "/src/types/index.ts"),
+    },
+    fallback: {
+      process: require.resolve("process/browser"),
+    },
   },
 };

@@ -1,0 +1,16 @@
+.carouselBox {
+  display: flex;
+  overflow: hidden;
+  padding-top: 15px;
+  justify-content: flex-start;
+}
+
+.carouselBoxItems {
+  max-width: 100%;
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  transition: 0.5s;
+}

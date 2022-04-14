@@ -5,11 +5,28 @@
 
 @mixin flexJustifyCenter {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 @mixin flexCenter {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin headerFont {
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 24px;
+}
+
+@mixin bodyFont {
+  line-height: 22px;
+  font-family: Inter;
+}
+
+@mixin proseHeaderFont {
+  margin: 10px 0;
+  font-family: Inter;
+  letter-spacing: 1.5px;
 }

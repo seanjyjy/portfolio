@@ -1,0 +1,116 @@
+@use '../../styles/colors' as c;
+@use '../../styles/commonStyles' as cs;
+
+.project-item {
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.project-item ~ .project-item {
+  margin-top: 50px;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+
+  & img {
+    margin: 0 15px 0 0;
+  }
+
+  & > p {
+    font-size: 1.2em;
+    line-height: 33px;
+    font-weight: 500;
+    color: c.$header-text;
+  }
+}
+
+.project-description-large {
+  font-size: 1.6em;
+  line-height: 33px;
+  font-weight: 700;
+  margin: 10px 0;
+  font-family: Inter;
+  color: c.$header-text;
+}
+
+.project-description {
+  color: c.$small-text;
+  font-size: 0.8em;
+  @include cs.bodyFont;
+}
+
+.project-button-container {
+  padding: 20px 0px;
+
+  display: flex;
+  & a {
+    text-decoration: none;
+    color: black;
+
+    &:visited {
+      color: black;
+    }
+  }
+  & > * {
+    margin: 0 5px;
+  }
+}
+
+.gif-styling {
+  width: 100%;
+  height: auto;
+}
+
+.project-icon-holder {
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px;
+  background-color: #f2f7ff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(max(1vw, 16px));
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media screen and (min-width: 1025px) {
+  .project-header {
+    margin-bottom: 20px;
+  }
+
+  .project-item {
+    display: flex;
+    margin-bottom: 120px;
+  }
+
+  .project-item-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .project-description-large {
+    font-size: 1.9em;
+    line-height: 35px;
+    margin-bottom: 20px;
+  }
+
+  .project-description {
+    line-height: 26px;
+    font-size: 0.9em;
+    font-weight: 400;
+  }
+
+  .project-icon-holder {
+    margin-top: 10px;
+
+    & p {
+      font-size: 0.9em;
+    }
+  }
+}

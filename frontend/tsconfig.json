@@ -15,7 +15,18 @@
     "isolatedModules": true,
     "noEmit": false,
     "jsx": "react-jsx",
-    "typeRoots": ["./src/global.d.ts", "./node_modules/@types"]
+    "typeRoots": ["./src/global.d.ts", "./node_modules/@types"],
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@commons/*": ["commons/*"],
+      "@context/*": ["context/*"],
+      "@images/*": ["images/*"],
+      "@utils/*": ["utils/*"],
+      "@hooks": ["hooks/index.ts"],
+      "@types": ["types/index.ts"]
+    }
   },
-  "include": ["src"]
+  "include": ["./src"],
+  "exclude": ["node_modules", ".vscode"]
 }

@@ -1,0 +1,13 @@
+.loadingAnimation-svg {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  display: inline-block;
+}
+
+.loadingAnimation {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}

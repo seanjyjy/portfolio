@@ -1,3 +1,138 @@
-.about-test {
-  color: "red";
+@use '../../styles/colors' as c;
+@use '../../styles/commonStyles' as cs;
+
+.about {
+  height: fit-content;
+}
+
+.about-page {
+  padding-bottom: 20px;
+  border-bottom: 1px solid c.$seperator;
+  width: 100%;
+}
+
+.aboutContainer {
+  width: 100%;
+}
+
+.aboutContainerStyle {
+  display: flex;
+  height: 55%;
+}
+
+.aboutRightContainer {
+  padding-top: 50px;
+}
+
+.aboutProse {
+  width: 100%;
+  padding: 20px;
+  font-size: 2em;
+  color: c.$header-text;
+}
+
+.learnMore {
+  margin: 10 20px;
+}
+
+.aboutMe {
+  width: 100%;
+
+  & div {
+    padding: 15 10px;
+  }
+
+  & h3 {
+    color: c.$header-text;
+    padding: 0 10px;
+    font-size: 1em;
+    @include cs.headerFont;
+  }
+
+  & p {
+    color: c.$small-text;
+    padding: 0 10px;
+    font-size: 0.8em;
+    @include cs.bodyFont;
+  }
+}
+
+#sean-img-holder {
+  display: none;
+}
+
+@media screen and (min-width: 960px) {
+  .aboutContainer {
+    @include cs.flexCenter;
+    width: 95%;
+    margin: 0 auto;
+    height: 100vh;
+  }
+
+  .aboutContainerStyle {
+    height: 65%;
+  }
+
+  #sean-img-holder {
+    @include cs.flexAlignCenter;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    min-width: 300px;
+    min-height: 300px;
+    max-height: 600px;
+    max-width: 600px;
+    position: relative;
+    background-color: #eff0f7;
+    margin-right: 70px;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    // box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    //   rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    //   rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+    & img {
+      left: 35px;
+      position: absolute;
+      max-width: inherit;
+      max-height: inherit;
+      height: 90%;
+      width: inherit;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+  }
+
+  .aboutProse {
+    font-size: 2.2em;
+  }
+
+  .aboutMe {
+    & h3 {
+      font-size: 1em;
+      line-height: 26px;
+    }
+  }
+}
+
+@media screen and (min-width: 1179px) {
+  .aboutContainer {
+    width: 80%;
+  }
+
+  .aboutProse {
+    font-size: 2.4em;
+  }
+
+  .aboutMe {
+    & h3 {
+      line-height: 28px;
+    }
+
+    & p {
+      line-height: 24px;
+      font-size: 0.9em;
+    }
+  }
 }

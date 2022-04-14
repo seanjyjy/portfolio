@@ -1,0 +1,30 @@
+@use '../../styles/colors' as c;
+@use '../../styles/commonStyles' as cs;
+
+.wordArrowButton {
+  @include cs.flexAlignCenter;
+  color: c.$blue-primary;
+  cursor: pointer;
+  font-weight: 400;
+  margin-right: 15px;
+  font-family: Inter;
+  font-size: 0.9em;
+  height: fit-content;
+  width: fit-content;
+
+  & > * {
+    margin: 0 5px;
+  }
+
+  & > img {
+    transition: all 200ms linear;
+    height: 21px;
+    transform: translate(0, 1px);
+  }
+}
+
+.wordArrowButton:hover {
+  & > img {
+    transform: translate(5px, 1px);
+  }
+}

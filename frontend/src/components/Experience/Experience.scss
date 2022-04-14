@@ -1,3 +1,205 @@
-.exp-test {
-  color: blue;
+@use '../../styles/colors' as c;
+@use '../../styles/commonStyles' as cs;
+
+.experiencePage {
+  padding: 20px;
+  height: auto;
+  min-height: 100%;
+}
+
+#experienceAnchor {
+  position: absolute;
+  top: -50px;
+}
+
+.expSepContainer {
+  width: 100%;
+  height: 2px;
+  @include cs.flexCenter;
+  margin: 30px 0;
+}
+
+.expSep {
+  height: 2px;
+  width: 50%;
+  background-color: c.$seperator;
+}
+
+.experienceContainer {
+  padding-bottom: 20px;
+}
+
+.myExperience {
+  font-size: 1em;
+  color: c.$highlight-text;
+  @include cs.proseHeaderFont;
+}
+
+.ExperienceProse {
+  color: c.$header-text;
+  font-size: 1.4em;
+  margin: 20px 0 30px 0;
+}
+
+.expCurrent {
+  & .expCurrentImgHolder {
+    & img {
+      width: 100%;
+      border-radius: 20px;
+    }
+  }
+
+  & .expCurrentText {
+    margin: 30px 0 10px 0;
+    color: c.$header-text;
+    font-size: 1.3em;
+    @include cs.headerFont;
+  }
+
+  & .expCurrentRole {
+    @include cs.flexAlignCenter;
+    font-size: 1.2em;
+    color: c.$blue-primary;
+    font-weight: 400;
+
+    & img {
+      width: auto;
+      height: 19px;
+      margin-left: 5px;
+    }
+  }
+
+  & .expCurrentGoal {
+    color: c.$small-text;
+    margin: 5px 0 0px 0;
+    font-size: 0.8em;
+    @include cs.bodyFont;
+  }
+
+  & .seeMoreExp {
+    margin: 40px 0 20px 0;
+  }
+}
+
+.pastExp {
+  position: relative;
+
+  & #pastExpAnchor {
+    position: absolute;
+    top: -90px;
+  }
+}
+
+.expShouldShow {
+  display: none;
+}
+
+@media screen and (min-width: 960px) {
+  .experienceContainer {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .experienceContainerWider {
+    margin: 0 auto;
+    width: 95%;
+  }
+
+  .myExperience {
+    font-size: 1.2em;
+  }
+
+  .ExperienceProse {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (min-width: 1179px) {
+  .experienceContainerWider {
+    width: 90%;
+  }
+
+  .expCurrent {
+    & .expCurrentRole {
+      font-size: 1em;
+    }
+
+    & .expCurrentGoal {
+      line-height: 24px;
+      font-size: 0.9em;
+      letter-spacing: 0.1px;
+    }
+
+    & .expCurrentText {
+      margin-top: 30px;
+      font-size: 1.5em;
+      font-weight: 500;
+    }
+  }
+
+  .ExperienceProse {
+    font-size: 2em;
+  }
+
+  .myExperience {
+    font-size: 1.4em;
+  }
+
+  .ExperienceProse {
+    font-size: 1.8em;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .expShouldShow {
+    display: block;
+  }
+
+  .expCurrent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 70%;
+
+    & .expCurrentImgHolder {
+      @include cs.flexAlignCenter;
+      height: 500px;
+      min-width: 600px;
+      position: relative;
+      background-color: #eff0f7;
+      margin-right: 120px;
+      border-radius: 20px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+      & > img {
+        width: 100%;
+        height: calc(100% - 80px);
+        left: 40px;
+        position: absolute;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+    }
+
+    & .expCurrentText {
+      margin-top: 0;
+      padding-top: 5%;
+    }
+  }
+
+  .experienceContainerWider {
+    width: 85%;
+    @include cs.flexJustifyCenter;
+    flex-direction: column;
+    height: 90vh;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .experienceContainerWider {
+    width: 75%;
+  }
+
+  .experienceContainer {
+    width: 80%;
+  }
 }

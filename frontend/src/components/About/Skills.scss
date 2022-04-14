@@ -1,0 +1,112 @@
+@use '../../styles/colors' as c;
+@use '../../styles/commonStyles' as cs;
+
+.skillsSection {
+  margin-top: 70px;
+}
+
+.skillsHeader {
+  & .mySkills {
+    font-size: 1em;
+    color: c.$highlight-text;
+    @include cs.proseHeaderFont;
+  }
+
+  & .skillsProse {
+    color: c.$header-text;
+    font-size: 1.4em;
+    margin: 20px 0 30px 0;
+  }
+}
+
+.skillsBody {
+  & .skillsType {
+    font-size: 1.3em;
+    color: c.$header-text;
+    @include cs.headerFont;
+  }
+
+  & .skillsTypeProse {
+    color: c.$small-text;
+    font-size: 0.9em;
+    margin: 5px 0 0px 0;
+    @include cs.bodyFont;
+  }
+}
+
+.skillsBody {
+  padding: 20px 35px;
+  background-color: white;
+  border-radius: 10px;
+  // box-shadow: -0.0625rem 0 0.625rem 0 rgb(0 0 0 / 7%),
+  //   0.3125rem 1.25rem 2.5rem 0 rgb(0 0 0 / 4%);
+  border: 1px solid c.$seperator;
+
+  flex: 0 0 auto;
+  width: 100%;
+
+  & > img {
+    height: 40px;
+    margin-bottom: 10px;
+  }
+}
+
+.skillsBody:not(:first-child) {
+  margin: 20px 0;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  & img {
+    width: 2.8em;
+    height: 2.8em;
+    margin: 15px 10px 15px 0;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .skillsSection {
+    display: flex;
+    margin: 180px auto 0;
+  }
+
+  .skillsHeader {
+    flex: 2;
+    margin-right: 40px;
+  }
+
+  .skillsBodyContainer {
+    flex: 5;
+  }
+
+  .skillsBody:not(:first-child) {
+    margin: 40px 0;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .skillsSection {
+    width: 80%;
+  }
+
+  .skillsHeader {
+    margin-right: 80px;
+  }
+
+  .skillsBody {
+    padding: 30px 40px;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .skillsSection {
+    width: 70%;
+  }
+
+  .skillsHeader {
+    margin-right: 80px;
+  }
+}

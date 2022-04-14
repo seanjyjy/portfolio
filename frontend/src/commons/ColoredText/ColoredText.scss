@@ -1,0 +1,67 @@
+.rainbow {
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@mixin textAnimation {
+  animation: rainbow_animation 6s ease-in-out infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 400% 100%;
+  margin-left: 7px;
+  font-family: Poppins, sans-serif;
+}
+
+@keyframes rainbow_animation {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+// THIS IS FOR THE COMPANIES TEXT ANIMATION BACKGROUND HARDCODED
+.rainbow_text_animated.motional {
+  background: linear-gradient(
+    to right,
+    #5c55ef,
+    #4e86f4,
+    #97b0e6,
+    #4e86f4,
+    #5c48f6
+  );
+
+  @include textAnimation;
+}
+
+.rainbow_text_animated.shopee {
+  background: linear-gradient(
+    to right,
+    #f53e2d,
+    #fe6433,
+    #f7a388,
+    #fe6433,
+    #f53e2d
+  );
+
+  @include textAnimation;
+}
+
+.rainbow_text_animated.nus {
+  background: linear-gradient(
+    to right,
+    #6f8fb1,
+    #003d7c,
+    #ef7c00,
+    #003d7c,
+    #6f8fb1
+  );
+
+  @include textAnimation;
+}

@@ -1,0 +1,174 @@
+@use '../../styles/colors' as c;
+@use '../../styles/commonStyles' as cs;
+
+#ExperienceContainer {
+  @include cs.flexCenter;
+  min-height: 100vh;
+  padding: 40px 30px;
+  position: relative;
+  flex-direction: column;
+}
+
+.exp-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 10px 0;
+  display: flex;
+  height: fit-content;
+}
+
+.exp-title-2 {
+  @include cs.flexAlignCenter;
+  width: 100%;
+  color: c.$header-text;
+}
+
+.exp-title-2.spaced {
+  justify-content: space-between;
+}
+
+.exp-date {
+  font-weight: 500;
+  margin: 10px 0;
+  color: c.$header-text;
+}
+
+.exp-mission {
+  margin: 10px 0;
+  letter-spacing: 1.2px;
+  color: c.$highlight-text;
+}
+
+.exp-contribution {
+  line-height: 22px;
+  font-size: 0.8em;
+  margin: 5px 0;
+  color: c.$small-text;
+}
+
+.exp-tech-stack {
+  margin-top: 15px;
+  font-weight: 600;
+  color: c.$header-text;
+}
+
+.exp-container {
+  margin: 30px 0px;
+  background-color: white;
+  padding: 15px 30px;
+  box-shadow: rgba(115, 139, 202, 0.2) 0px 8px 24px;
+}
+
+.exp-tech-stack-holder {
+  @include cs.flexAlignCenter;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.exp-gif {
+  width: auto;
+  height: 24px;
+  margin-left: 5px;
+}
+
+@media screen and (min-width: 641px) {
+  .exp-title {
+    font-size: 1.5em;
+  }
+
+  .exp-date {
+    font-size: 1.2em;
+  }
+
+  .exp-mission {
+    font-size: 1.1em;
+  }
+
+  .exp-contribution {
+    font-size: 0.85em;
+  }
+
+  .exp-tech-stack {
+    font-size: 1.1em;
+  }
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media screen and (min-width: 800px) {
+  .exp-title {
+    font-size: 1.55em;
+    margin: 10px 0;
+  }
+
+  .exp-date {
+    font-size: 1.25em;
+    margin: 7px 0;
+  }
+
+  .exp-mission {
+    font-size: 1.15em;
+    margin: 7px 0;
+  }
+
+  .exp-contribution {
+    font-size: 0.9em;
+    margin: 6px 0;
+  }
+
+  .exp-tech-stack {
+    font-size: 1.15em;
+  }
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media screen and (min-width: 1179px) {
+  .exp-title {
+    font-size: 1.6em;
+    margin: 15px 0;
+  }
+
+  .exp-date {
+    font-size: 1.3em;
+    margin: 11px 0;
+  }
+
+  .exp-mission {
+    font-size: 1.15em;
+    margin: 11px 0;
+  }
+
+  .exp-contribution {
+    font-size: 0.95em;
+    margin: 8px 0;
+  }
+
+  .exp-tech-stack {
+    font-size: 1.2em;
+  }
+}
+/* hi-res laptops and desktops */
+@media screen and (min-width: 1281px) {
+  .exp-title {
+    font-size: 1.55em;
+    margin: 20px 0;
+  }
+
+  .exp-date {
+    font-size: 1.25em;
+    margin: 15px 0;
+  }
+
+  .exp-mission {
+    font-size: 1.15em;
+    margin: 15px 0;
+  }
+
+  .exp-contribution {
+    font-size: 0.9em;
+    margin: 10px 0;
+  }
+
+  .exp-tech-stack {
+    font-size: 1.15em;
+  }
+}
