@@ -2,8 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player/lazy";
 
 import LoadingAnimation from "@commons/LoadingAnimation";
-
-import temp from "../../images/SortAlgoPV.mp4";
+import ErrorBoundary from "@commons/ErrorBoundary/ErrorBoundary";
 
 import PLAYIMG from "../../images/play.svg";
 import PAUSEIMG from "../../images/pause.svg";
@@ -62,9 +61,6 @@ const Player = ({ url }: PlayerProps) => {
             clickOnProgress(e, timelineRefBg.current!, videoRef.current!)
           );
       }
-
-      if (videoRef.current && timelineRef.current) {
-      }
     }
   }, []);
 
@@ -84,51 +80,57 @@ const Player = ({ url }: PlayerProps) => {
   };
 
   useEffect(() => {
+    const videoRefInstance = videoRef.current;
+    const timelineRefBgInstance = timelineRefBg.current;
+    const timelineRefInstance = timelineRef.current;
+
     return () => {
-      if (videoRef.current)
-        videoRef.current.removeEventListener("timeupdate", () =>
-          handleBar(videoRef.current!, timelineRef.current!)
+      if (videoRefInstance != null && timelineRefInstance != null)
+        videoRefInstance.removeEventListener("timeupdate", () =>
+          handleBar(videoRefInstance, timelineRefInstance)
         );
-      if (timelineRefBg.current)
-        timelineRefBg.current.removeEventListener("click", (e) =>
-          clickOnProgress(e, timelineRefBg.current!, videoRef.current!)
+      if (timelineRefBgInstance != null && videoRefInstance != null)
+        timelineRefBgInstance.removeEventListener("click", (e) =>
+          clickOnProgress(e, timelineRefBgInstance, videoRefInstance)
         );
     };
   }, []);
 
   return (
-    <div className="macbook-wrapper">
-      <div className="macbook-header">
-        <div className="header-dot r-1" />
-        <div className="header-dot y-2" />
-        <div className="header-dot g-3" />
-      </div>
-      <div className="player-wrapper" id="player-wrapper">
-        {url !== "" && isLoading && <LoadingAnimation />}
-        {url !== "" && (
-          <>
-            <ReactPlayer
-              playing={isPlaying}
-              id="react-player"
-              ref={ref}
-              onReady={onReady}
-              url={url}
-              className={`react-player ${isLoading && "rp-loading"}`}
-              width="100%"
-              height="100%"
-            />
-            <div className="player-controls">
-              <button onClick={handleClick}>
-                <img src={!isPlaying ? PLAYIMG : PAUSEIMG} alt="" />
-              </button>
-              <div className="player-control-timeline-bg">
-                <div className="player-control-timeline" />
+    <ErrorBoundary>
+      <div className="macbook-wrapper">
+        <div className="macbook-header">
+          <div className="header-dot r-1" />
+          <div className="header-dot y-2" />
+          <div className="header-dot g-3" />
+        </div>
+        <div className="player-wrapper" id="player-wrapper">
+          {url !== "" && isLoading && <LoadingAnimation />}
+          {url !== "" && (
+            <>
+              <ReactPlayer
+                playing={isPlaying}
+                id="react-player"
+                ref={ref}
+                onReady={onReady}
+                url={url}
+                className={`react-player ${isLoading && "rp-loading"}`}
+                width="100%"
+                height="100%"
+              />
+              <div className="player-controls">
+                <button onClick={handleClick}>
+                  <img src={!isPlaying ? PLAYIMG : PAUSEIMG} alt="" />
+                </button>
+                <div className="player-control-timeline-bg">
+                  <div className="player-control-timeline" />
+                </div>
               </div>
-            </div>
-          </>
-        )}
+            </>
+          )}
+        </div>
       </div>
-    </div>
+    </ErrorBoundary>
   );
 };
 

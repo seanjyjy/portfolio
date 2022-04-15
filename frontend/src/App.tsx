@@ -23,7 +23,7 @@ import LoadingAnimation from "@commons/LoadingAnimation";
 const LazyExperience = React.lazy(async () => {
   const [component] = await Promise.all([
     import("@components/Experience"),
-    new Promise((resolve) => setTimeout(resolve, 700)),
+    new Promise((resolve) => setTimeout(resolve, 500)),
   ]);
   return component;
 });
@@ -31,7 +31,7 @@ const LazyExperience = React.lazy(async () => {
 const LazyProject = React.lazy(async () => {
   const [component] = await Promise.all([
     import("@components/Project"),
-    new Promise((resolve) => setTimeout(resolve, 700)),
+    new Promise((resolve) => setTimeout(resolve, 500)),
   ]);
 
   return component;
@@ -39,7 +39,7 @@ const LazyProject = React.lazy(async () => {
 const LazyContact = React.lazy(async () => {
   const [component] = await Promise.all([
     import("@components/Contact"),
-    new Promise((resolve) => setTimeout(resolve, 700)),
+    new Promise((resolve) => setTimeout(resolve, 500)),
   ]);
   return component;
 });

@@ -1,16 +1,21 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { render } from "react-dom";
 import "./index.scss";
 
 import App from "./App";
 
 const rootElement = document.getElementById("root");
-const root = createRoot(rootElement as Element | DocumentFragment);
+render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  rootElement
+);
+// const root = createRoot(rootElement as Element | DocumentFragment);
 // root.render(
 //   <React.StrictMode>
-//     <ModeProvider>
-//         <App />
-//     </ModeProvider>
+//     <App />
 //   </React.StrictMode>
 // );
-root.render(<App />);
+// root.render(<App />);

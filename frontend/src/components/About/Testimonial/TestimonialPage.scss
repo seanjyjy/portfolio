@@ -23,6 +23,12 @@
   margin-bottom: 40px;
 }
 
+@media only screen and (min-width: 1400px) {
+  .testimonialPage {
+    width: 93%;
+  }
+}
+
 @media only screen and (min-width: 1600px) {
   .testimonialPage {
     width: 85%;

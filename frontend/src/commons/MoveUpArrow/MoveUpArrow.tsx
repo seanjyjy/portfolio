@@ -26,7 +26,7 @@ const MoveUpArrow = () => {
 
     function showOrHideButton() {
       let percent = getScrollPercent();
-      console.log(percent);
+
       if (percent > 50) {
         // Show button
         setIsShow(true);
@@ -38,13 +38,13 @@ const MoveUpArrow = () => {
 
     window.addEventListener(
       "scroll",
-      throttle((e: Event) => showOrHideButton())
+      throttle((e: Event) => showOrHideButton(), 50)
     );
 
     return () =>
       window.removeEventListener(
         "scroll",
-        throttle((e: Event) => showOrHideButton())
+        throttle((e: Event) => showOrHideButton(), 50)
       );
   }, []);
 
