@@ -19,10 +19,10 @@ export const testimonials: TestimonialInfo[] = [
   },
   {
     imgSrc:
-      "https://media-exp1.licdn.com/dms/image/C5603AQEbxI2gnaaT8A/profile-displayphoto-shrink_200_200/0/1595501663497?e=1655337600&v=beta&t=UGDpXnICUYr_O9jUamCPuHCLDRlQbIlBPPrN0jYBwg0",
-    name: "Thong Yong Jun",
-    role: "Senior Software Engineer at Motional",
+      "https://media-exp1.licdn.com/dms/image/C5603AQHrdpmfkhpBbA/profile-displayphoto-shrink_100_100/0/1627147938703?e=1655337600&v=beta&t=Ln-s9y-hzo1MYrCiTHxAKFZXIxl23M4UW0tQyLVqPbg",
+    name: "Ashley Lau",
+    role: "Software Enginner Intern at GIC",
     comments:
-      "Sean displayed the skills and attitude to be a strong frontend engineer. While interning with our team, he took on the task of revamping our web app for a new generation look and improved functionalities. The team are impressed with the speed he delivers and the quality of work. Notwithstanding, he also shows an eagerness to learn and is able to articulate well the issues he faced and the approaches he took. We placed high standard on our code and Sean with little guidance exceeded those expectations. I am confident he will be an asset to any development team.",
+      "I have worked with Sean Lum on multiple person and school projects, and he is without a doubt, one of the smartest, diligent and passionate individuals I know. The project that that left the deepest impression on me was SortAlgo, where he was the leader of my team. In order to help students understand and visualise common sorting algorithms, we came together as a team of 3 to build a sorting visualiser website, and he volunteered to take up the leader’s role. As the leader of the group, he came up with the UIUX design of the application, volunteered to take up the hardest parts of the code despite having no prior experience in react and facilitated the entire scrum process by always providing constructive feedbacks and improvements on things that needs to be done. Under his leadership, we managed to set up a CICD pipe line and complete the web application in 3 weeks. It was a pleasure working with Sean. I have learnt much from him, and look forward to working with him more in the future.",
   },
 ];
