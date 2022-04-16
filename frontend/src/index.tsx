@@ -6,16 +6,16 @@ import "./index.scss";
 import App from "./App";
 
 const rootElement = document.getElementById("root");
-render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  rootElement
-);
-// const root = createRoot(rootElement as Element | DocumentFragment);
-// root.render(
+// render(
 //   <React.StrictMode>
 //     <App />
-//   </React.StrictMode>
+//   </React.StrictMode>,
+//   rootElement
 // );
+const root = createRoot(rootElement as Element | DocumentFragment);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 // root.render(<App />);

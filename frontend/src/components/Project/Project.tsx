@@ -35,6 +35,8 @@ const Project = () => {
     return <Outlet />;
   }
 
+  const displayedProject = allProjects.slice(0, len);
+
   return (
     <div className="projectPage">
       <div className="projectContainer">
@@ -50,8 +52,8 @@ const Project = () => {
             <MouseSuggestionScroll />
           </div>
         )}
-        {allProjects.slice(0, len).map((project) => (
-          <ProjectItem {...project} key={project.index} />
+        {displayedProject.map((project) => (
+          <ProjectItem {...project} key={project.name} />
         ))}
         <div className="showMoreLessContainer">
           {len < allProjects.length && (

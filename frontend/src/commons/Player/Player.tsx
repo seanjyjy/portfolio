@@ -37,12 +37,11 @@ const Player = ({ url }: PlayerProps) => {
     video.currentTime = (ratio * video.duration) | 0;
   }
 
-  const ref = useCallback(async (node) => {
+  const ref = useCallback(async (node: any) => {
     if (node) {
       let videoParent = document.querySelector("#react-player") as HTMLElement;
       await new Promise((resolve) => setTimeout(resolve, 1500));
       videoRef.current = videoParent.children[0] as HTMLVideoElement;
-
       timelineRef.current = document.getElementsByClassName(
         "player-control-timeline"
       )[0] as HTMLElement;

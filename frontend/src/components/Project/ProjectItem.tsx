@@ -19,7 +19,6 @@ const ProjectItem = ({
   stack,
   logo,
   logosize,
-  url,
   developmentUrl,
   productionUrl,
   index,

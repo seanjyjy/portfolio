@@ -44,7 +44,7 @@ export const allProjects: ProjectItemType[] = [
     ],
     logo: nusforumslogo,
     logosize: "2.5em",
-    url: "https://www.youtube.com/watch?v=6aSZbqp7t40&ab_channel=JYjy",
+    url: "https://www.youtube.com/watch?v=X7iiDDLitrA",
     developmentUrl:
       "https://res.cloudinary.com/dhxecnaor/video/upload/v1649841344/NUSForumPV_diis6m.mp4",
     productionUrl:
