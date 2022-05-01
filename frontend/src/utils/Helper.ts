@@ -77,3 +77,13 @@ export const nearestUrl = () => {
 
   return "/" + bestFirstDirectory;
 };
+
+export function getScrollPercent() {
+  var h = document.documentElement,
+    b = document.body;
+  return (
+    ((h.scrollTop || b.scrollTop) /
+      ((h.scrollHeight || b.scrollHeight) - h.clientHeight)) *
+    100
+  );
+}

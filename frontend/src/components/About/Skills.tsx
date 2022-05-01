@@ -1,4 +1,5 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 
 import Keywords from "@commons/Keywords";
 import SkillsList from "./SkillsList";
@@ -35,18 +36,33 @@ const array = [
 ] as const;
 
 const Skills = () => {
+  const { ref: skillsRef, inView: skillsRefInView } = useInView({
+    /* Optional options */
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
   return (
     <div className="skillsSection">
       <div>
         <div id="skillsAnchor" />
-        <div className="skillsHeader">
+        <div
+          className={`skillsHeader ${
+            !skillsRefInView ? "lr-hidden" : "lr-shown"
+          }`}
+          ref={skillsRef}
+        >
           <div className="mySkills">MY SKILLS</div>
           <div className="skillsProse">
             Focused on <Keywords text="frontend technologies" /> with the
             occasional backend and design tools
           </div>
         </div>
-        <div className="skillsBodyContainer">
+        <div
+          className={`skillsBodyContainer ${
+            !skillsRefInView ? "rl-hidden" : "rl-shown"
+          }`}
+        >
           {array.map((skill, i) => (
             <div className="skillsBody" key={i}>
               <div className="skillsBodyHeader">

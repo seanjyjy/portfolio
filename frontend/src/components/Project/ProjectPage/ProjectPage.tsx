@@ -49,6 +49,7 @@ const ProjectPage = () => {
                 ? projectInfo.developmentUrl
                 : projectInfo.productionUrl
             }
+            index={1900}
           />
         </div>
         <div className="projectPageProduct">Product</div>

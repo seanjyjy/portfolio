@@ -2,7 +2,6 @@
 @use '../../styles/commonStyles' as cs;
 
 #ContactContainer {
-  min-height: calc(100vh - 70px);
   padding: 40px 15px;
   margin: 0 auto;
 }
@@ -140,6 +139,7 @@ input:-webkit-autofill:active {
 
 .contact-background {
   position: relative;
+  padding-top: 70px;
 }
 
 .contactContainer2 {

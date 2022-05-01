@@ -61,7 +61,6 @@ const CarouselBox = <T,>({
     const { clientWidth } = boxRef.current;
 
     setDist((dist) => {
-      console.log("moving right");
       setPosition((pos) => pos - 1);
       if (dist + clientWidth > leftBound) {
         return leftBound;
@@ -76,7 +75,6 @@ const CarouselBox = <T,>({
     const { clientWidth } = boxRef.current;
 
     setDist((dist) => {
-      console.log("moving left");
       setPosition((pos) => pos + 1);
       if (dist - clientWidth < rightBound) {
         return rightBound;

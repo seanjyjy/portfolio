@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 
 import { useWindowSize } from "@hooks";
 
@@ -26,6 +27,11 @@ const ProjectItem = ({
 }: ProjectItemType) => {
   const { width } = useWindowSize();
   const navigate = useNavigate();
+  const { ref: piRef, inView: piInView } = useInView({
+    /* Optional options */
+    threshold: 0.3,
+    triggerOnce: true,
+  });
 
   function goToProject(project?: string) {
     if (project) navigate(project);
@@ -59,7 +65,10 @@ const ProjectItem = ({
           />
         </div>
         <div className="gif-styling">
-          <Player url={isDevelopment ? developmentUrl : productionUrl} />
+          <Player
+            url={isDevelopment ? developmentUrl : productionUrl}
+            index={index}
+          />
         </div>
         <div className="project-icon-holder">
           <IconList iconList={stack} />
@@ -70,11 +79,20 @@ const ProjectItem = ({
 
   return (
     <div
+      ref={piRef}
       className="project-item"
       style={{ flexDirection: index % 2 === 1 ? "row-reverse" : "row" }}
     >
       <div
-        className="project-item-left"
+        className={`project-item-left ${
+          index % 2 === 0
+            ? !piInView
+              ? "lr-hidden"
+              : "lr-shown"
+            : !piInView
+            ? "rl-hidden"
+            : "rl-shown"
+        }`}
         style={{
           marginRight: index % 2 === 0 ? "60px" : 0,
           flex: 1,
@@ -105,14 +123,25 @@ const ProjectItem = ({
         </div>
       </div>
       <div
-        className="project-item-right"
+        className={`project-item-right ${
+          index % 2 === 0
+            ? !piInView
+              ? "rl-hidden"
+              : "rl-shown"
+            : !piInView
+            ? "lr-hidden"
+            : "lr-shown"
+        }`}
         style={{
           marginRight: index % 2 === 1 ? "60px" : 0,
           flex: 1.3,
         }}
       >
         <div className="gif-styling">
-          <Player url={isDevelopment ? developmentUrl : productionUrl} />
+          <Player
+            url={isDevelopment ? developmentUrl : productionUrl}
+            index={index}
+          />
         </div>
       </div>
     </div>

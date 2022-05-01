@@ -11,3 +11,17 @@
 .Typewriter__cursor {
   color: c.$highlight-text;
 }
+
+.typeWritterHack {
+  position: relative;
+  height: fit-content;
+
+  & > :last-child {
+    position: absolute;
+    top: 0;
+  }
+
+  & > :first-child {
+    color: transparent;
+  }
+}

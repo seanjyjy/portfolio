@@ -64,6 +64,7 @@
 }
 
 .project-icon-holder {
+  margin-top: 30px;
   border-radius: 10px;
   width: 100%;
   padding: 5px;
@@ -74,6 +75,14 @@
   justify-content: center;
   align-items: center;
   font-size: calc(max(1vw, 16px));
+}
+
+.project-item-left {
+  transition: all 1s linear;
+}
+
+.project-item-right {
+  transition: all 1s linear;
 }
 
 /* big landscape tablets, laptops, and desktops */

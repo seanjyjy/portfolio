@@ -1,4 +1,5 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 
 import ExperienceCard from "./ExperienceCard";
 import Keywords from "@commons/Keywords";
@@ -15,6 +16,12 @@ import { experiences } from "../../constants";
 import "./Experience.scss";
 
 const Experience = () => {
+  const { ref: experienceRef, inView: experienceInView } = useInView({
+    /* Optional options */
+    threshold: 1,
+    triggerOnce: true,
+  });
+
   function scrollToSep() {
     document.getElementById("pastExpAnchor")?.scrollIntoView({
       behavior: "smooth",
@@ -26,8 +33,19 @@ const Experience = () => {
       <div className="experiencePage">
         <div id="experienceAnchor" />
         <div className="experienceContainerWider">
-          <div className="myExperience">MY WORK EXPERIENCE</div>
-          <div className="experienceProse">
+          <div
+            className={`myExperience ${
+              !experienceInView ? "lr-hidden" : "lr-shown"
+            }`}
+            ref={experienceRef}
+          >
+            MY WORK EXPERIENCE
+          </div>
+          <div
+            className={`experienceProse ${
+              !experienceInView ? "lr-hidden" : "lr-shown"
+            }`}
+          >
             Worked in fast-paced companies to push{" "}
             <Keywords
               text={
@@ -38,10 +56,14 @@ const Experience = () => {
             toolings.
           </div>
           <div className="expCurrent">
-            <div className="expCurrentImgHolder">
+            <div className={`expCurrentImgHolder`}>
               <img src={coding} alt="" />
             </div>
-            <div>
+            <div
+              className={`expCurrentRoleText ${
+                !experienceInView ? "td-hidden" : "td-shown"
+              }`}
+            >
               <div className="expCurrentText">
                 Incoming Enterprise Engineer Intern
               </div>

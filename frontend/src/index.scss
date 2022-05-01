@@ -31,3 +31,33 @@ a {
 #root {
   display: unset;
 }
+
+.lr-hidden {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.lr-shown {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.td-hidden {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.td-shown {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.rl-hidden {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.rl-shown {
+  opacity: 1;
+  transform: translateX(0px);
+}

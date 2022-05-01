@@ -14,17 +14,20 @@ const Keywords = ({ text, typewritter = false }: KeywordsProps) => {
   }
 
   return (
-    <Typewriter
-      options={{ autoStart: true, loop: false, delay: 50 }}
-      onInit={(typewriter) => {
-        typewriter
-          .typeString(text)
-          .callFunction(function (state) {
-            state.elements.cursor.style.display = "none";
-          })
-          .start();
-      }}
-    />
+    <div className="typeWritterHack clearfix">
+      <div>{text}</div>
+      <Typewriter
+        options={{ autoStart: true, loop: false, delay: 50 }}
+        onInit={(typewriter) => {
+          typewriter
+            .typeString(text)
+            .callFunction(function (state) {
+              state.elements.cursor.style.display = "none";
+            })
+            .start();
+        }}
+      />
+    </div>
   );
 };
 

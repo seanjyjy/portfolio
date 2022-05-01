@@ -28,6 +28,7 @@
     font-size: 1.9em;
     margin: 20px 0 30px 0;
   }
+  transition: all 1s linear;
 }
 
 .skillsBody {
@@ -94,6 +95,7 @@
 
   .skillsBodyContainer {
     flex: 5;
+    transition: all 1s linear;
   }
 }
 

@@ -3,22 +3,30 @@
 
 .nav {
   @include cs.flexCenter;
-  position: sticky;
+  position: fixed;
   z-index: 500;
   left: 0;
   top: 0;
   width: 100vw;
   background-color: #fff;
-  min-height: 70px;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: height;
+}
+
+.nav.mounted {
+  height: 100px;
+}
+
+.nav.dismounted {
   height: 70px;
-  // border-bottom: 1px solid c.$seperator;
 }
 
 .navContainer {
   @include cs.flexAlignCenter;
   width: 100%;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0px 20px;
 }
 
 .hamburger {

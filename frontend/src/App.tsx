@@ -44,7 +44,6 @@ const LazyContact = React.lazy(async () => {
   return component;
 });
 
-// TODO: Include react-lazy with suspense when all is done :)
 const App = () => {
   return (
     <Router>

@@ -7,9 +7,10 @@ import { useWindowSize } from "@hooks";
 // Components
 import RoundedButton from "@commons/RoundedButton";
 
+import { getScrollPercent, throttle } from "@utils/Helper";
 import { links } from "../../constants";
 
-import { NavMenuTabsProps } from "./types";
+import type { NavMenuTabsProps } from "./types";
 
 import "./NavMenu.scss";
 
@@ -24,13 +25,34 @@ const NavMenu = () => {
   const { width } = useWindowSize();
   const navigate = useNavigate();
   const [click, setClick] = useState(false);
+  const [isMounted, setIsMounted] = useState(true);
 
   // this is to prevent multiple event listeners.
   useEffect(() => {
     setValuesBasedOnWidth();
-    window.addEventListener("resize", setValuesBasedOnWidth);
 
-    return () => window.removeEventListener("resize", setValuesBasedOnWidth);
+    function mountDismountNavMenu() {
+      let percent = getScrollPercent();
+      if (percent > 0.8) {
+        setIsMounted(false);
+      } else {
+        setIsMounted(true);
+      }
+    }
+
+    window.addEventListener("resize", setValuesBasedOnWidth);
+    window.addEventListener(
+      "scroll",
+      throttle((e: Event) => mountDismountNavMenu(), 10)
+    );
+
+    return () => {
+      window.removeEventListener("resize", setValuesBasedOnWidth);
+      window.removeEventListener(
+        "scroll",
+        throttle((e: Event) => mountDismountNavMenu(), 10)
+      );
+    };
   }, []);
 
   const clearFullScreen = () => {
@@ -100,7 +122,7 @@ const NavMenu = () => {
   }
 
   return (
-    <nav className="nav">
+    <nav className={`nav ${isMounted ? "mounted" : "dismounted"}`}>
       <div className="navContainer">
         <div className="title" onClick={() => handleClick("/About")}>
           Sean Lum.

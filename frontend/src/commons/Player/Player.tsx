@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player/lazy";
+// import { useInView } from "react-intersection-observer";
 
 import LoadingAnimation from "@commons/LoadingAnimation";
 import ErrorBoundary from "@commons/ErrorBoundary/ErrorBoundary";
@@ -11,12 +12,18 @@ import "./Player.scss";
 
 interface PlayerProps {
   url?: string;
+  index: number;
 }
 
-const Player = ({ url }: PlayerProps) => {
+const Player = ({ url, index }: PlayerProps) => {
   const videoRef = useRef<HTMLVideoElement | undefined>();
   const timelineRef = useRef<HTMLElement | undefined>();
   const timelineRefBg = useRef<HTMLElement | undefined>();
+  // const { ref: eleRef, inView } = useInView({
+  //   /* Optional options */
+  //   threshold: 0.8,
+  //   triggerOnce: true,
+  // });
 
   function handleBar(video: HTMLVideoElement, bar: HTMLElement) {
     let width = video.currentTime / video.duration;
@@ -39,26 +46,29 @@ const Player = ({ url }: PlayerProps) => {
 
   const ref = useCallback(async (node: any) => {
     if (node) {
-      let videoParent = document.querySelector("#react-player") as HTMLElement;
+      let videoParent = document.querySelector(
+        `#react-player-${index}`
+      ) as HTMLElement;
       await new Promise((resolve) => setTimeout(resolve, 1500));
       videoRef.current = videoParent.children[0] as HTMLVideoElement;
-      timelineRef.current = document.getElementsByClassName(
-        "player-control-timeline"
-      )[0] as HTMLElement;
+      timelineRef.current = document.querySelector(
+        `div.player-control-timeline.index-${index}`
+      ) as HTMLElement;
 
-      timelineRefBg.current = document.getElementsByClassName(
-        "player-control-timeline-bg"
-      )[0] as HTMLElement;
+      timelineRefBg.current = document.querySelector(
+        `div.player-control-timeline-bg.index-${index}`
+      ) as HTMLElement;
 
       if (videoRef.current && timelineRef.current) {
         videoRef.current.addEventListener("timeupdate", () =>
           handleBar(videoRef.current!, timelineRef.current!)
         );
 
-        if (timelineRefBg.current)
+        if (timelineRefBg.current) {
           timelineRefBg.current.addEventListener("click", (e) =>
             clickOnProgress(e, timelineRefBg.current!, videoRef.current!)
           );
+        }
       }
     }
   }, []);
@@ -95,6 +105,14 @@ const Player = ({ url }: PlayerProps) => {
     };
   }, []);
 
+  // useEffect(() => {
+  //   if (inView && !isPlaying) {
+  //     setTimeout(() => {
+  //       setIsPlaying(true);
+  //     }, 3000);
+  //   }
+  // }, [inView]);
+
   return (
     <ErrorBoundary>
       <div className="macbook-wrapper">
@@ -107,22 +125,24 @@ const Player = ({ url }: PlayerProps) => {
           {url !== "" && isLoading && <LoadingAnimation />}
           {url !== "" && (
             <>
-              <ReactPlayer
-                playing={isPlaying}
-                id="react-player"
-                ref={ref}
-                onReady={onReady}
-                url={url}
-                className={`react-player ${isLoading && "rp-loading"}`}
-                width="100%"
-                height="100%"
-              />
+              <div>
+                <ReactPlayer
+                  playing={isPlaying}
+                  id={`react-player-${index}`}
+                  ref={ref}
+                  onReady={onReady}
+                  url={url}
+                  className={`react-player ${isLoading && "rp-loading"}`}
+                  width="100%"
+                  height="100%"
+                />
+              </div>
               <div className="player-controls">
                 <button onClick={handleClick}>
                   <img src={!isPlaying ? PLAYIMG : PAUSEIMG} alt="" />
                 </button>
-                <div className="player-control-timeline-bg">
-                  <div className="player-control-timeline" />
+                <div className={`player-control-timeline-bg index-${index}`}>
+                  <div className={`player-control-timeline index-${index}`} />
                 </div>
               </div>
             </>

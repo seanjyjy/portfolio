@@ -1,4 +1,5 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import { useWindowSize } from "@hooks";
 
 import WordArrowButton from "@commons/WordArrowButton";
@@ -27,6 +28,26 @@ const AboutInfoPageRows = ({ header, info, imgSrc }: aboutInfo) => {
 
 const AboutInfoPageContainer = () => {
   const { width } = useWindowSize();
+  const { ref: aboutRef, inView: aboutRefInView } = useInView({
+    /* Optional options */
+    threshold: 1,
+    triggerOnce: true,
+  });
+  const { ref: aboutInfoFactsRef, inView: aboutInfoFactsRefInView } = useInView(
+    {
+      /* Optional options */
+      threshold: 1,
+      triggerOnce: true,
+    }
+  );
+  const {
+    ref: aboutInfoContainerRef,
+    inView: aboutInfoContainerRefInView,
+  } = useInView({
+    /* Optional options */
+    threshold: 1,
+    triggerOnce: true,
+  });
 
   function scrollToSkills() {
     document.getElementById("skillsAnchor")?.scrollIntoView({
@@ -39,8 +60,20 @@ const AboutInfoPageContainer = () => {
   if (width < 960) {
     return (
       <div className="aboutInfoPageContainer">
-        <div className="aboutInfo">About</div>
-        <div className="aboutInfoFacts">
+        <div
+          className={`aboutInfo ${
+            aboutRefInView ? "header-hidden" : "header-shown"
+          }`}
+          ref={aboutRef}
+        >
+          About
+        </div>
+        <div
+          className={`aboutInfoFacts ${
+            !aboutInfoFactsRefInView ? "header-hidden" : "header-shown"
+          }`}
+          ref={aboutInfoFactsRef}
+        >
           Some <Keywords text="bytes of information" /> about myself
         </div>
         <div className="aboutSeanPng">
@@ -57,11 +90,26 @@ const AboutInfoPageContainer = () => {
 
   return (
     <div className="aboutInfoPageContainer">
-      <div className="aboutInfo">About</div>
-      <div className="aboutInfoFacts">
+      <div
+        className={`aboutInfo ${!aboutRefInView ? "lr-hidden" : "lr-shown"}`}
+        ref={aboutRef}
+      >
+        About
+      </div>
+      <div
+        className={`aboutInfoFacts ${
+          !aboutInfoFactsRefInView ? "lr-hidden" : "lr-shown"
+        }`}
+        ref={aboutInfoFactsRef}
+      >
         Some <Keywords text="bytes of information" /> about myself
       </div>
-      <div className="aboutInfoPageContainer2">
+      <div
+        className={`aboutInfoPageContainer2 ${
+          !aboutInfoContainerRefInView ? "td-hidden" : "td-shown"
+        }`}
+        ref={aboutInfoContainerRef}
+      >
         <div className="aboutInfoPageInformation">
           {aboutInfo2.map((info) => (
             <AboutInfoPageRows {...info} key={info.header} />

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { throttle } from "../../utils/Helper";
+import { getScrollPercent, throttle } from "../../utils/Helper";
 
 import navArrow from "../../images/navArrow.svg";
 
@@ -14,16 +14,6 @@ const MoveUpArrow = () => {
   }
 
   useEffect(() => {
-    function getScrollPercent() {
-      var h = document.documentElement,
-        b = document.body;
-      return (
-        ((h.scrollTop || b.scrollTop) /
-          ((h.scrollHeight || b.scrollHeight) - h.clientHeight)) *
-        100
-      );
-    }
-
     function showOrHideButton() {
       let percent = getScrollPercent();
 

@@ -9,6 +9,7 @@
   padding-bottom: 20px;
   width: 100%;
   position: relative;
+  padding-top: 50px;
 }
 
 .aboutContainer {
@@ -74,7 +75,7 @@
 
 .aboutBubble {
   position: absolute;
-  top: 70px;
+  top: 150px;
   right: 70px;
   height: 250px;
   width: 250px;
@@ -86,7 +87,7 @@
     transform: rotate(0deg) translate(0px, 0px);
   }
   50% {
-    transform: rotate(-90deg) translate(-400px, -500px);
+    transform: rotate(-90deg) translate(-400px, -450px);
   }
   100% {
     transform: rotate(0deg) translate(0px, 0px);
@@ -99,8 +100,8 @@
     flex-direction: row;
     width: 95%;
     margin: 0 auto;
-    max-height: calc(100vh - 70px);
-    min-height: calc(100vh - 70px);
+    max-height: calc(100vh);
+    min-height: calc(100vh);
     padding-bottom: 40px;
   }
 
@@ -120,7 +121,7 @@
   // Floating objects
   .about-object3 {
     position: absolute;
-    top: 10%;
+    top: 18%;
     left: 0;
     background: c.$floating-bar;
     border-top-right-radius: 20px;
@@ -131,7 +132,7 @@
 
   .about-object4 {
     position: absolute;
-    top: 6%;
+    top: 14%;
     left: 0;
     background: c.$floating-bar;
     border-top-right-radius: 20px;
@@ -142,7 +143,7 @@
 
   .about-object5 {
     position: absolute;
-    top: 10%;
+    top: 18%;
     left: 220px;
     border-radius: 50%;
     background: #3370ff;
