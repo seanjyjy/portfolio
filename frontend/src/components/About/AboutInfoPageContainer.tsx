@@ -30,13 +30,13 @@ const AboutInfoPageContainer = () => {
   const { width } = useWindowSize();
   const { ref: aboutRef, inView: aboutRefInView } = useInView({
     /* Optional options */
-    threshold: 1,
+    threshold: 0.3,
     triggerOnce: true,
   });
   const { ref: aboutInfoFactsRef, inView: aboutInfoFactsRefInView } = useInView(
     {
       /* Optional options */
-      threshold: 1,
+      threshold: 0.3,
       triggerOnce: true,
     }
   );
@@ -45,7 +45,7 @@ const AboutInfoPageContainer = () => {
     inView: aboutInfoContainerRefInView,
   } = useInView({
     /* Optional options */
-    threshold: 1,
+    threshold: 0.6,
     triggerOnce: true,
   });
 
