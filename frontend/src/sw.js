@@ -3,7 +3,11 @@ import { CacheableResponsePlugin } from "workbox-cacheable-response";
 import { clientsClaim } from "workbox-core";
 import { precacheAndRoute, matchPrecache } from "workbox-precaching";
 import { registerRoute, setCatchHandler } from "workbox-routing";
-import { CacheFirst, StaleWhileRevalidate } from "workbox-strategies";
+import {
+  CacheFirst,
+  StaleWhileRevalidate,
+  NetworkFirst,
+} from "workbox-strategies";
 // Used to limit entries in cache, remove entries after a certain period of time
 import { ExpirationPlugin } from "workbox-expiration";
 
