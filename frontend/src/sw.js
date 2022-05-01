@@ -1,8 +1,10 @@
+// Used for filtering matches based on status code, header, or both
 import { CacheableResponsePlugin } from "workbox-cacheable-response";
 import { clientsClaim } from "workbox-core";
-import { precacheAndRoute } from "workbox-precaching";
-import { registerRoute } from "workbox-routing";
+import { precacheAndRoute, matchPrecache } from "workbox-precaching";
+import { registerRoute, setCatchHandler } from "workbox-routing";
 import { CacheFirst, StaleWhileRevalidate } from "workbox-strategies";
+// Used to limit entries in cache, remove entries after a certain period of time
 import { ExpirationPlugin } from "workbox-expiration";
 
 clientsClaim();
@@ -10,7 +12,7 @@ clientsClaim();
 self.skipWaiting();
 
 // cache-first auto used which is wanted
-
+// Ensure your build step is configured to include /offline.html as part of your precache manifest.
 precacheAndRoute(self.__WB_MANIFEST);
 
 registerRoute(
@@ -36,6 +38,23 @@ registerRoute(
   })
 );
 
+// Cache page navigations (html) with a Network First strategy
+registerRoute(
+  // Check to see if the request is a navigation to a new page
+  ({ request }) => request.mode === "navigate",
+  // Use a Network First caching strategy
+  new NetworkFirst({
+    // Put all cached files in a cache named 'pages'
+    cacheName: "pages",
+    plugins: [
+      // Ensure that only requests that result in a 200 status are cached
+      new CacheableResponsePlugin({
+        statuses: [200],
+      }),
+    ],
+  })
+);
+
 // TODO: change maxAgeSeconds
 registerRoute(
   ({ request }) => request.destination === "image",
@@ -55,6 +74,21 @@ registerRoute(
   ({ request }) =>
     request.destination === "script" || request.destination === "style",
   new StaleWhileRevalidate({
-    cacheName: "static-resources",
+    cacheName: "assets",
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [200],
+      }),
+    ],
   })
 );
+
+// Catch routing errors, like if the user is offline
+setCatchHandler(async ({ event }) => {
+  // Return the precached offline page if a document is being requested
+  if (event.request.destination === "document") {
+    return matchPrecache("/index.html");
+  }
+
+  return Response.error();
+});
