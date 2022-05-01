@@ -7,10 +7,16 @@ import "./CarouselBox.scss";
 
 type DotsProps = {
   selected: boolean;
+  onClick: () => void;
 };
 
-function Dot({ selected }: DotsProps) {
-  return <div className={`carouselDot ${selected ? "on" : "off"}`} />;
+function Dot({ selected, onClick }: DotsProps) {
+  return (
+    <div
+      className={`carouselDot ${selected ? "on" : "off"}`}
+      onClick={onClick}
+    />
+  );
 }
 
 type CarouselBoxProps<T> = {
@@ -101,24 +107,7 @@ const CarouselBox = <T,>({
     return idx * -itemWidth;
   };
 
-  useEffect(() => {
-    if (!boxRef.current) {
-      return;
-    }
-    const { clientWidth } = boxRef.current;
-    setLeftBound(0);
-    setRightBound(
-      -(clientWidth / itemsPerPage) * (carouselItems.length - itemsPerPage)
-    );
-    prevWidth.current = width;
-    setDist(snapToGrid);
-  }, [itemsPerPage, carouselItems, width]);
-
-  useEffect(() => {
-    setArr(segmentArray(carouselItems, itemsPerPage));
-  }, [itemsPerPage, carouselItems]);
-
-  useInterval(
+  const reset = useInterval(
     () => {
       if (dist === leftBound && direction === 1) {
         setDirection(0);
@@ -145,13 +134,44 @@ const CarouselBox = <T,>({
     }, 1000)();
   }, []);
 
+  const setViewTrue = () => setIsView(true);
+  const setViewFalse = () => setIsView(false);
+
+  useEffect(() => {
+    if (!boxRef.current) {
+      return;
+    }
+    const { clientWidth } = boxRef.current;
+    setLeftBound(0);
+    setRightBound(
+      -(clientWidth / itemsPerPage) * (carouselItems.length - itemsPerPage)
+    );
+    prevWidth.current = width;
+    setDist(snapToGrid);
+  }, [itemsPerPage, carouselItems, width]);
+
+  useEffect(() => {
+    setArr(segmentArray(carouselItems, itemsPerPage));
+  }, [itemsPerPage, carouselItems]);
+
   useEffect(() => {
     setResizing(true);
     resizeFalse();
   }, [width]);
 
-  const setViewTrue = () => setIsView(true);
-  const setViewFalse = () => setIsView(false);
+  function handleDotClick(index: number) {
+    if (position < index) {
+      for (let i = 0; i < index - position; i++) {
+        shiftRight();
+      }
+      reset();
+    } else if (position > index) {
+      for (let i = 0; i < position - index; i++) {
+        shiftLeft();
+      }
+      reset();
+    }
+  }
 
   return (
     <>
@@ -181,7 +201,11 @@ const CarouselBox = <T,>({
       </div>
       <div className="carouselDots">
         {[...new Array(numDots)].map((_, i) => (
-          <Dot key={i} selected={position === i} />
+          <Dot
+            key={i}
+            selected={position === i}
+            onClick={() => handleDotClick(i)}
+          />
         ))}
       </div>
     </>

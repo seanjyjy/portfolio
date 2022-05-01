@@ -5,7 +5,7 @@
   font-size: 1.3em;
   color: c.$highlight-text;
   @include cs.proseHeaderFont;
-  transition: all 1s linear;
+  transition: all 0.8s linear;
 }
 
 .aboutInfoFacts {
@@ -13,7 +13,7 @@
   font-size: 2em;
   margin: 20px 0 30px 0;
   font-weight: 500;
-  transition: all 1s linear;
+  transition: all 0.8s linear;
 }
 
 .aboutInfoToSkills {
@@ -46,7 +46,7 @@
   }
 
   & img:hover {
-    filter: grayscale(0%);
+    filter: grayscale(35%);
   }
 }
 
@@ -64,23 +64,23 @@
     font-size: 1em;
     @include cs.headerFont;
     letter-spacing: -1px;
-    color: #1d1d20;
+    color: #404041;
   }
 }
 
 .aboutInfoRowsInfo {
-  color: #404041;
+  color: #5e616a;
   padding: 0 10px 20px 10px;
   font-size: 0.8em;
   @include cs.bodyFont;
 }
 
 .aboutInfoPageContainer2 {
-  background-color: #fafafa;
+  background-color: #f7f7f7;
   border-radius: 12px;
   position: relative;
   padding: 60px 40px;
-  transition: all 1s linear;
+  transition: all 0.8s linear;
 
   &::after {
     content: "";
