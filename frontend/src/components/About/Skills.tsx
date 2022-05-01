@@ -37,24 +37,29 @@ const array = [
 const Skills = () => {
   return (
     <div className="skillsSection">
-      <div className="skillsHeader">
-        <div className="mySkills">MY SKILLS</div>
-        <div className="skillsProse">
-          Worked with <Keywords text="mainly frontend technologies" /> with the
-          occasional backend technologies and design tools
-        </div>
-      </div>
-      <div className="skillsBodyContainer">
-        {array.map((skill, i) => (
-          <div className="skillsBody" key={i}>
-            <img src={skill.icon} alt="" />
-            <div className="skillsType">{skill.type}</div>
-            <div className="skillsTypeProse">{skill.prose}</div>
-            <div className="skillsList">
-              <SkillsList skills={skill.skills} />
-            </div>
+      <div>
+        <div id="skillsAnchor" />
+        <div className="skillsHeader">
+          <div className="mySkills">MY SKILLS</div>
+          <div className="skillsProse">
+            Focused on <Keywords text="frontend technologies" /> with the
+            occasional backend and design tools
           </div>
-        ))}
+        </div>
+        <div className="skillsBodyContainer">
+          {array.map((skill, i) => (
+            <div className="skillsBody" key={i}>
+              <div className="skillsBodyHeader">
+                <img src={skill.icon} alt="" />
+                <div className="skillsType">{skill.type}</div>
+              </div>
+              <div className="skillsTypeProse">{skill.prose}</div>
+              <div className="skillsList">
+                <SkillsList skills={skill.skills} />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

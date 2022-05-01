@@ -7,12 +7,25 @@
 
 .about-page {
   padding-bottom: 20px;
-  border-bottom: 1px solid c.$seperator;
   width: 100%;
+  position: relative;
 }
 
 .aboutContainer {
   width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.aboutImg {
+  display: block;
+  flex: 1;
+  & > img {
+    width: 100%;
+  }
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 0 50px;
 }
 
 .aboutContainerStyle {
@@ -20,8 +33,11 @@
   height: 55%;
 }
 
-.aboutRightContainer {
-  padding-top: 50px;
+.aboutIntroduction {
+  @include cs.flexJustifyCenter;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
 }
 
 .aboutProse {
@@ -29,110 +45,150 @@
   padding: 20px;
   font-size: 2em;
   color: c.$header-text;
+  position: relative;
+  background-color: white;
+
+  &::after {
+    content: "";
+    background: url("../../images/triangle.svg");
+    height: 500px;
+    width: 300px;
+    position: absolute;
+    top: -70px;
+    left: -50px;
+    background-repeat: no-repeat;
+  }
+}
+
+.aboutProseMini {
+  color: c.$small-text;
+  padding: 0 20px;
+  font-size: 1em;
+  @include cs.bodyFont;
+  margin: 15px 0;
 }
 
 .learnMore {
-  margin: 10 20px;
+  margin: 30px 20px;
 }
 
-.aboutMe {
-  width: 100%;
-
-  & div {
-    padding: 15 10px;
-  }
-
-  & h3 {
-    color: c.$header-text;
-    padding: 0 10px;
-    font-size: 1em;
-    @include cs.headerFont;
-  }
-
-  & p {
-    color: c.$small-text;
-    padding: 0 10px;
-    font-size: 0.8em;
-    @include cs.bodyFont;
-  }
+.aboutBubble {
+  position: absolute;
+  top: 70px;
+  right: 70px;
+  height: 250px;
+  width: 250px;
+  animation: aboutBubbleAnimation 40s infinite;
 }
 
-#sean-img-holder {
-  display: none;
+@keyframes aboutBubbleAnimation {
+  0% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  50% {
+    transform: rotate(-90deg) translate(-400px, -500px);
+  }
+  100% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
 }
 
 @media screen and (min-width: 960px) {
   .aboutContainer {
-    @include cs.flexCenter;
+    @include cs.flexAlignCenter;
+    flex-direction: row;
     width: 95%;
     margin: 0 auto;
-    height: 100vh;
+    max-height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
+    padding-bottom: 40px;
   }
 
-  .aboutContainerStyle {
-    height: 65%;
+  .aboutImg {
+    flex: 1.2;
+    margin-top: 150px;
   }
 
-  #sean-img-holder {
-    @include cs.flexAlignCenter;
-    justify-content: flex-end;
-    width: 100%;
-    height: 100%;
-    min-width: 300px;
-    min-height: 300px;
-    max-height: 600px;
-    max-width: 600px;
-    position: relative;
-    background-color: #eff0f7;
-    margin-right: 70px;
-    border-radius: 20px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    // box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    //   rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    //   rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-
-    & img {
-      left: 35px;
-      position: absolute;
-      max-width: inherit;
-      max-height: inherit;
-      height: 90%;
-      width: inherit;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
+  .aboutIntroduction {
+    margin-top: 150px;
   }
 
   .aboutProse {
     font-size: 2.2em;
   }
 
-  .aboutMe {
-    & h3 {
-      font-size: 1em;
-      line-height: 26px;
-    }
+  // Floating objects
+  .about-object3 {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    background: c.$floating-bar;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 200px;
+    height: 15px;
+  }
+
+  .about-object4 {
+    position: absolute;
+    top: 6%;
+    left: 0;
+    background: c.$floating-bar;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 100px;
+    height: 15px;
+  }
+
+  .about-object5 {
+    position: absolute;
+    top: 10%;
+    left: 220px;
+    border-radius: 50%;
+    background: #3370ff;
+    width: 15px;
+    height: 15px;
   }
 }
 
 @media screen and (min-width: 1179px) {
   .aboutContainer {
-    width: 80%;
+    width: 85%;
   }
 
   .aboutProse {
-    font-size: 2.4em;
+    font-size: 2.8em;
+    font-weight: 500;
   }
 
-  .aboutMe {
-    & h3 {
-      line-height: 28px;
-    }
+  .about-object3 {
+    width: 300px;
+    height: 18px;
+  }
 
-    & p {
-      line-height: 24px;
-      font-size: 0.9em;
-    }
+  .about-object4 {
+    width: 200px;
+    height: 18px;
+  }
+
+  .about-object5 {
+    width: 18px;
+    height: 18px;
+    left: 320px;
+  }
+
+  .aboutImg {
+    flex: 1.3;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .aboutProse {
+    font-size: 3em;
+    font-weight: 600;
+  }
+
+  .aboutImg {
+    flex: 1.6;
   }
 }

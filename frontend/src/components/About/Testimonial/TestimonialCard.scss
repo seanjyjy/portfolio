@@ -28,6 +28,7 @@
   @include cs.headerFont;
   font-size: 1.1em;
   color: c.$header-text;
+  letter-spacing: 0px !important;
 }
 
 .testimonialRole {

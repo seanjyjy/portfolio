@@ -11,7 +11,7 @@
   background-color: #fff;
   min-height: 70px;
   height: 70px;
-  border-bottom: 1px solid c.$seperator;
+  // border-bottom: 1px solid c.$seperator;
 }
 
 .navContainer {
@@ -75,8 +75,8 @@
 
 .title {
   font-family: Poppins;
-  font-weight: 500;
-  font-size: 1.5em;
+  font-weight: 600;
+  font-size: 1.7em;
   color: c.$header-text;
   white-space: nowrap;
   cursor: pointer;

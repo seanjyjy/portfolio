@@ -1,0 +1,135 @@
+@use '../../styles/colors' as c;
+@use '../../styles/commonStyles' as cs;
+
+.aboutInfo {
+  font-size: 1.3em;
+  color: c.$highlight-text;
+  @include cs.proseHeaderFont;
+}
+
+.aboutInfoFacts {
+  color: c.$header-text;
+  font-size: 2em;
+  margin: 20px 0 30px 0;
+  font-weight: 500;
+}
+
+.aboutInfoToSkills {
+  margin-top: 30px;
+  margin-left: 5px;
+}
+
+.aboutSeanPng {
+  height: 370px;
+  width: 340px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  position: relative;
+
+  & > div {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 50;
+  }
+
+  & img {
+    height: 100%;
+    width: 100%;
+    filter: grayscale(50%) brightness(1.2);
+    transition: filter 0.3s linear;
+  }
+
+  & img:hover {
+    filter: grayscale(0%);
+  }
+}
+
+.aboutInfoRowsHeader {
+  @include cs.flexAlignCenter;
+  margin: 20px 0 15px 0;
+
+  & > img {
+    height: 25px;
+    width: 25px;
+    margin: 0 10px;
+  }
+
+  & > div {
+    font-size: 1em;
+    @include cs.headerFont;
+    letter-spacing: -1px;
+    color: #1d1d20;
+  }
+}
+
+.aboutInfoRowsInfo {
+  color: #404041;
+  padding: 0 10px 20px 10px;
+  font-size: 0.8em;
+  @include cs.bodyFont;
+}
+
+.aboutInfoPageContainer2 {
+  background-color: #fafafa;
+  border-radius: 12px;
+  position: relative;
+  padding: 60px 40px;
+
+  &::after {
+    content: "";
+    background: url("../../images/dot-repeats.svg");
+    position: absolute;
+    top: -50px;
+    right: -70px;
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .aboutInfoPageContainer2 {
+    @include cs.flexAlignCenter;
+
+    & > :first-child {
+      flex: 1;
+      margin-right: 50px;
+    }
+  }
+
+  .aboutInfoRowsInfo {
+    padding: 0 0 20px 0;
+    font-size: 0.9em;
+  }
+
+  .aboutInfoRowsHeader {
+    margin: 0px 0 20px 0;
+
+    & > img {
+      height: 30px;
+      width: 30px;
+      margin: 0 15 0 0px;
+    }
+
+    & > div {
+      font-size: 1.3em;
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .aboutInfoPageContainer2 {
+    @include cs.flexAlignCenter;
+    & > :first-child {
+      margin-right: 70px;
+    }
+  }
+
+  .aboutInfoFacts {
+    font-size: 2.3em;
+  }
+}

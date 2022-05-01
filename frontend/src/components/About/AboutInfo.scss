@@ -3,15 +3,16 @@
 
 .aboutInfoPage {
   height: fit-content;
-  padding: 80px 50px 30px;
-  // background-color: #f8f9fa;
-  background-color: #fdfdfd;
+  padding: 0px 0 30px;
+  background-color: #ffffff;
   width: 100%;
   position: relative;
 
   & .aboutInfoPageContainer {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 90%;
+    margin: 70px auto;
+    position: relative;
+    height: fit-content;
   }
 }
 
@@ -20,81 +21,19 @@
   top: -50px;
 }
 
-.aboutInfoPage::after {
-  content: "";
-  height: 1px;
-  width: 80%;
-  background-color: c.$seperator;
-  position: absolute;
-  left: 10%;
-  margin: 20px 0;
-}
+@media screen and (min-width: 1500px) {
+  .aboutInfoPage {
+    padding: 80px 0 30px;
 
-.aboutInfo {
-  text-align: center;
-  font-size: 2em;
-  color: c.$header-text;
-  margin: 15px 0;
-}
-
-.aboutInfoFacts {
-  text-align: center;
-  color: c.$tab-text;
-  margin-bottom: 20px;
-}
-
-.aboutCard {
-  padding: 20px 35px;
-  background-color: white;
-  border-radius: 10px;
-  // box-shadow: -0.0625rem 0 0.625rem 0 rgb(0 0 0 / 7%),
-  //   0.3125rem 1.25rem 2.5rem 0 rgb(0 0 0 / 4%);
-  flex: 0 0 auto;
-  width: 100%;
-  margin: 10px;
-
-  border: 1px solid c.$seperator;
-
-  & .aboutHeader {
-    & > img {
-      height: 40px;
-      margin-bottom: 10px;
+    & .aboutInfoPageContainer {
+      margin-bottom: 180px !important;
     }
 
-    & > div {
-      font-size: 1.4em;
-      color: c.$header-text;
-      margin-bottom: 10px;
+    & .aboutInfoPageContainer {
+      max-width: min(1500px, 90%);
+      margin: 70px auto;
+      position: relative;
+      height: fit-content;
     }
-  }
-
-  & .aboutInfoText {
-    color: c.$small-text;
-    font-size: 0.9em;
-    @include cs.bodyFont;
-    margin-bottom: 10px;
-  }
-}
-
-.aboutInfoCards {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-@media screen and (min-width: 960px) {
-  .aboutInfoCards {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(160px, 1fr));
-    grid-gap: 1rem;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .aboutInfoFacts {
-    margin-bottom: 60px;
-  }
-
-  .aboutCard {
-    padding: 30px 45px;
   }
 }

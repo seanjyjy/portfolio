@@ -57,6 +57,11 @@
   background-color: white;
   padding: 15px 30px;
   box-shadow: rgba(115, 139, 202, 0.2) 0px 8px 24px;
+  transition: all 0.3s linear;
+}
+
+.exp-container:hover {
+  transform: scale(1.02);
 }
 
 .exp-tech-stack-holder {

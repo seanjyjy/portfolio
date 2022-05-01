@@ -1,3 +1,6 @@
+@use '../../styles/colors' as c;
+@use '../../styles/commonStyles' as cs;
+
 .carouselBox {
   display: flex;
   overflow: hidden;
@@ -13,4 +16,25 @@
   justify-content: center;
   transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
   transition: 0.5s;
+}
+
+.carouselDots {
+  @include cs.flexCenter;
+}
+
+.carouselDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 20 5px;
+  transition: all 0.4s ease-in-out;
+}
+
+.carouselDot.on {
+  background-color: c.$blue-primary;
+  transform: scale(1.05);
+}
+
+.carouselDot.off {
+  background-color: c.$seperator;
 }

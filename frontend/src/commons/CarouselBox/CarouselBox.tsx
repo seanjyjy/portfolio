@@ -1,15 +1,24 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-
 import { useInterval, useWindowSize } from "@hooks";
 
-import "./CarouselBox.scss";
 import { debounce } from "../../utils/Helper";
+
+import "./CarouselBox.scss";
+
+type DotsProps = {
+  selected: boolean;
+};
+
+function Dot({ selected }: DotsProps) {
+  return <div className={`carouselDot ${selected ? "on" : "off"}`} />;
+}
 
 type CarouselBoxProps<T> = {
   carouselItems: T[];
   renderItem: (item: T, index?: number) => React.ReactNode;
   itemsPerPage?: number; // default will be 3
 };
+
 const segmentArray = <T,>(data: T[], itemsPerPage: number): T[][] => {
   const arr: T[][] = [];
   let temp: T[] = [];
@@ -40,17 +49,20 @@ const CarouselBox = <T,>({
   const [rightBound, setRightBound] = useState(0);
   const [dist, setDist] = useState(0);
   const [resizing, setResizing] = useState(false);
+  const [isView, setIsView] = useState(false);
+  const [position, setPosition] = useState(0);
+  const numDots = Math.ceil(carouselItems.length / itemsPerPage ?? 0);
 
   // 0 -> move right, 1 -> move left
   const [direction, setDirection] = useState(0);
 
   const shiftLeft = () => {
-    if (!boxRef.current) {
-      return;
-    }
-
+    if (!boxRef.current) return;
     const { clientWidth } = boxRef.current;
+
     setDist((dist) => {
+      console.log("moving right");
+      setPosition((pos) => pos - 1);
       if (dist + clientWidth > leftBound) {
         return leftBound;
       }
@@ -60,14 +72,16 @@ const CarouselBox = <T,>({
   };
 
   const shiftRight = () => {
-    if (!boxRef.current) {
-      return;
-    }
+    if (!boxRef.current) return;
     const { clientWidth } = boxRef.current;
+
     setDist((dist) => {
+      console.log("moving left");
+      setPosition((pos) => pos + 1);
       if (dist - clientWidth < rightBound) {
         return rightBound;
       }
+
       return snapToGrid(dist - clientWidth);
     });
   };
@@ -110,11 +124,11 @@ const CarouselBox = <T,>({
     () => {
       if (dist === leftBound && direction === 1) {
         setDirection(0);
-        shiftLeft();
+        shiftRight();
         return;
       } else if (dist === rightBound && direction === 0) {
         setDirection(1);
-        shiftRight();
+        shiftLeft();
         return;
       }
 
@@ -124,7 +138,7 @@ const CarouselBox = <T,>({
         shiftLeft();
       }
     },
-    carouselItems.length > itemsPerPage && !resizing ? 3000 : null
+    carouselItems.length > itemsPerPage && !resizing && !isView ? 5000 : null
   );
 
   const resizeFalse = useCallback(() => {
@@ -138,9 +152,17 @@ const CarouselBox = <T,>({
     resizeFalse();
   }, [width]);
 
+  const setViewTrue = () => setIsView(true);
+  const setViewFalse = () => setIsView(false);
+
   return (
     <>
-      <div className="carouselBox" ref={boxRef}>
+      <div
+        className="carouselBox"
+        ref={boxRef}
+        onMouseEnter={setViewTrue}
+        onMouseLeave={setViewFalse}
+      >
         {arr.map((arr, index) => (
           <div
             id={`cb-${index}`}
@@ -157,6 +179,11 @@ const CarouselBox = <T,>({
               return <div key={`cb-${index}`}>{renderItem(item, index)}</div>;
             })}
           </div>
+        ))}
+      </div>
+      <div className="carouselDots">
+        {[...new Array(numDots)].map((_, i) => (
+          <Dot key={i} selected={position === i} />
         ))}
       </div>
     </>

@@ -3,14 +3,14 @@ import React from "react";
 import WordArrowButton from "@commons/WordArrowButton";
 import Keywords from "@commons/Keywords";
 
-import SEANIMG from "../../images/sean.jpg";
+import LandingImg from "../../images/landingPageImg.svg";
 import ARROWIMGBLUE from "../../images/thin-arrow-blue.svg";
-import { info } from "../../constants";
+import BubbleImg from "../../images/bubble.svg";
 
 import "./About.scss";
 
 const AboutPage = () => {
-  function scrollToSkills() {
+  function scrollToAbout() {
     document.getElementById("aboutInfoAnchor")?.scrollIntoView({
       behavior: "smooth",
     });
@@ -19,37 +19,36 @@ const AboutPage = () => {
   return (
     <div className="about-page">
       <div className="aboutContainer">
-        <div className="aboutContainerStyle">
-          <div id="sean-img-holder">
-            <div className="seanImgBg" />
-            <img src={SEANIMG} alt="Sean Lum" />
+        <div className="aboutIntroduction">
+          <div className="aboutProse">
+            Hi I'm Sean, a{" "}
+            <Keywords
+              text="frontend engineer & aspiring full stack engineer."
+              typewritter={true}
+            />
           </div>
-          <div className="aboutRightContainer">
-            <div className="aboutProse">
-              Hi I'm Sean, a{" "}
-              <Keywords
-                text={"frontend engineer & aspiring full stack engineer."}
-              />{" "}
-              I love to create softwares that benefits others
-            </div>
-            <div className="aboutMe">
-              {info.map((item) => (
-                <div key={item.header}>
-                  <h3>{item.header}</h3>
-                  <p>{item.info}</p>
-                </div>
-              ))}
-            </div>
-            <div className="learnMore">
-              <WordArrowButton
-                text="Learn more about Sean"
-                imgSrc={ARROWIMGBLUE}
-                onClick={scrollToSkills}
-              />
-            </div>
+          <div className="aboutProseMini">
+            {" "}
+            I enjoy creating softwares that benefits others. Also, I enjoy
+            dabbling with new concepts regarding Frontend development and write
+            some blogs on Medium.
+          </div>
+          <div className="learnMore">
+            <WordArrowButton
+              text="Learn more about Sean"
+              imgSrc={ARROWIMGBLUE}
+              onClick={scrollToAbout}
+            />
           </div>
         </div>
+        <div className="aboutImg">
+          <img src={LandingImg} alt="sean lum" />
+        </div>
       </div>
+      <div className="about-object3" />
+      <div className="about-object4" />
+      <div className="about-object5" />
+      <img src={BubbleImg} alt="" className="aboutBubble" />
     </div>
   );
 };

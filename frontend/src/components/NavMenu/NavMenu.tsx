@@ -77,7 +77,7 @@ const NavMenu = () => {
         <nav className="nav">
           <div className="navContainer">
             <div className="title" onClick={() => handleClick("/About")}>
-              Sean Lum
+              Sean Lum.
             </div>
             <div className="hamburger" onClick={() => handleClick()}>
               <div className={`bar ${!click ? "" : "active"}`} />
@@ -103,7 +103,7 @@ const NavMenu = () => {
     <nav className="nav">
       <div className="navContainer">
         <div className="title" onClick={() => handleClick("/About")}>
-          Sean Lum
+          Sean Lum.
         </div>
         <div className="horizontal-tabs">
           {tabs.map((tab) => (

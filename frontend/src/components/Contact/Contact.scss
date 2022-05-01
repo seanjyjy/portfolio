@@ -2,16 +2,16 @@
 @use '../../styles/commonStyles' as cs;
 
 #ContactContainer {
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
   padding: 40px 15px;
+  margin: 0 auto;
 }
 
 .contactFooter {
   @include cs.flexAlignCenter;
-  padding: 40px;
-  width: 100vw;
+  padding: 10px 40px;
   justify-content: space-between;
-  max-width: 800px;
+  width: min(900px, 100%);
   margin: 0 auto;
 }
 
@@ -48,6 +48,7 @@
 
 #Contact {
   margin: 0 auto;
+  width: 100%;
 }
 
 .contactHeader {
@@ -97,7 +98,7 @@ input {
 textarea {
   display: block;
   width: 100%;
-  min-height: 150px;
+  min-height: clamp(150px, 20vw, 300px);
   border: 1px solid #ddd;
   border-radius: 4px;
   min-width: 100%;
@@ -141,13 +142,19 @@ input:-webkit-autofill:active {
   position: relative;
 }
 
+.contactContainer2 {
+  display: flex;
+  padding: 0 5px;
+
+  & .contactImgContainer {
+    display: none;
+  }
+}
+
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 @media screen and (min-width: 860px) {
-  .form-container {
-    max-width: 620px;
-  }
   #Contact {
-    max-width: 620px;
+    max-width: 820px;
   }
 
   .util-icons-card {
@@ -177,6 +184,28 @@ input:-webkit-autofill:active {
 
     & > p {
       font-size: 1.8em;
+    }
+  }
+
+  .contactContainer2 {
+    & .contactImgContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex: 1;
+      margin-left: 100px;
+      margin-bottom: 50px;
+
+      & img {
+        width: 100%;
+      }
+    }
+
+    & #contactContainer {
+      display: flex;
+      flex-direction: column;
+      flex: 1.2;
+      justify-content: flex-end;
     }
   }
 }

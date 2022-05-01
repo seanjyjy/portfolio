@@ -47,6 +47,7 @@
     & img {
       width: 100%;
       border-radius: 20px;
+      background-color: white;
     }
   }
 
@@ -66,7 +67,8 @@
     & img {
       width: auto;
       height: 19px;
-      margin-left: 5px;
+      margin-right: 7px;
+      margin-bottom: 3px;
     }
   }
 
@@ -164,21 +166,22 @@
 
     & .expCurrentImgHolder {
       @include cs.flexAlignCenter;
-      height: 500px;
-      min-width: 600px;
-      position: relative;
-      background-color: #eff0f7;
-      margin-right: 120px;
-      border-radius: 20px;
-      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      height: 400px;
+      min-width: 500px;
+      margin-right: 60px;
+      // position: relative;
+      // background-color: #eff0f7;
+      // margin-right: 120px;
+      // border-radius: 20px;
+      // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-      & > img {
-        width: 100%;
-        height: calc(100% - 80px);
-        left: 40px;
-        position: absolute;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      }
+      // & > img {
+      //   width: 100%;
+      //   height: calc(100% - 80px);
+      //   left: 40px;
+      //   position: absolute;
+      //   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      // }
     }
 
     & .expCurrentText {
@@ -202,5 +205,26 @@
 
   .experienceContainer {
     width: 80%;
+  }
+}
+
+.experienceBubble {
+  position: absolute;
+  top: 250px;
+  left: 70px;
+  height: 250px;
+  width: 250px;
+  animation: experienceBubbleAnimation 80s infinite;
+}
+
+@keyframes experienceBubbleAnimation {
+  0% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  50% {
+    transform: rotate(60deg) translate(1000px, -1000px);
+  }
+  100% {
+    transform: rotate(0deg) translate(0px, 0px);
   }
 }

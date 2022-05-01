@@ -52,7 +52,6 @@ export interface aboutInfo {
   header: string;
   info: string;
   imgSrc: string;
-  info2: string;
 }
 
 export interface TestimonialInfo {

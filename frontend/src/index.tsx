@@ -13,9 +13,9 @@ const rootElement = document.getElementById("root");
 //   rootElement
 // );
 const root = createRoot(rootElement as Element | DocumentFragment);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-// root.render(<App />);
+// root.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+// );
+root.render(<App />);
