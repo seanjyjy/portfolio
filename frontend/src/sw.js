@@ -87,12 +87,12 @@ registerRoute(
   })
 );
 
-// Catch routing errors, like if the user is offline
-setCatchHandler(async ({ event }) => {
-  // Return the precached offline page if a document is being requested
-  if (event.request.destination === "document") {
-    return matchPrecache("/index.html");
-  }
+// // Catch routing errors, like if the user is offline
+// setCatchHandler(async ({ event }) => {
+//   // Return the precached offline page if a document is being requested
+//   if (event.request.destination === "document") {
+//     return matchPrecache("/index.html");
+//   }
 
-  return Response.error();
-});
+//   return Response.error();
+// });
