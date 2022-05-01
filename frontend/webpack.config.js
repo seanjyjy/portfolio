@@ -8,6 +8,8 @@ const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const ReactRefreshTypeScript = require("react-refresh-typescript");
 const webpack = require("webpack");
+const { InjectManifest } = require("workbox-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const dotenv = require("dotenv");
 dotenv.config({
   path: __dirname + "/.env",
@@ -173,6 +175,44 @@ module.exports = {
         process.env.REACT_APP_EMAILJS_USER
       ),
     }),
+    !isDevelopment &&
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, "public/manifest.json"),
+            to: path.resolve(__dirname, "dist"),
+          },
+          {
+            from: path.resolve(__dirname, "public/Thumbnail.png"),
+            to: path.resolve(__dirname, "dist"),
+          },
+          {
+            from: path.resolve(__dirname, "public/snowflake.svg"),
+            to: path.resolve(__dirname, "dist"),
+          },
+          {
+            from: path.resolve(__dirname, "public/snowflake.png"),
+            to: path.resolve(__dirname, "dist"),
+          },
+          {
+            from: path.resolve(__dirname, "public/snowflake_x128.png"),
+            to: path.resolve(__dirname, "dist"),
+          },
+          {
+            from: path.resolve(__dirname, "public/snowflake_x192.png"),
+            to: path.resolve(__dirname, "dist"),
+          },
+          {
+            from: path.resolve(__dirname, "public/snowflake_x512.png"),
+            to: path.resolve(__dirname, "dist"),
+          },
+        ],
+      }),
+    !isDevelopment &&
+      new InjectManifest({
+        swSrc: "./src/sw.js",
+        swDest: "sw.js",
+      }),
     // isDevelopment && new WebpackBundleAnalyzer(),
   ].filter(Boolean),
   devServer: {

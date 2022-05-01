@@ -8,7 +8,7 @@
     "start": "NODE_ENV=development ./node_modules/.bin/webpack serve --config webpack.config.js --open",
     "watch": "./node_modules/.bin/webpack --watch",
     "build": "NODE_ENV=production ./node_modules/.bin/webpack",
-    "prod-serve": "http-server ./dist -o / -a localhost",
+    "prod-serve": "npx http-server ./dist -o / -a localhost",
     "analyze": "./node_modules/.bin/webpack --json > stats.json && yarn webpack-bundler-analyzer stats.json"
   },
   "author": "",
@@ -34,7 +34,15 @@
     "react-tiny-popover": "^7.0.1",
     "simple-react-lightbox": "^3.6.9-0",
     "typescript": "^4.6.3",
-    "typewriter-effect": "^2.18.2"
+    "typewriter-effect": "^2.18.2",
+    "workbox-cacheable-response": "^6.5.3",
+    "workbox-core": "^6.5.3",
+    "workbox-expiration": "^6.5.3",
+    "workbox-precaching": "^6.5.3",
+    "workbox-routing": "^6.5.3",
+    "workbox-strategies": "^6.5.3",
+    "workbox-webpack-plugin": "^6.5.3",
+    "workbox-window": "^6.5.3"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
@@ -45,6 +53,7 @@
     "@types/react-router-dom": "^5.3.3",
     "babel-loader": "^8.2.4",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^3.4.1",
     "fork-ts-checker-webpack-plugin": "^7.2.3",

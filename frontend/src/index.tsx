@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { render } from "react-dom";
 import "./index.scss";
+import registerSW from "./serviceWorkerRegistration";
 
 import App from "./App";
 
@@ -19,3 +20,5 @@ const root = createRoot(rootElement as Element | DocumentFragment);
 //   </React.StrictMode>
 // );
 root.render(<App />);
+
+registerSW();
