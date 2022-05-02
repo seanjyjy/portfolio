@@ -82,7 +82,7 @@ export const allProjects: ProjectItemType[] = [
         <Keywords text="interactive visual aids." />
       </div>
     ),
-    team: ["Sean Lum", "Ashely Lau", "Keane Chan"],
+    team: ["Sean Lum", "Ashley Lau", "Keane Chan"],
   },
   {
     name: "ModuleFuture",

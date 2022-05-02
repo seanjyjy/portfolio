@@ -12,7 +12,6 @@ import {
 import { ExpirationPlugin } from "workbox-expiration";
 
 clientsClaim();
-
 self.skipWaiting();
 
 // cache-first auto used which is wanted
@@ -32,7 +31,7 @@ registerRoute(
     cacheName: "google-fonts-webfonts",
     plugins: [
       new CacheableResponsePlugin({
-        statuses: [0, 200],
+        statuses: [200],
       }),
       new ExpirationPlugin({
         maxAge: 60 * 60 * 24 * 365,
@@ -42,18 +41,45 @@ registerRoute(
   })
 );
 
+// const fileExtensionRegexp = new RegExp('/[^/?]+\\.[^/]+$');
+// registerRoute(
+//   // Return false to exempt requests from being fulfilled by index.html.
+//   ({ request, url }) => {
+//     // If this isn't a navigation, skip.
+//     if (request.mode !== 'navigate') {
+//       return false;
+//     }
+
+//     // If this is a URL that starts with /_, skip.
+//     if (url.pathname.startsWith('/_')) {
+//       return false;
+//     }
+
+//     // If this looks like a URL for a resource, because it contains
+//     // a file extension, skip.
+//     if (url.pathname.match(fileExtensionRegexp)) {
+//       return false;
+//     }
+
+//     // Return true to signal that we want to use the handler.
+//     return true;
+//   },
+//   createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html'),
+// );
+
 // Cache page navigations (html) with a Network First strategy
 registerRoute(
   // Check to see if the request is a navigation to a new page
   ({ request }) => request.mode === "navigate",
   // Use a Network First caching strategy
   new NetworkFirst({
+    networkTimeoutSeconds: 3,
     // Put all cached files in a cache named 'pages'
     cacheName: "pages",
     plugins: [
       // Ensure that only requests that result in a 200 status are cached
       new CacheableResponsePlugin({
-        statuses: [200],
+        statuses: [0, 200],
       }),
     ],
   })
@@ -65,6 +91,9 @@ registerRoute(
   new CacheFirst({
     cacheName: "images",
     plugins: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
       new ExpirationPlugin({
         maxEntries: 200,
         maxAgeSeconds: 60, // to change in the future
@@ -81,18 +110,8 @@ registerRoute(
     cacheName: "assets",
     plugins: [
       new CacheableResponsePlugin({
-        statuses: [200],
+        statuses: [0, 200],
       }),
     ],
   })
 );
-
-// Catch routing errors, like if the user is offline
-setCatchHandler(async ({ event }) => {
-  // Return the precached offline page if a document is being requested
-  if (event.request.destination === "document") {
-    return matchPrecache("index.html");
-  }
-
-  return Response.error();
-});

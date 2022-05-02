@@ -4,7 +4,7 @@ export default function registerSW() {
   if ("production" !== process.env.NODE_ENV) return;
   if (!("serviceWorker" in navigator)) return;
 
-  const wb = new Workbox("sw.js");
+  const wb = new Workbox("/sw.js");
 
   wb.addEventListener("installed", (event) => {
     if (event.isUpdate) {

@@ -49,7 +49,7 @@ const Experience = () => {
             Worked in fast-paced companies to push{" "}
             <Keywords
               text={
-                "top quality product and worked on extraordinary projects for real-world impact."
+                "top quality product and useful tools for real-world impact."
               }
             />{" "}
             I experiment with interesting technologies and build useful
