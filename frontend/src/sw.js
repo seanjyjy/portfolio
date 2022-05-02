@@ -14,6 +14,7 @@ import {
   googleFontsCache,
   imageCache,
   staticResourceCache,
+  pageCache,
 } from "workbox-recipes";
 
 clientsClaim();
@@ -22,8 +23,6 @@ self.skipWaiting();
 // cache-first auto used which is wanted
 // Ensure your build step is configured to include /offline.html as part of your precache manifest.
 precacheAndRoute(self.__WB_MANIFEST);
-
-staticResourceCache();
 // googleFontsCache();
 
 registerRoute(
@@ -40,7 +39,8 @@ registerRoute(
     ],
   })
 );
-
+staticResourceCache();
+pageCache();
 imageCache();
 // registerRoute(
 //   ({ url }) => url.origin === "https://fonts.googleapis.com",
@@ -92,22 +92,22 @@ imageCache();
 // );
 
 // Cache page navigations (html) with a Network First strategy
-registerRoute(
-  // Check to see if the request is a navigation to a new page
-  ({ request }) => request.mode === "navigate",
-  // Use a Network First caching strategy
-  new NetworkFirst({
-    networkTimeoutSeconds: 3,
-    // Put all cached files in a cache named 'pages'
-    cacheName: "pages",
-    plugins: [
-      // Ensure that only requests that result in a 200 status are cached
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-    ],
-  })
-);
+// registerRoute(
+//   // Check to see if the request is a navigation to a new page
+//   ({ request }) => request.mode === "navigate",
+//   // Use a Network First caching strategy
+//   new NetworkFirst({
+//     networkTimeoutSeconds: 3,
+//     // Put all cached files in a cache named 'pages'
+//     cacheName: "pages",
+//     plugins: [
+//       // Ensure that only requests that result in a 200 status are cached
+//       new CacheableResponsePlugin({
+//         statuses: [0, 200],
+//       }),
+//     ],
+//   })
+// );
 
 // // TODO: change maxAgeSeconds
 // registerRoute(
@@ -141,23 +141,6 @@ registerRoute(
 // );
 
 // Cache user profile images from linkedin
-registerRoute(
-  new RegExp("https://media-exp1.licdn.com/dms/image/.*"),
-  new StaleWhileRevalidate({
-    cacheName: "profile-images",
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 20,
-        maxAgeSeconds: 86400, // 1 day
-      }),
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-    ],
-  })
-);
-
-// Cache videos from linkedin
 registerRoute(
   new RegExp("https://media-exp1.licdn.com/dms/image/.*"),
   new StaleWhileRevalidate({
