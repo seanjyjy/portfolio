@@ -50,25 +50,23 @@ const App = () => {
       <ScrollToTop />
       <div>
         <Routes>
-          <Route path="/">
-            <Route path="" element={<Navigate to="/About" />} />
-            <Route
-              element={
-                <Suspense fallback={<LoadingAnimation />}>
-                  <Layout />
-                </Suspense>
-              }
-            >
-              <Route path="About" element={<About />} />
-              <Route path="Experience" element={<LazyExperience />} />
-              <Route path="Project" element={<LazyProject />}>
-                <Route path=":project" element={<ProjectPage />} />
-              </Route>
-              <Route path="Contact" element={<LazyContact />} />
+          <Route
+            element={
+              <Suspense fallback={<LoadingAnimation />}>
+                <Layout />
+              </Suspense>
+            }
+          >
+            <Route path="/" element={<About />} />
+            <Route path="About" element={<About />} />
+            <Route path="Experience" element={<LazyExperience />} />
+            <Route path="Project" element={<LazyProject />}>
+              <Route path=":project" element={<ProjectPage />} />
             </Route>
-            <Route path="redirect" element={<RedirectPage />} />
-            <Route path="*" element={<RedirectPage />} />
+            <Route path="Contact" element={<LazyContact />} />
           </Route>
+          <Route path="redirect" element={<RedirectPage />} />
+          <Route path="*" element={<RedirectPage />} />
         </Routes>
       </div>
       <MoveUpArrow />

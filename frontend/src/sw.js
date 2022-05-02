@@ -10,6 +10,11 @@ import {
 } from "workbox-strategies";
 // Used to limit entries in cache, remove entries after a certain period of time
 import { ExpirationPlugin } from "workbox-expiration";
+import {
+  googleFontsCache,
+  imageCache,
+  staticResourceCache,
+} from "workbox-recipes";
 
 clientsClaim();
 self.skipWaiting();
@@ -18,28 +23,31 @@ self.skipWaiting();
 // Ensure your build step is configured to include /offline.html as part of your precache manifest.
 precacheAndRoute(self.__WB_MANIFEST);
 
-registerRoute(
-  ({ url }) => url.origin === "https://fonts.googleapis.com",
-  new StaleWhileRevalidate({
-    cacheName: "google-fonts-stylesheets",
-  })
-);
+staticResourceCache();
+googleFontsCache();
+imageCache();
+// registerRoute(
+//   ({ url }) => url.origin === "https://fonts.googleapis.com",
+//   new StaleWhileRevalidate({
+//     cacheName: "google-fonts-stylesheets",
+//   })
+// );
 
-registerRoute(
-  ({ url }) => url.origin === "https://fonts.gstatic.com",
-  new CacheFirst({
-    cacheName: "google-fonts-webfonts",
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [200],
-      }),
-      new ExpirationPlugin({
-        maxAge: 60 * 60 * 24 * 365,
-        maxEntries: 30,
-      }),
-    ],
-  })
-);
+// registerRoute(
+//   ({ url }) => url.origin === "https://fonts.gstatic.com",
+//   new CacheFirst({
+//     cacheName: "google-fonts-webfonts",
+//     plugins: [
+//       new CacheableResponsePlugin({
+//         statuses: [200],
+//       }),
+//       new ExpirationPlugin({
+//         maxAge: 60 * 60 * 24 * 365,
+//         maxEntries: 30,
+//       }),
+//     ],
+//   })
+// );
 
 // const fileExtensionRegexp = new RegExp('/[^/?]+\\.[^/]+$');
 // registerRoute(
@@ -85,33 +93,33 @@ registerRoute(
   })
 );
 
-// TODO: change maxAgeSeconds
-registerRoute(
-  ({ request }) => request.destination === "image",
-  new CacheFirst({
-    cacheName: "images",
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-      new ExpirationPlugin({
-        maxEntries: 200,
-        maxAgeSeconds: 60, // to change in the future
-      }),
-    ],
-  })
-);
+// // TODO: change maxAgeSeconds
+// registerRoute(
+//   ({ request }) => request.destination === "image",
+//   new CacheFirst({
+//     cacheName: "images",
+//     plugins: [
+//       new CacheableResponsePlugin({
+//         statuses: [0, 200],
+//       }),
+//       new ExpirationPlugin({
+//         maxEntries: 200,
+//         maxAgeSeconds: 60, // to change in the future
+//       }),
+//     ],
+//   })
+// );
 
-// TODO: might remove
-registerRoute(
-  ({ request }) =>
-    request.destination === "script" || request.destination === "style",
-  new StaleWhileRevalidate({
-    cacheName: "assets",
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-    ],
-  })
-);
+// // TODO: might remove
+// registerRoute(
+//   ({ request }) =>
+//     request.destination === "script" || request.destination === "style",
+//   new StaleWhileRevalidate({
+//     cacheName: "assets",
+//     plugins: [
+//       new CacheableResponsePlugin({
+//         statuses: [0, 200],
+//       }),
+//     ],
+//   })
+// );

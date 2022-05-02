@@ -152,15 +152,15 @@ module.exports = {
       filename: isDevelopment ? "[name].css" : "[name].[contenthash].css",
     }),
     new HtmlWebpackPlugin(htmlPluginConfig),
-    new HtmlWebpackPlugin({
-      template: "./public/404.html",
-      filename: "404.html",
-      minify: {
-        removeAttributeQuotes: true,
-        collapseWhitespace: true,
-        removeComments: true,
-      },
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: "./public/404.html",
+    //   filename: "404.html",
+    //   minify: {
+    //     removeAttributeQuotes: true,
+    //     collapseWhitespace: true,
+    //     removeComments: true,
+    //   },
+    // }),
     new webpack.ProvidePlugin({
       process: "process/browser",
     }),
@@ -220,7 +220,7 @@ module.exports = {
       directory: "./dist",
     },
     hot: true,
-    historyApiFallback: true,
+    historyApiFallback: { index: "/" },
   },
   resolve: {
     modules: [path.resolve(process.cwd(), "src"), "node_modules"],
