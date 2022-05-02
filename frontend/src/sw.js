@@ -23,24 +23,23 @@ self.skipWaiting();
 // cache-first auto used which is wanted
 // Ensure your build step is configured to include /offline.html as part of your precache manifest.
 precacheAndRoute(self.__WB_MANIFEST);
-// googleFontsCache();
+googleFontsCache();
 
-registerRoute(
-  new RegExp("https://fonts.(?:googleapis|gstatic).com/(.*)"),
-  new CacheFirst({
-    cacheName: "google-fonts",
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 30,
-      }),
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-    ],
-  })
-);
+// registerRoute(
+//   new RegExp("https://fonts.(?:googleapis|gstatic).com/(.*)"),
+//   new CacheFirst({
+//     cacheName: "google-fonts",
+//     plugins: [
+//       new ExpirationPlugin({
+//         maxEntries: 30,
+//       }),
+//       new CacheableResponsePlugin({
+//         statuses: [0, 200],
+//       }),
+//     ],
+//   })
+// );
 staticResourceCache();
-pageCache();
 imageCache();
 // registerRoute(
 //   ({ url }) => url.origin === "https://fonts.googleapis.com",
@@ -139,6 +138,8 @@ imageCache();
 //     ],
 //   })
 // );
+
+// pageCache();
 
 // Cache user profile images from linkedin
 registerRoute(
