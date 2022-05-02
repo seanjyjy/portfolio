@@ -65,7 +65,6 @@ if (!isDevelopment) {
     template: "./public/index.html",
     filename: "index.html",
     minify: {
-      removeAttributeQuotes: true,
       collapseWhitespace: true,
       removeComments: true,
     },
