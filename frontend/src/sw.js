@@ -21,14 +21,18 @@ import {
   pageCache,
 } from "workbox-recipes";
 
-self.addEventListener("install", () => {
-  self.skipWaiting(); //tells service worker to skip installing and activate it
-  cleanupOutdatedCaches();
+self.addEventListener("install", (event) => {
+  self.skipWaiting();
 });
 
-self.addEventListener("activate", () => {
-  clientsClaim();
+self.addEventListener("activate", (event) => {
+  event.waitUntil(self.clients.claim());
+  self.registration.unregister().then(() => {
+    console.log("SW  - unregistered old service worker");
+  });
 });
+
+cleanupOutdatedCaches();
 
 // cache-first auto used which is wanted
 // Ensure your build step is configured to include /offline.html as part of your precache manifest.
