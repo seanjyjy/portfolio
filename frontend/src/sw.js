@@ -31,10 +31,10 @@ registerRoute(
   new CacheFirst({
     cacheName: "google-fonts",
     plugins: [
-      new workbox.expiration.Plugin({
+      new ExpirationPlugin({
         maxEntries: 30,
       }),
-      new workbox.cacheableResponse.Plugin({
+      new CacheableResponsePlugin({
         statuses: [0, 200],
       }),
     ],
