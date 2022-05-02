@@ -75,6 +75,7 @@ module.exports = {
   mode: mode,
   target: target,
   output: output,
+  entry: "./src/index.tsx",
   optimization: optimization,
   module: {
     rules: [

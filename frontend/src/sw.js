@@ -18,13 +18,12 @@ import {
 } from "workbox-recipes";
 
 clientsClaim();
-self.skipWaiting();
-
 // cache-first auto used which is wanted
 // Ensure your build step is configured to include /offline.html as part of your precache manifest.
 precacheAndRoute(self.__WB_MANIFEST);
 googleFontsCache();
-
+staticResourceCache();
+imageCache();
 // registerRoute(
 //   new RegExp("https://fonts.(?:googleapis|gstatic).com/(.*)"),
 //   new CacheFirst({
@@ -39,8 +38,7 @@ googleFontsCache();
 //     ],
 //   })
 // );
-staticResourceCache();
-imageCache();
+
 // registerRoute(
 //   ({ url }) => url.origin === "https://fonts.googleapis.com",
 //   new StaleWhileRevalidate({
