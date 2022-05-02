@@ -147,34 +147,6 @@ module.exports = {
   plugins: [
     isDevelopment && new ForkTsCheckerWebpackPlugin(),
     isDevelopment && new ReactRefreshWebpackPlugin(),
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: isDevelopment ? "[name].css" : "[name].[contenthash].css",
-    }),
-    new HtmlWebpackPlugin(htmlPluginConfig),
-    // new HtmlWebpackPlugin({
-    //   template: "./public/404.html",
-    //   filename: "404.html",
-    //   minify: {
-    //     removeAttributeQuotes: true,
-    //     collapseWhitespace: true,
-    //     removeComments: true,
-    //   },
-    // }),
-    new webpack.ProvidePlugin({
-      process: "process/browser",
-    }),
-    new webpack.DefinePlugin({
-      "process.env.REACT_APP_EMAILJS_SERVICE": JSON.stringify(
-        process.env.REACT_APP_EMAILJS_SERVICE
-      ),
-      "process.env.REACT_APP_EMAILJS_TEMPLATE": JSON.stringify(
-        process.env.REACT_APP_EMAILJS_TEMPLATE
-      ),
-      "process.env.REACT_APP_EMAILJS_USER": JSON.stringify(
-        process.env.REACT_APP_EMAILJS_USER
-      ),
-    }),
     !isDevelopment &&
       new CopyPlugin({
         patterns: [
@@ -213,6 +185,34 @@ module.exports = {
         swSrc: "./src/sw.js",
         swDest: "sw.js",
       }),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: isDevelopment ? "[name].css" : "[name].[contenthash].css",
+    }),
+    new HtmlWebpackPlugin(htmlPluginConfig),
+    // new HtmlWebpackPlugin({
+    //   template: "./public/404.html",
+    //   filename: "404.html",
+    //   minify: {
+    //     removeAttributeQuotes: true,
+    //     collapseWhitespace: true,
+    //     removeComments: true,
+    //   },
+    // }),
+    new webpack.ProvidePlugin({
+      process: "process/browser",
+    }),
+    new webpack.DefinePlugin({
+      "process.env.REACT_APP_EMAILJS_SERVICE": JSON.stringify(
+        process.env.REACT_APP_EMAILJS_SERVICE
+      ),
+      "process.env.REACT_APP_EMAILJS_TEMPLATE": JSON.stringify(
+        process.env.REACT_APP_EMAILJS_TEMPLATE
+      ),
+      "process.env.REACT_APP_EMAILJS_USER": JSON.stringify(
+        process.env.REACT_APP_EMAILJS_USER
+      ),
+    }),
     // isDevelopment && new WebpackBundleAnalyzer(),
   ].filter(Boolean),
   devServer: {

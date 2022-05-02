@@ -1,7 +1,11 @@
 // Used for filtering matches based on status code, header, or both
 import { CacheableResponsePlugin } from "workbox-cacheable-response";
-import { clientsClaim } from "workbox-core";
-import { precacheAndRoute, matchPrecache } from "workbox-precaching";
+import { skipWaiting, clientsClaim } from "workbox-core";
+import {
+  precacheAndRoute,
+  matchPrecache,
+  cleanupOutdatedCaches,
+} from "workbox-precaching";
 import { registerRoute, setCatchHandler } from "workbox-routing";
 import {
   CacheFirst,
@@ -17,7 +21,9 @@ import {
   pageCache,
 } from "workbox-recipes";
 
+skipWaiting();
 clientsClaim();
+cleanupOutdatedCaches();
 // cache-first auto used which is wanted
 // Ensure your build step is configured to include /offline.html as part of your precache manifest.
 precacheAndRoute(self.__WB_MANIFEST);
