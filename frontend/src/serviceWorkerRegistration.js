@@ -8,9 +8,9 @@ export default function registerSW() {
 
   wb.addEventListener("installed", (event) => {
     if (event.isUpdate) {
-      // if (confirm("New update is available, Click Ok to refresh")) {
-      //   window.location.reload();
-      // }
+      if (confirm("New update is available, Click Ok to refresh")) {
+        window.location.reload();
+      }
     }
   });
 
