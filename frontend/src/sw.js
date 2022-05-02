@@ -24,7 +24,23 @@ self.skipWaiting();
 precacheAndRoute(self.__WB_MANIFEST);
 
 staticResourceCache();
-googleFontsCache();
+// googleFontsCache();
+
+registerRoute(
+  new RegExp("https://fonts.(?:googleapis|gstatic).com/(.*)"),
+  new CacheFirst({
+    cacheName: "google-fonts",
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 30,
+      }),
+      new workbox.cacheableResponse.Plugin({
+        statuses: [0, 200],
+      }),
+    ],
+  })
+);
+
 imageCache();
 // registerRoute(
 //   ({ url }) => url.origin === "https://fonts.googleapis.com",
@@ -123,3 +139,60 @@ registerRoute(
 //     ],
 //   })
 // );
+
+// Cache user profile images from linkedin
+registerRoute(
+  new RegExp("https://media-exp1.licdn.com/dms/image/.*"),
+  new StaleWhileRevalidate({
+    cacheName: "profile-images",
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 20,
+        maxAgeSeconds: 86400, // 1 day
+      }),
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+    ],
+  })
+);
+
+// Cache videos from linkedin
+registerRoute(
+  new RegExp("https://media-exp1.licdn.com/dms/image/.*"),
+  new StaleWhileRevalidate({
+    cacheName: "profile-images",
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 20,
+        maxAgeSeconds: 86400, // 1 day
+      }),
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+    ],
+  })
+);
+
+// Cache videos from cloudinary
+registerRoute(
+  new RegExp("https://res.cloudinary.com/dhxecnaor/video/upload/.*"),
+  new StaleWhileRevalidate({
+    cacheName: "videos",
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 20,
+        maxAgeSeconds: 86400, // 1 day
+      }),
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+    ],
+  })
+);
+
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
+});
