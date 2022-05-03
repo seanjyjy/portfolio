@@ -54,7 +54,7 @@
 
   .featuredProjects {
     font-size: 1.4em;
-    margin: 55px 0;
+    margin: 0 0 55px 0;
     text-align: center;
   }
 
@@ -68,6 +68,7 @@
     transform: translateY(-30px);
     transition: all linear 1s;
     opacity: 1;
+    margin-top: 100px;
   }
 
   .myProject {

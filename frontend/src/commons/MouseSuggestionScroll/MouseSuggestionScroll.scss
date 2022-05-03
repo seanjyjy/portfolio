@@ -60,7 +60,6 @@ $wheel_size: $border_width * 3;
   left: calc(50% - 3px);
   width: $wheel_size;
   height: $wheel_size;
-  margin-left: -calc($wheel_size / 2);
   border-radius: 50%;
   background-color: $mouse_color;
 
