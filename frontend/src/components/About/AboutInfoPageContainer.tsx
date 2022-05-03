@@ -45,7 +45,7 @@ const AboutInfoPageContainer = () => {
     inView: aboutInfoContainerRefInView,
   } = useInView({
     /* Optional options */
-    threshold: 0.6,
+    threshold: 0.4,
     triggerOnce: true,
   });
 

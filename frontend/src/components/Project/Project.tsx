@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import { useWindowSize } from "@hooks";
 
@@ -38,43 +39,49 @@ const Project = () => {
   const displayedProject = allProjects.slice(0, len);
 
   return (
-    <div className="projectPage">
-      <div className="projectContainer">
-        <div className="myProject">MY PROJECTS</div>
-        <div className="projectProse">
-          I enjoy creating softwares that are{" "}
-          <Keywords text="elegant, accessible and impactful." /> I hope my
-          project will <Keywords text="make a difference for others." />
-        </div>
-        <div className="featuredProjects">FEATURED PROJECTS</div>
-        {width >= 1025 && (
-          <div id="mouseScrollContainer">
-            <MouseSuggestionScroll />
+    <>
+      <Helmet>
+        <title>Projects</title>
+        <meta name="description" content="Sean's past projects" />
+      </Helmet>
+      <div className="projectPage">
+        <div className="projectContainer">
+          <div className="myProject">MY PROJECTS</div>
+          <div className="projectProse">
+            I enjoy creating softwares that are{" "}
+            <Keywords text="elegant, accessible and impactful." /> I hope my
+            project will <Keywords text="make a difference for others." />
           </div>
-        )}
-        {displayedProject.map((project) => (
-          <ProjectItem {...project} key={project.name} />
-        ))}
-        <div className="showMoreLessContainer">
-          {len < allProjects.length && (
-            <RoundedButtonArrow
-              icon={ARROWIMG}
-              placement="bottom"
-              text="Show more"
-              onClick={showMoreFn}
-            />
+          <div className="featuredProjects">FEATURED PROJECTS</div>
+          {width >= 1025 && (
+            <div id="mouseScrollContainer">
+              <MouseSuggestionScroll />
+            </div>
           )}
-          {len > 3 && (
-            <RoundedButtonArrow
-              icon={ARROWIMG}
-              placement="top"
-              text="Show less"
-              onClick={showLesserFn}
-            />
-          )}
+          {displayedProject.map((project) => (
+            <ProjectItem {...project} key={project.name} />
+          ))}
+          <div className="showMoreLessContainer">
+            {len < allProjects.length && (
+              <RoundedButtonArrow
+                icon={ARROWIMG}
+                placement="bottom"
+                text="Show more"
+                onClick={showMoreFn}
+              />
+            )}
+            {len > 3 && (
+              <RoundedButtonArrow
+                icon={ARROWIMG}
+                placement="top"
+                text="Show less"
+                onClick={showLesserFn}
+              />
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

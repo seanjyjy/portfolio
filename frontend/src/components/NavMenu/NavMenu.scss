@@ -12,6 +12,7 @@
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: height;
+  height: 70px;
 }
 
 .nav.mounted {
@@ -91,24 +92,26 @@
 }
 
 .dropdown-list {
-  opacity: 0;
-  height: 0;
-  transition: top 0.2s ease-out, opacity 0.3s ease-in-out;
-  position: absolute;
-  top: -20px;
+  transition: top 0.2s ease-in-out, opacity 0.4s ease-in-out,
+    height 0.3s ease-in-out;
+  position: fixed;
   width: 100%;
   background-color: white;
-  pointer-events: none;
 }
 
 .dropdown-list.active {
-  width: 100%;
-  height: calc(100vh - 70px);
+  height: 100vh;
   opacity: 1;
-  top: 70px;
-  background-color: white;
   pointer-events: auto;
+  top: 70px;
   z-index: 100;
+}
+
+.dropdown-list.inactive {
+  opacity: 0;
+  height: 0;
+  top: -20px;
+  pointer-events: none;
 }
 
 .vertical-tab {

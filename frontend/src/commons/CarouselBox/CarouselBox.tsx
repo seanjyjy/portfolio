@@ -110,12 +110,13 @@ const CarouselBox = <T,>({
   const reset = useInterval(
     () => {
       if (dist === leftBound && direction === 1) {
-        setDirection(0);
         shiftRight();
+        setDirection(0);
         return;
       } else if (dist === rightBound && direction === 0) {
-        setDirection(1);
         shiftLeft();
+        setDirection(1);
+
         return;
       }
 
@@ -157,6 +158,8 @@ const CarouselBox = <T,>({
   useEffect(() => {
     setResizing(true);
     resizeFalse();
+    setPosition(0);
+    setDist(0);
   }, [width]);
 
   function handleDotClick(index: number) {

@@ -55,39 +55,21 @@ const NavMenu = () => {
     };
   }, []);
 
-  const clearFullScreen = () => {
-    document.body.style.position = "";
-    document.body.style.overflowY = "";
-    document.body.style.height = "";
-  };
-
   const handleClick = (href?: string) => {
     // when clicking on the link remove all defaults
     if (href) {
       setClick(false);
-      clearFullScreen();
       navigate(href);
       return;
     }
 
     // all other cases
     setClick(!click);
-    if ((width ?? 0) < 860) {
-      if (!click) {
-        document.body.style.position = "fixed";
-        document.body.style.height = "100vh";
-        document.body.style.overflowY = "hidden";
-      } else {
-        clearFullScreen();
-      }
-    }
   };
 
   const setValuesBasedOnWidth = () => {
     if (window.innerWidth >= 860) {
       setClick(false);
-    } else {
-      clearFullScreen();
     }
   };
 
@@ -106,7 +88,7 @@ const NavMenu = () => {
             </div>
           </div>
         </nav>
-        <div className={`dropdown-list ${!click ? "" : "active"}`}>
+        <div className={`dropdown-list ${!click ? "inactive" : "active"}`}>
           {tabs.map((tab) => (
             <div
               className="vertical-tab"

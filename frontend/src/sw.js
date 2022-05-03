@@ -40,10 +40,10 @@ cleanupOutdatedCaches();
 // Ensure your build step is configured to include /offline.html as part of your precache manifest.
 precacheAndRoute(self.__WB_MANIFEST);
 
-const strategy = new CacheFirst();
-const urls = ["/offline.html"];
+// const strategy = new CacheFirst();
+// const urls = ["/offline.html"];
 
-warmStrategyCache({ urls, strategy });
+// warmStrategyCache({ urls, strategy });
 
 googleFontsCache();
 staticResourceCache();
