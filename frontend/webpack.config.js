@@ -32,6 +32,7 @@ let optimization = {};
 let htmlPluginConfig = {
   template: "./public/index.html",
 };
+let devtool = "eval-source-map";
 
 if (!isDevelopment) {
   mode = "production";
@@ -42,6 +43,8 @@ if (!isDevelopment) {
     filename: "[name].[contenthash].bundle.js",
     assetModuleFilename: "images/[hash][ext][query]",
   };
+
+  devtool = "source-map";
 
   optimization = {
     minimizer: [new CssMinimizerWebpackPlugin(), new TerserWebpackPlugin()],
@@ -77,6 +80,7 @@ module.exports = {
   output: output,
   entry: "./src/index.tsx",
   optimization: optimization,
+  devtool: devtool,
   module: {
     rules: [
       { test: /\.(png|jpe?g|gif|svg)$/i, type: "asset/resource" },

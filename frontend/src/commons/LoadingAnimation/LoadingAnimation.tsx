@@ -17,7 +17,7 @@ const LoadingAnimation = () => {
         enableBackground="new 0 0 0 0"
         xmlSpace="preserve"
       >
-        <circle fill="#FF5F57" stroke="none" cx="6" cy="50" r="6">
+        <circle fill="#FF5F57" stroke="none" cx="25" cy="50" r="6">
           <animateTransform
             attributeName="transform"
             dur="1s"
@@ -27,7 +27,7 @@ const LoadingAnimation = () => {
             begin="0.1"
           />
         </circle>
-        <circle fill="#FEBC2E" stroke="none" cx="30" cy="50" r="6">
+        <circle fill="#FEBC2E" stroke="none" cx="50" cy="50" r="6">
           <animateTransform
             attributeName="transform"
             dur="1s"
@@ -37,7 +37,7 @@ const LoadingAnimation = () => {
             begin="0.2"
           />
         </circle>
-        <circle fill="#28C840" stroke="none" cx="54" cy="50" r="6">
+        <circle fill="#28C840" stroke="none" cx="75" cy="50" r="6">
           <animateTransform
             attributeName="transform"
             dur="1s"
