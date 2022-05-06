@@ -80,7 +80,7 @@ const NavMenu = () => {
       <>
         <nav className="nav">
           <div className="navContainer">
-            <h1 className="title" onClick={() => handleClick("/About")}>
+            <h1 className="title" onClick={() => handleClick("/")}>
               Sean Lum.
             </h1>
             <div className="hamburger" onClick={() => handleClick()}>
@@ -106,7 +106,7 @@ const NavMenu = () => {
   return (
     <nav className={`nav ${isMounted ? "mounted" : "dismounted"}`}>
       <div className="navContainer">
-        <h1 className="title" onClick={() => handleClick("/About")}>
+        <h1 className="title" onClick={() => handleClick("/")}>
           Sean Lum.
         </h1>
         <div className="horizontal-tabs">
