@@ -182,6 +182,10 @@ module.exports = {
             from: path.resolve(__dirname, "public/snowflake_x512.png"),
             to: path.resolve(__dirname, "dist"),
           },
+          {
+            from: path.resolve(__dirname, "public/sitemap.xml"),
+            to: path.resolve(__dirname, "dist"),
+          },
         ],
       }),
     !isDevelopment &&
