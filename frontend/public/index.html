@@ -12,7 +12,6 @@
       name="keywords"
       content="JavaScript,TypeScript,CSS,SASS,React,Redux,React Query,AdobeXD,Software Engineer,Front-end,Frontend,Frontend Engineer"
     />
-    <meta name="description" content="Hi I'm Sean Lum. I am an aspiring frontend engineer who is looking to grow and collaborate with others."/>
     
     <!-- SEO OGP tags -->
     <meta
@@ -27,7 +26,7 @@
     <meta
       property="og:description"
       name="description"
-      content="Hi I'm Sean Lum. I am an aspiring frontend engineer who is looking to grow and collaborate with others."
+      content="Hi I'm Sean Lum. I am an aspiring frontend engineer who is looking to grow and collaborate with others. Currently I am studying in the National University of Singapore(NUS) and I am specializing in Software Engineering and Database Systems."
     />
 
     <!-- Adding SEO Twitter tags. comes hand in hand with OGP tags -->
@@ -50,14 +49,12 @@
     <!-- Prefetching fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
     <!-- PWA related for apple -->
     <link rel="apple-touch-icon" href="./snowflake_x128.png" />
@@ -101,6 +98,12 @@
     />
     <base href="/" />
 
+    <!-- Orientation  -->
+    <meta name="screen-orientation" content="portrait" />
+
+    <!-- imagemode - show image even in text only mode  -->
+    <meta name="imagemode" content="force" />
+
     <script type="application/ld+json" async>
       {
         "@context": "http://schema.org",
@@ -109,10 +112,24 @@
         "url" : "https://www.seanlumjy.com/",
         "image" : "https://www.seanlumjy.com/sean.jpg",
         "jobTitle" : "Software Engineer",
-        "description" : "Hi I'm Sean Lum. I am an aspiring frontend engineer who is looking to grow and collaborate with others."
+        "description" : "Hi I'm Sean Lum. I am an aspiring frontend engineer who is looking to grow and collaborate with others. Currently I am studying in the National University of Singapore(NUS) and I am specializing in Software Engineering and Database Systems."
       }
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLM0F3BG03"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-ZLM0F3BG03");
+    </script>
     <noscript>Please enable JavaScript to continue using this application.</noscript>
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  </noscript>
   </head>
   <body>
     <div id="root"></div>
