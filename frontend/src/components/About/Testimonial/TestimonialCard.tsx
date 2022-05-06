@@ -10,9 +10,9 @@ const TestimonialCard = ({ imgSrc, name, role, comments }: TestimonialInfo) => {
       <div className="testimonialImg">
         <img src={imgSrc} alt="testimonial author's image" />
       </div>
-      <div className="testimonialName">{name}</div>
-      <div className="testimonialRole">{role}</div>
-      <div className="testimonialComments">{comments}</div>
+      <h3 className="testimonialName">{name}</h3>
+      <h5 className="testimonialRole">{role}</h5>
+      <p className="testimonialComments">{comments}</p>
     </div>
   );
 };

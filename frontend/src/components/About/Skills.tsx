@@ -43,7 +43,7 @@ const Skills = () => {
   });
 
   return (
-    <div className="skillsSection">
+    <section className="skillsSection">
       <div>
         <div id="skillsAnchor" />
         <div
@@ -52,11 +52,11 @@ const Skills = () => {
           }`}
           ref={skillsRef}
         >
-          <div className="mySkills">MY SKILLS</div>
-          <div className="skillsProse">
+          <h4 className="mySkills">MY SKILLS</h4>
+          <h1 className="skillsProse">
             Focused on <Keywords text="frontend technologies" /> with the
             occasional backend and design tools
-          </div>
+          </h1>
         </div>
         <div
           className={`skillsBodyContainer ${
@@ -67,9 +67,9 @@ const Skills = () => {
             <div className="skillsBody" key={i}>
               <div className="skillsBodyHeader">
                 <img src={skill.icon} alt="skills icon" />
-                <div className="skillsType">{skill.type}</div>
+                <h2 className="skillsType">{skill.type}</h2>
               </div>
-              <div className="skillsTypeProse">{skill.prose}</div>
+              <p className="skillsTypeProse">{skill.prose}</p>
               <div className="skillsList">
                 <SkillsList skills={skill.skills} />
               </div>
@@ -77,7 +77,7 @@ const Skills = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

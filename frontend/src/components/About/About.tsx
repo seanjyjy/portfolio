@@ -11,14 +11,17 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>Sean Lum</title>
-        <meta name="description" content="Some information about Sean Lum." />
+        <title>Sean Lum's portfolio website</title>
+        <meta
+          name="description"
+          content="Hi I'm Sean Lum. I am an aspiring frontend engineer who is looking to grow and collaborate with others."
+        />
       </Helmet>
-      <div className="about">
+      <main className="about">
         <AboutPage />
         <AboutInfo />
         <TestimonialPage />
-      </div>
+      </main>
     </>
   );
 };

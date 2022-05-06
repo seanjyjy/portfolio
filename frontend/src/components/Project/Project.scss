@@ -16,12 +16,14 @@
   font-size: 1em;
   color: c.$highlight-text;
   @include cs.proseHeaderFont;
+  font-weight: normal;
 }
 
 .projectProse {
   font-size: 1.4em;
   margin: 20px 0 30px 0;
   color: c.$header-text;
+  font-weight: normal;
 }
 
 .featuredProjects {

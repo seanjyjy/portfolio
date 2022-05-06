@@ -46,9 +46,9 @@ const ProjectItem = ({
       <div className="project-item">
         <div className="project-header">
           <img src={logo} alt="icon" style={{ width: logosize }} />
-          <p>{name}</p>
+          <h3>{name}</h3>
         </div>
-        <p className="project-description-large">{largedesc}</p>
+        <h1 className="project-description-large">{largedesc}</h1>
         <p className="project-description">{desc}</p>
         <div className="project-button-container">
           <a href={webLink} target="_blank" rel="noopener noreferrer">

@@ -16,11 +16,11 @@ const TestimonialPage = () => {
   if (width == null) return null;
 
   return (
-    <div className="testimonialPage">
-      <div className="testimonialPageHeader">Testimonials</div>
-      <div className="testimonialPageProse">
+    <section className="testimonialPage">
+      <h4 className="testimonialPageHeader">Testimonials</h4>
+      <h5 className="testimonialPageProse">
         See what others have to say about me
-      </div>
+      </h5>
       <CarouselBox
         itemsPerPage={width >= 1050 ? 3 : width >= 700 ? 2 : 1}
         carouselItems={testimonials}
@@ -34,7 +34,7 @@ const TestimonialPage = () => {
           />
         )}
       />
-    </div>
+    </section>
   );
 };
 

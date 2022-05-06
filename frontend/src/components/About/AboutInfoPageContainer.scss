@@ -6,6 +6,7 @@
   color: c.$highlight-text;
   @include cs.proseHeaderFont;
   transition: all 0.8s linear;
+  font-weight: normal;
 }
 
 .aboutInfoFacts {
@@ -60,8 +61,8 @@
     margin: 0 10px;
   }
 
-  & > div {
-    font-size: 1em;
+  & > h2 {
+    font-size: 1.3em;
     @include cs.headerFont;
     letter-spacing: -1px;
     color: #404041;

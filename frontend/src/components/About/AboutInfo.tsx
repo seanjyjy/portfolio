@@ -7,11 +7,11 @@ import "./AboutInfo.scss";
 
 const AboutInfo = () => {
   return (
-    <div className="aboutInfoPage">
+    <section className="aboutInfoPage">
       <div id="aboutInfoAnchor" />
       <AboutInfoPageContainer />
       <Skills />
-    </div>
+    </section>
   );
 };
 

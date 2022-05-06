@@ -19,9 +19,9 @@ const AboutInfoPageRows = ({ header, info, imgSrc }: aboutInfo) => {
     <div className="aboutInfoPageRows">
       <div className="aboutInfoRowsHeader">
         <img src={imgSrc} alt={header} />
-        <div>{header}</div>
+        <h2>{header}</h2>
       </div>
-      <div className="aboutInfoRowsInfo">{info}</div>
+      <p className="aboutInfoRowsInfo">{info}</p>
     </div>
   );
 };
@@ -59,51 +59,49 @@ const AboutInfoPageContainer = () => {
 
   if (width < 960) {
     return (
-      <div className="aboutInfoPageContainer">
-        <div
+      <section className="aboutInfoPageContainer">
+        <h2
           className={`aboutInfo ${
             aboutRefInView ? "header-hidden" : "header-shown"
           }`}
           ref={aboutRef}
         >
           About
-        </div>
-        <div
+        </h2>
+        <h1
           className={`aboutInfoFacts ${
             !aboutInfoFactsRefInView ? "header-hidden" : "header-shown"
           }`}
           ref={aboutInfoFactsRef}
         >
           Some <Keywords text="bytes of information" /> about myself
-        </div>
+        </h1>
         <div className="aboutSeanPng">
-          <div>
-            <img src={SEANIMG} alt="sean lum" />
-          </div>
+          <img src={SEANIMG} alt="sean lum" />
         </div>
         {aboutInfo2.map((info) => (
           <AboutInfoPageRows {...info} key={info.header} />
         ))}
-      </div>
+      </section>
     );
   }
 
   return (
-    <div className="aboutInfoPageContainer">
-      <div
+    <section className="aboutInfoPageContainer">
+      <h2
         className={`aboutInfo ${!aboutRefInView ? "lr-hidden" : "lr-shown"}`}
         ref={aboutRef}
       >
         About
-      </div>
-      <div
+      </h2>
+      <h1
         className={`aboutInfoFacts ${
           !aboutInfoFactsRefInView ? "lr-hidden" : "lr-shown"
         }`}
         ref={aboutInfoFactsRef}
       >
         Some <Keywords text="bytes of information" /> about myself
-      </div>
+      </h1>
       <div
         className={`aboutInfoPageContainer2 ${
           !aboutInfoContainerRefInView ? "td-hidden" : "td-shown"
@@ -123,12 +121,10 @@ const AboutInfoPageContainer = () => {
           </div>
         </div>
         <div className="aboutSeanPng">
-          <div>
-            <img src={SEANIMG2} alt="sean lum" />
-          </div>
+          <img src={SEANIMG2} alt="sean lum" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -46,11 +46,11 @@ const Contact = () => {
           <div className="contactImgContainer">
             {width >= 1025 && (
               <div className="contactHeader">
-                <div>CONTACT</div>
-                <p>
+                <h2>CONTACT</h2>
+                <h1>
                   Interested in what you see? If you wish to{" "}
                   <Keywords text="collaborate together, feel free to contact me." />
-                </p>
+                </h1>
               </div>
             )}
             <img src={EmailImg} alt="email" />

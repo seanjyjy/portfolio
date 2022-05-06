@@ -44,15 +44,15 @@ const Project = () => {
         <title>Sean | Projects</title>
         <meta name="description" content="Sean Lum's past projects" />
       </Helmet>
-      <div className="projectPage">
-        <div className="projectContainer">
-          <div className="myProject">MY PROJECTS</div>
-          <div className="projectProse">
+      <main className="projectPage">
+        <section className="projectContainer">
+          <h2 className="myProject">MY PROJECTS</h2>
+          <h1 className="projectProse">
             I enjoy creating softwares that are{" "}
             <Keywords text="elegant, accessible and impactful." /> I hope my
             project will <Keywords text="make a difference for others." />
-          </div>
-          <div className="featuredProjects">FEATURED PROJECTS</div>
+          </h1>
+          <h3 className="featuredProjects">FEATURED PROJECTS</h3>
           {width >= 1025 && (
             <div id="mouseScrollContainer">
               <MouseSuggestionScroll />
@@ -61,7 +61,7 @@ const Project = () => {
           {displayedProject.map((project) => (
             <ProjectItem {...project} key={project.name} />
           ))}
-          <div className="showMoreLessContainer">
+          <section className="showMoreLessContainer">
             {len < allProjects.length && (
               <RoundedButtonArrow
                 icon={ARROWIMG}
@@ -78,9 +78,9 @@ const Project = () => {
                 onClick={showLesserFn}
               />
             )}
-          </div>
-        </div>
-      </div>
+          </section>
+        </section>
+      </main>
     </>
   );
 };

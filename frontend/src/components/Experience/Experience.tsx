@@ -35,19 +35,19 @@ const Experience = () => {
         <title>Sean | Experience</title>
         <meta name="description" content="Sean Lum's Job Experience" />
       </Helmet>
-      <div style={{ position: "relative" }}>
+      <main style={{ position: "relative" }}>
         <div className="experiencePage">
           <div id="experienceAnchor" />
-          <div className="experienceContainerWider">
-            <div
+          <section className="experienceContainerWider">
+            <h2
               className={`myExperience ${
                 !experienceInView ? "lr-hidden" : "lr-shown"
               }`}
               ref={experienceRef}
             >
               MY WORK EXPERIENCE
-            </div>
-            <div
+            </h2>
+            <h1
               className={`experienceProse ${
                 !experienceInView ? "lr-hidden" : "lr-shown"
               }`}
@@ -60,7 +60,7 @@ const Experience = () => {
               />{" "}
               I experiment with interesting technologies and build useful
               toolings.
-            </div>
+            </h1>
             <div className="expCurrent">
               <div className={`expCurrentImgHolder`}>
                 <img src={coding} alt="coding" />
@@ -70,32 +70,32 @@ const Experience = () => {
                   !experienceInView ? "td-hidden" : "td-shown"
                 }`}
               >
-                <div className="expCurrentText">
+                <h2 className="expCurrentText">
                   Incoming Enterprise Engineer Intern
-                </div>
+                </h2>
                 <div className="expCurrentRole">
                   <img src={METAIMG} alt="meta" />
                   Meta
                 </div>
-                <div className="expCurrentGoal">
+                <p className="expCurrentGoal">
                   Empower the world with what we build. Make the world more open
                   and connected. My goal is to continue working on interesting,
                   useful and ground breaking projects to make an impact on
                   others.
-                </div>
+                </p>
                 <div className="expShouldShow">
-                  <div className="expCurrentText">
+                  <h2 className="expCurrentText">
                     Upcoming Software Engineer Intern
-                  </div>
+                  </h2>
                   <div className="expCurrentRole">
                     <img src={BDIMG} alt="byedance" />
                     ByteDance
                   </div>
-                  <div className="expCurrentGoal">
+                  <p className="expCurrentGoal">
                     Enable people to enjoy content powered by technology. We
                     inform, entertain, and inspire people across language,
                     culture, and geography.
-                  </div>
+                  </p>
                 </div>
                 <div className="seeMoreExp">
                   <WordArrowButton
@@ -109,22 +109,22 @@ const Experience = () => {
             <div className="expSepContainer">
               <div className="expSep" />
             </div>
-          </div>
-          <div className="experienceContainer">
+          </section>
+          <section className="experienceContainer">
             <div className="pastExp">
               <div id="pastExpAnchor" />
               {experiences.map((experience) => (
                 <ExperienceCard {...experience} key={experience.date} />
               ))}
             </div>
-          </div>
+          </section>
         </div>
         <img
           src={BubbleImg}
           alt="floating bubble"
           className="experienceBubble"
         />
-      </div>
+      </main>
     </>
   );
 };

@@ -17,22 +17,22 @@ const AboutPage = () => {
   }
 
   return (
-    <div className="about-page">
+    <section className="about-page">
       <div className="aboutContainer">
         <div className="aboutIntroduction">
-          <div className="aboutProse">
+          <h1 className="aboutProse">
             Hi I'm Sean, a{" "}
             <Keywords
               text="frontend engineer & aspiring full stack engineer."
               typewritter={true}
             />
-          </div>
-          <div className="aboutProseMini">
+          </h1>
+          <h5 className="aboutProseMini">
             {" "}
             I enjoy creating softwares that benefits others. Also, I enjoy
             dabbling with new concepts regarding Frontend development and write
             some blogs on Medium.
-          </div>
+          </h5>
           <div className="learnMore">
             <WordArrowButton
               text="Learn more about Sean"
@@ -49,7 +49,7 @@ const AboutPage = () => {
       <div className="about-object4" />
       <div className="about-object5" />
       <img src={BubbleImg} alt="bubble floating" className="aboutBubble" />
-    </div>
+    </section>
   );
 };
 

@@ -18,14 +18,14 @@ const Footer = () => {
   if (width == null) return null;
 
   return (
-    <>
+    <footer>
       {!isContact && (
         <div className="footer">
           <div>
-            <div className="footerName">Sean Lum</div>
-            <div className="footerProse">
+            <p className="footerName">Sean Lum</p>
+            <p className="footerProse">
               Striving to make a difference in others
-            </div>
+            </p>
           </div>
           <div className="footerLinks">
             {links.map((l, i) => (
@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
         </div>
       )}
-      <div
+      <p
         className="footerCopyRight"
         style={{
           transform: isContact
@@ -52,8 +52,8 @@ const Footer = () => {
         }}
       >
         © Copyright 2022
-      </div>
-    </>
+      </p>
+    </footer>
   );
 };
 

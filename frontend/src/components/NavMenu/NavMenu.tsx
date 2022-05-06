@@ -80,9 +80,9 @@ const NavMenu = () => {
       <>
         <nav className="nav">
           <div className="navContainer">
-            <div className="title" onClick={() => handleClick("/About")}>
+            <h1 className="title" onClick={() => handleClick("/About")}>
               Sean Lum.
-            </div>
+            </h1>
             <div className="hamburger" onClick={() => handleClick()}>
               <div className={`bar ${!click ? "" : "active"}`} />
             </div>
@@ -90,13 +90,13 @@ const NavMenu = () => {
         </nav>
         <div className={`dropdown-list ${!click ? "inactive" : "active"}`}>
           {tabs.map((tab) => (
-            <div
+            <p
               className="vertical-tab"
               onClick={() => handleClick(tab.href)}
               key={tab.href}
             >
               {tab.name}
-            </div>
+            </p>
           ))}
         </div>
       </>
@@ -106,18 +106,18 @@ const NavMenu = () => {
   return (
     <nav className={`nav ${isMounted ? "mounted" : "dismounted"}`}>
       <div className="navContainer">
-        <div className="title" onClick={() => handleClick("/About")}>
+        <h1 className="title" onClick={() => handleClick("/About")}>
           Sean Lum.
-        </div>
+        </h1>
         <div className="horizontal-tabs">
           {tabs.map((tab) => (
-            <div
+            <p
               key={tab.href}
               className="horizontal-tab"
               onClick={() => handleClick(tab.href)}
             >
               {tab.name}
-            </div>
+            </p>
           ))}
         </div>
         <div className="socials">

@@ -25,23 +25,23 @@ const ProjectPage = () => {
   return (
     <div className="projectPagePage">
       <div className="projectPageContainer">
-        <div className="projectPageName">{projectInfo.name}</div>
-        <div className="projectPageProse">{projectInfo.prose}</div>
+        <h3 className="projectPageName">{projectInfo.name}</h3>
+        <h2 className="projectPageProse">{projectInfo.prose}</h2>
         <div className="projectGoal">
-          <div className="projectPageGoal">Background</div>
-          <div className="projectPageGoalText">{projectInfo.desc}</div>
+          <h2 className="projectPageGoal">Background</h2>
+          <p className="projectPageGoalText">{projectInfo.desc}</p>
         </div>
-        <div className="projectPageTeammates">Team</div>
+        <h3 className="projectPageTeammates">Team</h3>
         <div className="projectPageTeammatesContainer">
           {projectInfo.team?.map((name) => (
-            <div key={name}>{name}</div>
+            <p key={name}>{name}</p>
           ))}
         </div>
-        <div className="projectPageStack">Tech Stack</div>
+        <h3 className="projectPageStack">Tech Stack</h3>
         <div className="projectPageStackContainer">
           <IconList iconList={projectInfo.stack} />
         </div>
-        <div className="projectPageProduct">Highlight</div>
+        <h3 className="projectPageProduct">Highlight</h3>
         <div className="projectHighlight">
           <Player
             url={
@@ -52,7 +52,7 @@ const ProjectPage = () => {
             index={1900}
           />
         </div>
-        <div className="projectPageProduct">Product</div>
+        <h3 className="projectPageProduct">Product</h3>
         <div className="projectPageImageContainer">
           <LightBox images={projectObj[projectInfo.name]} />
         </div>
