@@ -186,6 +186,10 @@ module.exports = {
             from: path.resolve(__dirname, "public/sitemap.xml"),
             to: path.resolve(__dirname, "dist"),
           },
+          {
+            from: path.resolve(__dirname, "public/robots.txt"),
+            to: path.resolve(__dirname, "dist"),
+          },
         ],
       }),
     !isDevelopment &&
