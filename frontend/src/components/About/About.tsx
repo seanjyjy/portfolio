@@ -11,8 +11,8 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About</title>
-        <meta name="description" content="Some information about Sean." />
+        <title>Sean Lum</title>
+        <meta name="description" content="Some information about Sean Lum." />
       </Helmet>
       <div className="about">
         <AboutPage />

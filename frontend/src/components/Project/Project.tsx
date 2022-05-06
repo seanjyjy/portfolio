@@ -41,8 +41,8 @@ const Project = () => {
   return (
     <>
       <Helmet>
-        <title>Projects</title>
-        <meta name="description" content="Sean's past projects" />
+        <title>Sean | Projects</title>
+        <meta name="description" content="Sean Lum's past projects" />
       </Helmet>
       <div className="projectPage">
         <div className="projectContainer">

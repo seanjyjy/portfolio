@@ -8,7 +8,9 @@ import MediumLogo from "../images/medium-small.svg";
 
 export const links = [
   {
-    icon: <img src={LinkedInIcon} style={{ width: "33px" }} alt="" />,
+    icon: (
+      <img src={LinkedInIcon} style={{ width: "33px" }} alt="linkedin icon" />
+    ),
     link: "https://www.linkedin.com/in/jyjy98/",
     name: "LinkedIn",
     text: "jyjy98",
@@ -16,7 +18,7 @@ export const links = [
     logo: LinkedInLogo,
   },
   {
-    icon: <img src={GithubIcon} style={{ width: "33px" }} alt="" />,
+    icon: <img src={GithubIcon} style={{ width: "33px" }} alt="github icon" />,
     link: "https://github.com/seanjyjy",
     name: "GitHub",
     text: "seanjyjy",
@@ -24,7 +26,7 @@ export const links = [
     logo: GithubLogo,
   },
   {
-    icon: <img src={MediumIcon} style={{ width: "33px" }} alt="" />,
+    icon: <img src={MediumIcon} style={{ width: "33px" }} alt="medium icon" />,
     link: "https://medium.com/@seanlumjy",
     name: "Medium",
     text: "Seanlumjy",

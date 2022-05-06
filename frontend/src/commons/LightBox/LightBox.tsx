@@ -27,7 +27,7 @@ const LightBoxArrow = ({ placement, onClick }: LightBoxArrowProps) => {
       }}
     >
       <div>
-        <img src={GTsvg} alt="" />
+        <img src={GTsvg} alt="greater than" />
       </div>
     </div>
   );

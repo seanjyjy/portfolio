@@ -66,7 +66,7 @@ const Skills = () => {
           {array.map((skill, i) => (
             <div className="skillsBody" key={i}>
               <div className="skillsBodyHeader">
-                <img src={skill.icon} alt="" />
+                <img src={skill.icon} alt="skills icon" />
                 <div className="skillsType">{skill.type}</div>
               </div>
               <div className="skillsTypeProse">{skill.prose}</div>

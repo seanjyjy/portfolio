@@ -40,7 +40,7 @@ const ExperienceCard = ({
         <div className={`exp-title-2 ${width >= 535 ? "" : "spaced"}`}>
           {`${width >= 535 ? role : role2} ${width >= 535 ? "⤐" : ""}`}
           {gif ? (
-            <img src={gif} alt="" className="exp-gif" />
+            <img src={gif} alt="coding" className="exp-gif" />
           ) : (
             <ColoredText text={title} />
           )}

@@ -50,7 +50,10 @@ const RedirectPage = ({ specificRoute }: RedirectPageProps) => {
             <a href={bestUrl}>{formattedBestUrl}</a> in {time} ...
           </div>
         </div>
-        <img src={Robot} alt="" />
+        <img
+          src={Robot}
+          alt="404 robot redirect back to nearest URL in https://www.seanlumjy.com"
+        />
       </div>
     </div>
   );

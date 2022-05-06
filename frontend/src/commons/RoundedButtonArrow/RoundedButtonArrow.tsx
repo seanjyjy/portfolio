@@ -40,7 +40,7 @@ const RoundedButtonArrow = ({
               marginRight: "10px",
             }}
           >
-            <img src={icon} alt="" />
+            <img src={icon} alt="rounded button arrow" />
           </div>
           <div>{text}</div>
         </>
@@ -53,7 +53,7 @@ const RoundedButtonArrow = ({
               transform: `rotate(${rotateAmount(placement)}deg)`,
             }}
           >
-            <img src={icon} alt="" />
+            <img src={icon} alt="rounded button arrow" />
           </div>
         </>
       )}

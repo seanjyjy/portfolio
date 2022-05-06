@@ -10,7 +10,7 @@ interface RoundedButtonProps {
 const RoundedButton = ({ icon, onClick }: RoundedButtonProps) => {
   return (
     <div className="roundedButton" onClick={onClick}>
-      <img src={icon} alt="" />
+      <img src={icon} alt="rounded button" />
     </div>
   );
 };

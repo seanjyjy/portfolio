@@ -35,7 +35,7 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact</title>
+        <title>Sean | Contact</title>
         <meta
           name="description"
           content="Contact me if you wish you work on projects or talk to me :)"

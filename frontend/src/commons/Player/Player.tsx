@@ -139,7 +139,10 @@ const Player = ({ url, index }: PlayerProps) => {
               </div>
               <div className="player-controls">
                 <button onClick={handleClick}>
-                  <img src={!isPlaying ? PLAYIMG : PAUSEIMG} alt="" />
+                  <img
+                    src={!isPlaying ? PLAYIMG : PAUSEIMG}
+                    alt="play button for video"
+                  />
                 </button>
                 <div className={`player-control-timeline-bg index-${index}`}>
                   <div className={`player-control-timeline index-${index}`} />

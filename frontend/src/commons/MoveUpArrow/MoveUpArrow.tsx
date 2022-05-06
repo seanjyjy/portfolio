@@ -44,7 +44,7 @@ const MoveUpArrow = () => {
       style={{ opacity: show ? 1 : 0 }}
       onClick={scrollTop}
     >
-      <img src={navArrow} alt="" />
+      <img src={navArrow} alt="go back to top arrow" />
     </div>
   );
 };

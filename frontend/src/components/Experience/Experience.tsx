@@ -32,8 +32,8 @@ const Experience = () => {
   return (
     <>
       <Helmet>
-        <title>Experience</title>
-        <meta name="description" content="Sean's Job Experience" />
+        <title>Sean | Experience</title>
+        <meta name="description" content="Sean Lum's Job Experience" />
       </Helmet>
       <div style={{ position: "relative" }}>
         <div className="experiencePage">
@@ -63,7 +63,7 @@ const Experience = () => {
             </div>
             <div className="expCurrent">
               <div className={`expCurrentImgHolder`}>
-                <img src={coding} alt="" />
+                <img src={coding} alt="coding" />
               </div>
               <div
                 className={`expCurrentRoleText ${
@@ -119,7 +119,11 @@ const Experience = () => {
             </div>
           </div>
         </div>
-        <img src={BubbleImg} alt="" className="experienceBubble" />
+        <img
+          src={BubbleImg}
+          alt="floating bubble"
+          className="experienceBubble"
+        />
       </div>
     </>
   );

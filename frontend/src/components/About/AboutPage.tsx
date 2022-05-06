@@ -48,7 +48,7 @@ const AboutPage = () => {
       <div className="about-object3" />
       <div className="about-object4" />
       <div className="about-object5" />
-      <img src={BubbleImg} alt="" className="aboutBubble" />
+      <img src={BubbleImg} alt="bubble floating" className="aboutBubble" />
     </div>
   );
 };
