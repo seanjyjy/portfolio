@@ -12,9 +12,6 @@
    <url>
       <loc>https://www.seanlumjy.com/Project</loc>
    </url>
-    <url>
-      <loc>https://www.seanlumjy.com/Project</loc>
-   </url>
    <url>
       <loc>https://www.seanlumjy.com/Project/NUSForum</loc>
    </url> 
@@ -35,5 +32,8 @@
    </url>  
    <url>
       <loc>https://www.seanlumjy.com/Contact</loc>
+   </url>
+      <url>
+      <loc>https://www.seanlumjy.com/Redirect</loc>
    </url>
 </urlset>
