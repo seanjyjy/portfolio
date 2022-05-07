@@ -3,7 +3,14 @@ import { Helmet } from "react-helmet";
 
 import AboutPage from "./AboutPage";
 import AboutInfo from "./AboutInfo";
-import TestimonialPage from "./Testimonial";
+import LazyLoad from "@commons/LazyLoad";
+
+const LazyTestimonialPage = React.lazy(
+  () =>
+    import(
+      /* webpackChunkName: "Testimonial" */ "./Testimonial/TestimonialPage"
+    )
+);
 
 import "./About.scss";
 
@@ -20,7 +27,7 @@ const About = () => {
       <main className="about">
         <AboutPage />
         <AboutInfo />
-        <TestimonialPage />
+        <LazyLoad Children={LazyTestimonialPage} />
       </main>
     </>
   );

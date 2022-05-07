@@ -53,6 +53,7 @@ const RedirectPage = ({ specificRoute }: RedirectPageProps) => {
         <img
           src={Robot}
           alt="404 robot redirect back to nearest URL in https://www.seanlumjy.com"
+          loading="lazy"
         />
       </div>
     </div>

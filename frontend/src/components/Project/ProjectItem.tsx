@@ -45,7 +45,12 @@ const ProjectItem = ({
     return (
       <div className="project-item">
         <div className="project-header">
-          <img src={logo} alt="icon" style={{ width: logosize }} />
+          <img
+            src={logo}
+            alt="icon"
+            style={{ width: logosize }}
+            loading="lazy"
+          />
           <h3>{name}</h3>
         </div>
         <h1 className="project-description-large">{largedesc}</h1>
@@ -99,7 +104,12 @@ const ProjectItem = ({
         }}
       >
         <div className="project-header">
-          <img src={logo} alt="icon" style={{ width: logosize }} />
+          <img
+            src={logo}
+            alt="icon"
+            style={{ width: logosize }}
+            loading="lazy"
+          />
           <p>{name}</p>
         </div>
         <p className="project-description-large">{largedesc}</p>

@@ -14,6 +14,7 @@ const Icon = ({ icon, name, width, style }: IconDef) => {
         src={icon}
         style={{ width: width, ...style }}
         className="icon-list-icon"
+        loading="lazy"
       />
     </OverlayIcon>
   );

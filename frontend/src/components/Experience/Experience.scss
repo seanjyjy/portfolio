@@ -229,6 +229,7 @@
   height: 250px;
   width: 250px;
   animation: experienceBubbleAnimation 80s infinite;
+  pointer-events: none;
 }
 
 @keyframes experienceBubbleAnimation {

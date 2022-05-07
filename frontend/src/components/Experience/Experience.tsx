@@ -63,7 +63,7 @@ const Experience = () => {
             </h1>
             <div className="expCurrent">
               <div className={`expCurrentImgHolder`}>
-                <img src={coding} alt="coding" />
+                <img src={coding} alt="coding" loading="lazy" />
               </div>
               <div
                 className={`expCurrentRoleText ${
@@ -88,7 +88,7 @@ const Experience = () => {
                     Upcoming Software Engineer Intern
                   </h2>
                   <div className="expCurrentRole">
-                    <img src={BDIMG} alt="byedance" />
+                    <img src={BDIMG} alt="byedance" loading="lazy" />
                     ByteDance
                   </div>
                   <p className="expCurrentGoal">

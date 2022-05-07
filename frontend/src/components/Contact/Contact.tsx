@@ -53,7 +53,7 @@ const Contact = () => {
                 </h1>
               </div>
             )}
-            <img src={EmailImg} alt="email" />
+            <img src={EmailImg} alt="email" loading="lazy" />
           </div>
           <div id="ContactContainer">
             <div id="Contact">

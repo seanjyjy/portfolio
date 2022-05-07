@@ -225,7 +225,7 @@ module.exports = {
         process.env.REACT_APP_EMAILJS_USER
       ),
     }),
-    // isDevelopment && new WebpackBundleAnalyzer(),
+    // new WebpackBundleAnalyzer(),
   ].filter(Boolean),
   devServer: {
     static: {

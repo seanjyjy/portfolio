@@ -12,8 +12,12 @@
   height: fit-content;
   width: fit-content;
 
+  & > div {
+    z-index: 999;
+  }
+
   & > * {
-    margin: 0 5px;
+    margin-right: 5px;
   }
 
   & > img {

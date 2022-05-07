@@ -11,7 +11,7 @@ interface WordArrowButtonProps {
 const WordArrowButton = ({ text, imgSrc, onClick }: WordArrowButtonProps) => {
   return (
     <div className="wordArrowButton" onClick={onClick}>
-      {text} <img src={imgSrc} alt="word arrow button" />
+      <div>{text}</div> <img src={imgSrc} alt="word arrow button" />
     </div>
   );
 };

@@ -16,7 +16,7 @@ const SkillsList = ({ skills }: SkillsListProps) => {
       {skills.map((item) => (
         <div key={item.title}>
           <OverlayIcon overlayText={item.title}>
-            <img src={item.img} alt="icon overlay image" />
+            <img src={item.img} alt="icon overlay image" loading="lazy" />
           </OverlayIcon>
         </div>
       ))}

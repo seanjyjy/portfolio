@@ -43,41 +43,38 @@ const Skills = () => {
   });
 
   return (
-    <section className="skillsSection">
-      <div>
-        <div id="skillsAnchor" />
-        <div
-          className={`skillsHeader ${
-            !skillsRefInView ? "lr-hidden" : "lr-shown"
-          }`}
-          ref={skillsRef}
-        >
-          <h4 className="mySkills">MY SKILLS</h4>
-          <h1 className="skillsProse">
-            Focused on <Keywords text="frontend technologies" /> with the
-            occasional backend and design tools
-          </h1>
-        </div>
-        <div
-          className={`skillsBodyContainer ${
-            !skillsRefInView ? "rl-hidden" : "rl-shown"
-          }`}
-        >
-          {array.map((skill, i) => (
-            <div className="skillsBody" key={i}>
-              <div className="skillsBodyHeader">
-                <img src={skill.icon} alt="skills icon" />
-                <h2 className="skillsType">{skill.type}</h2>
-              </div>
-              <p className="skillsTypeProse">{skill.prose}</p>
-              <div className="skillsList">
-                <SkillsList skills={skill.skills} />
-              </div>
-            </div>
-          ))}
-        </div>
+    <div className="skillsSectionInner">
+      <div
+        className={`skillsHeader ${
+          !skillsRefInView ? "lr-hidden" : "lr-shown"
+        }`}
+        ref={skillsRef}
+      >
+        <h4 className="mySkills">MY SKILLS</h4>
+        <h1 className="skillsProse">
+          Focused on <Keywords text="frontend technologies" /> with the
+          occasional backend and design tools
+        </h1>
       </div>
-    </section>
+      <div
+        className={`skillsBodyContainer ${
+          !skillsRefInView ? "rl-hidden" : "rl-shown"
+        }`}
+      >
+        {array.map((skill, i) => (
+          <div className="skillsBody" key={i}>
+            <div className="skillsBodyHeader">
+              <img src={skill.icon} alt="skills icon" loading="lazy" />
+              <h2 className="skillsType">{skill.type}</h2>
+            </div>
+            <p className="skillsTypeProse">{skill.prose}</p>
+            <div className="skillsList">
+              <SkillsList skills={skill.skills} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

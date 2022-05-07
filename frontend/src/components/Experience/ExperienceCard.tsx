@@ -15,6 +15,7 @@ const Icon = ({ icon, name, width, style }: IconDef) => {
         src={icon}
         style={{ width: width, ...style }}
         className="icon-list-icon"
+        loading="lazy"
       />
     </OverlayIcon>
   );
@@ -40,7 +41,7 @@ const ExperienceCard = ({
         <div className={`exp-title-2 ${width >= 535 ? "" : "spaced"}`}>
           {`${width >= 535 ? role : role2} ${width >= 535 ? "⤐" : ""}`}
           {gif ? (
-            <img src={gif} alt="coding" className="exp-gif" />
+            <img src={gif} alt="coding" className="exp-gif" loading="lazy" />
           ) : (
             <ColoredText text={title} />
           )}

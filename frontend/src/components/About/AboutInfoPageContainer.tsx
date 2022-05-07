@@ -18,7 +18,7 @@ const AboutInfoPageRows = ({ header, info, imgSrc }: aboutInfo) => {
   return (
     <div className="aboutInfoPageRows">
       <div className="aboutInfoRowsHeader">
-        <img src={imgSrc} alt={header} />
+        <img src={imgSrc} alt={header} loading="lazy" />
         <h2>{header}</h2>
       </div>
       <p className="aboutInfoRowsInfo">{info}</p>

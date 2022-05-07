@@ -6,7 +6,7 @@
   height: fit-content;
   @include cs.flexCenter;
 
-  & > div {
+  .skillsSectionInner {
     padding: 0 20px;
   }
 }
@@ -86,7 +86,7 @@
     margin: 0px auto;
     width: 90%;
 
-    & > div {
+    .skillsSectionInner {
       display: flex;
     }
   }

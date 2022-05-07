@@ -1,5 +1,5 @@
-import { useState } from "react";
-import Lightbox from "react-image-lightbox";
+import React, { Suspense, useState } from "react";
+// import Lightbox from "react-image-lightbox";
 
 import type { LightBoxImage } from "@types";
 
@@ -7,6 +7,9 @@ import GTsvg from "../../images/gt.svg";
 
 import "react-image-lightbox/style.css";
 import "./LightBox.scss";
+import LoadingAnimation from "@commons/LoadingAnimation";
+
+const LazyLightbox = React.lazy(() => import("react-image-lightbox"));
 
 interface LightBoxProps {
   images: LightBoxImage[];
@@ -27,7 +30,7 @@ const LightBoxArrow = ({ placement, onClick }: LightBoxArrowProps) => {
       }}
     >
       <div>
-        <img src={GTsvg} alt="greater than" />
+        <img src={GTsvg} alt="greater than" loading="lazy" />
       </div>
     </div>
   );
@@ -51,20 +54,26 @@ const LightBox2 = ({ images }: LightBoxProps) => {
       >
         <LightBoxArrow onClick={moveBack} placement="left" />
         <div onClick={() => setIsOpen(true)} className="lb-imgContainer">
-          <img src={images[photoIdx].src} alt={images[photoIdx].caption} />
+          <img
+            src={images[photoIdx].src}
+            alt={images[photoIdx].caption}
+            loading="lazy"
+          />
         </div>
         <LightBoxArrow onClick={moveFoward} placement="right" />
       </div>
       {isOpen && (
-        <Lightbox
-          mainSrc={images[photoIdx].src}
-          nextSrc={images[(photoIdx + 1) % images.length].src}
-          prevSrc={images[(photoIdx + images.length - 1) % images.length].src}
-          onCloseRequest={() => setIsOpen(false)}
-          onMovePrevRequest={moveBack}
-          onMoveNextRequest={moveFoward}
-          imageCaption={images[photoIdx].caption}
-        />
+        <Suspense fallback={<LoadingAnimation />}>
+          <LazyLightbox
+            mainSrc={images[photoIdx].src}
+            nextSrc={images[(photoIdx + 1) % images.length].src}
+            prevSrc={images[(photoIdx + images.length - 1) % images.length].src}
+            onCloseRequest={() => setIsOpen(false)}
+            onMovePrevRequest={moveBack}
+            onMoveNextRequest={moveFoward}
+            imageCaption={images[photoIdx].caption}
+          />
+        </Suspense>
       )}
     </>
   );
