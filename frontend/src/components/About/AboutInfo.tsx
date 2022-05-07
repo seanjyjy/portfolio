@@ -15,10 +15,7 @@ const AboutInfo = () => {
     <>
       <section className="aboutInfoPage">
         <div id="aboutInfoAnchor" />
-        <LazyLoad
-          Children={LazyAboutInfoPageContainer}
-          style={{ height: "100vh", width: "100vw" }}
-        />
+        <LazyLoad Children={LazyAboutInfoPageContainer} />
       </section>
       <SkillsWrapper />
     </>

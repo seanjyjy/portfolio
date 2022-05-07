@@ -55,13 +55,13 @@
 
   & > h2 {
     color: c.$highlight-text;
-    font-size: 1.4em;
+    font-size: 1.1em;
     @include cs.proseHeaderFont;
     font-weight: normal;
   }
 
   & > h1 {
-    font-size: 1.7em;
+    font-size: 1.4em;
     color: c.$header-text;
     font-weight: normal;
   }
@@ -174,17 +174,17 @@ input:-webkit-autofill:active {
 
 @media screen and (min-width: 1025px) {
   .contactHeader {
-    & > p {
+    & > h2 {
       font-size: 2em;
     }
   }
 
   .contactHeader {
-    & > div {
+    & > h2 {
       font-size: 1.4em;
     }
 
-    & > p {
+    & > h1 {
       font-size: 1.8em;
     }
   }

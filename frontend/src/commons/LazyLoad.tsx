@@ -5,12 +5,14 @@ import LoadingAnimation from "./LoadingAnimation";
 
 type LazyLoadProps = {
   Children: React.LazyExoticComponent<() => JSX.Element | null>;
-  style?: React.CSSProperties;
 };
 
-const LazyLoad = ({ Children, style }: LazyLoadProps) => {
+const LazyLoad = ({ Children }: LazyLoadProps) => {
   const ref = useRef<HTMLElement | null>(null);
   const isVisible = useIntersectionObserver(ref);
+  const style: React.CSSProperties = isVisible
+    ? { width: "100vw", height: "fit-content" }
+    : { width: "100vw", height: "100vh" };
 
   return (
     <section ref={ref} style={style}>

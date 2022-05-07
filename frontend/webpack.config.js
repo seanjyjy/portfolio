@@ -11,6 +11,7 @@ const webpack = require("webpack");
 const { InjectManifest } = require("workbox-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const dotenv = require("dotenv");
+const HtmlWebpackInjectPreload = require("@principalstudio/html-webpack-inject-preload");
 
 dotenv.config({
   path: __dirname + "/.env",
@@ -42,7 +43,7 @@ if (!isDevelopment) {
   output = {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[contenthash].bundle.js",
-    assetModuleFilename: "images/[hash][ext][query]",
+    assetModuleFilename: "images/[name].[hash][ext][query]",
   };
 
   devtool = "source-map";
@@ -226,6 +227,14 @@ module.exports = {
       "process.env.REACT_APP_EMAILJS_USER": JSON.stringify(
         process.env.REACT_APP_EMAILJS_USER
       ),
+    }),
+    new HtmlWebpackInjectPreload({
+      files: [
+        {
+          match: /(bubble)\..+(.svg)$/,
+          attributes: { as: "image" },
+        },
+      ],
     }),
     // new WebpackBundleAnalyzer(),
   ].filter(Boolean),

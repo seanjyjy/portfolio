@@ -12,10 +12,7 @@ const SkillsWrapper = () => {
   return (
     <section className="skillsSection">
       <div id="skillsAnchor" />
-      <LazyLoad
-        Children={LazySkills}
-        style={{ width: "100%", height: "100vh" }}
-      />
+      <LazyLoad Children={LazySkills} />
     </section>
   );
 };
