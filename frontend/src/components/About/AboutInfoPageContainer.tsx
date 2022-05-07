@@ -77,7 +77,14 @@ const AboutInfoPageContainer = () => {
           Some <Keywords text="bytes of information" /> about myself
         </h1>
         <div className="aboutSeanPng">
-          <img src={SEANIMG} alt="sean lum" loading="lazy" />
+          <img
+            className="seanImg1"
+            src={SEANIMG}
+            alt="sean lum"
+            loading="lazy"
+            height={934}
+            width={1040}
+          />
         </div>
         {aboutInfo2.map((info) => (
           <AboutInfoPageRows {...info} key={info.header} />
@@ -121,7 +128,12 @@ const AboutInfoPageContainer = () => {
           </div>
         </div>
         <div className="aboutSeanPng">
-          <img src={SEANIMG2} alt="sean lum" loading="lazy" />
+          <img
+            src={SEANIMG2}
+            alt="sean lum"
+            loading="lazy"
+            className="seanImg2"
+          />
         </div>
       </div>
     </section>
