@@ -11,7 +11,6 @@ const webpack = require("webpack");
 const { InjectManifest } = require("workbox-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const dotenv = require("dotenv");
-const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 
 dotenv.config({
   path: __dirname + "/.env",
@@ -213,14 +212,6 @@ module.exports = {
         collapseWhitespace: true,
         removeComments: true,
       },
-    }),
-    new HtmlCriticalWebpackPlugin({
-      base: path.resolve(__dirname, "dist"),
-      src: "index.html",
-      dest: "index.html",
-      inline: true,
-      minify: true,
-      extract: true,
     }),
     new webpack.ProvidePlugin({
       process: "process/browser",

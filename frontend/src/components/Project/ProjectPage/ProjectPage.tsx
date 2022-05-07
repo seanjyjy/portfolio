@@ -1,14 +1,16 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Navigate, Route, useParams } from "react-router-dom";
 
 import IconList from "@commons/IconList";
 import LightBox from "@commons/LightBox/LightBox";
-import Player from "@commons/Player";
+import LoadingAnimation from "@commons/LoadingAnimation";
 
 import { projects, allProjects } from "../../../constants";
 import { projectObj } from "../../../constants";
 
 import "./ProjectPage.scss";
+
+const LazyPlayer = React.lazy(() => import("@commons/Player"));
 
 const ProjectPage = () => {
   const { project: projectName } = useParams();
@@ -43,14 +45,16 @@ const ProjectPage = () => {
         </div>
         <h3 className="projectPageProduct">Highlight</h3>
         <div className="projectHighlight">
-          <Player
-            url={
-              isDevelopment
-                ? projectInfo.developmentUrl
-                : projectInfo.productionUrl
-            }
-            index={1900}
-          />
+          <Suspense fallback={<LoadingAnimation />}>
+            <LazyPlayer
+              url={
+                isDevelopment
+                  ? projectInfo.developmentUrl
+                  : projectInfo.productionUrl
+              }
+              index={1900}
+            />
+          </Suspense>
         </div>
         <h3 className="projectPageProduct">Product</h3>
         <div className="projectPageImageContainer">

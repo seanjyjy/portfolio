@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 
@@ -11,7 +12,9 @@ import type { ProjectItemType } from "types";
 import ARROWIMGBLUE from "../../images/thin-arrow-blue.svg";
 
 import "./ProjectItem.scss";
-import Player from "@commons/Player";
+import LoadingAnimation from "@commons/LoadingAnimation";
+
+const LazyPlayer = React.lazy(() => import("@commons/Player"));
 
 const ProjectItem = ({
   name,
@@ -70,10 +73,12 @@ const ProjectItem = ({
           />
         </div>
         <div className="gif-styling">
-          <Player
-            url={isDevelopment ? developmentUrl : productionUrl}
-            index={index}
-          />
+          <Suspense fallback={<LoadingAnimation />}>
+            <LazyPlayer
+              url={isDevelopment ? developmentUrl : productionUrl}
+              index={index}
+            />
+          </Suspense>
         </div>
         <div className="project-icon-holder">
           <IconList iconList={stack} />
@@ -148,10 +153,12 @@ const ProjectItem = ({
         }}
       >
         <div className="gif-styling">
-          <Player
-            url={isDevelopment ? developmentUrl : productionUrl}
-            index={index}
-          />
+          <Suspense fallback={<LoadingAnimation />}>
+            <LazyPlayer
+              url={isDevelopment ? developmentUrl : productionUrl}
+              index={index}
+            />
+          </Suspense>
         </div>
       </div>
     </div>
