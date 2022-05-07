@@ -11,6 +11,8 @@ const webpack = require("webpack");
 const { InjectManifest } = require("workbox-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const dotenv = require("dotenv");
+const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
+
 dotenv.config({
   path: __dirname + "/.env",
 });
@@ -200,17 +202,26 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: isDevelopment ? "[name].css" : "[name].[contenthash].css",
+      chunkFilename: isDevelopment ? "[name].css" : "[name].[contenthash].css",
     }),
     new HtmlWebpackPlugin(htmlPluginConfig),
-    // new HtmlWebpackPlugin({
-    //   template: "./public/404.html",
-    //   filename: "404.html",
-    //   minify: {
-    //     removeAttributeQuotes: true,
-    //     collapseWhitespace: true,
-    //     removeComments: true,
-    //   },
-    // }),
+    new HtmlWebpackPlugin({
+      template: "./public/404.html",
+      filename: "404.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true,
+      },
+    }),
+    new HtmlCriticalWebpackPlugin({
+      base: path.resolve(__dirname, "dist"),
+      src: "index.html",
+      dest: "index.html",
+      inline: true,
+      minify: true,
+      extract: true,
+    }),
     new webpack.ProvidePlugin({
       process: "process/browser",
     }),
