@@ -50,7 +50,7 @@ class CustomWebpackPlugin {
     });
 
     htmlPluginData.headTags = filtered.concat(cssLinks);
-    console.log(htmlPluginData.headTags);
+
     return htmlPluginData;
   }
 
@@ -78,52 +78,6 @@ class CustomWebpackPlugin {
       );
     });
   }
-
-  //   apply(compiler) {
-  //     compiler.hooks.emit.tapAsync(
-  //       "CustomWebpackPlugin",
-  //       (compilation, callback) => {
-  //   let string = compilation.assets["index.html"];
-
-  //   const re = /\<link.*rel="stylesheet".*(\/\>|\>)/g;
-  //   console.log(typeof string);
-  //   // const links = string.match(re);
-
-  //         // console.log(links);
-  //         //Register asynchronous hook in callback mode
-  //         const copyrightText = "copyright belongs to jackysummer";
-  //         //Compilation stores all the contents of this package
-  //         //All the files to be generated are on its assets property
-  //         compilation.assets["copyright.txt"] = {
-  //           //Add copyright.txt
-  //           source: function () {
-  //             return copyrightText;
-  //           },
-  //           size: function () {
-  //             //File size
-  //             return copyrightText.length;
-  //           },
-  //         };
-  //         callback(); // must be called
-  //       }
-  //     );
-
-  // const { outputPath, fileName = "manifesto.json" } = this.options;
-  // // console.log(compiler);
-  // compiler.hooks.done.tap("Custom Manifest", (stats) => {
-  //   const assetsManifest = [];
-  //   const { assets } = stats.compilation;
-
-  //   if (Boolean(assets["index.html"])) return;
-
-  //   let file = fs.readFile("index.html");
-  //   //   try {
-  //   //     let filePath = outputPath + "/" + fileName;
-  //   //   } catch (error) {
-  //   //     console.log(error)
-  //   //   }
-  // });
-  //   }
 }
 
 module.exports = CustomWebpackPlugin;
