@@ -82,7 +82,7 @@ const AboutInfoPageContainer = () => {
             src={SEANIMG}
             alt="sean lum"
             loading="lazy"
-            height={934}
+            height={943}
             width={1040}
           />
         </div>

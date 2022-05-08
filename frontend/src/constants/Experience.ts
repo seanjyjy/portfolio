@@ -17,8 +17,6 @@ import {
 
 import type { ExperienceObjProps } from "@types";
 
-import FaceBookGif from "../images/facebook.gif";
-
 export const experiences: ExperienceObjProps[] = [
   // {
   //   title: "Meta",
