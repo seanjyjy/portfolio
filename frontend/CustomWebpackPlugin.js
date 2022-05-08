@@ -64,8 +64,6 @@ class CustomWebpackPlugin {
       }
       const hooks = HtmlWebpackPlugin.getHooks(compilation);
 
-      console.log("came here");
-
       hooks.alterAssetTagGroups.tapAsync(
         "CustomWebpack",
         (htmlPluginData, callback) => {
