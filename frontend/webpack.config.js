@@ -13,6 +13,8 @@ const CopyPlugin = require("copy-webpack-plugin");
 const dotenv = require("dotenv");
 const HtmlWebpackInjectPreload = require("@principalstudio/html-webpack-inject-preload");
 
+const CustomWebpackPlugin = require("./CustomWebpackPlugin");
+
 dotenv.config({
   path: __dirname + "/.env",
 });
@@ -235,6 +237,9 @@ module.exports = {
           attributes: { as: "image" },
         },
       ],
+    }),
+    new CustomWebpackPlugin({
+      outputPath: path.resolve(__dirname, "dist"),
     }),
     // new WebpackBundleAnalyzer(),
   ].filter(Boolean),
