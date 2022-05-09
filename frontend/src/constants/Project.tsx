@@ -14,6 +14,8 @@ import {
   charkraUiIcon,
   tailwindIcon,
   reduxIcon,
+  remixIcon,
+  hljsIcon,
 } from "../utils/Icons";
 
 import modulefuturelogo from "../images/ModuleFutureLogo.png";
@@ -22,12 +24,29 @@ import facebooklogo from "../images/facebook.svg";
 import internhunterlogo from "../images/InternHunter.png";
 import nusforumslogo from "../images/NUSForums.svg";
 import chatroomlogo from "../images/chatroomicon.svg";
+import snowflakelogo from "../images/snowflake.svg";
 
 import Keywords from "@commons/Keywords";
 
 import type { ProjectItemType } from "@types";
 
 export const allProjects: ProjectItemType[] = [
+  {
+    name: "Blog",
+    desc:
+      "This blog is for me to write about interesting projects I have done, tools that I have created and interesting concepts about Web Development I have learnt. Check out this blog!",
+    webLink: "https://blog.seanlumjy.com/",
+    stack: [reactIcon, typescriptIcon, remixIcon, tailwindIcon, hljsIcon],
+    logo: snowflakelogo,
+    logosize: "1.8em",
+    url: "https://www.youtube.com/watch?v=4dC2wt1UAS4",
+    developmentUrl:
+      "https://res.cloudinary.com/dhxecnaor/video/upload/v1652083992/BlogPV_y3kf33.mp4",
+    productionUrl:
+      "https://res.cloudinary.com/drqnfuqm1/video/upload/v1652084347/BlogPV_e9gdmx.mp4",
+    index: 0,
+    largedesc: "Personalize Blog",
+  },
   {
     name: "NUSForum",
     desc:
@@ -49,7 +68,7 @@ export const allProjects: ProjectItemType[] = [
       "https://res.cloudinary.com/dhxecnaor/video/upload/v1649841344/NUSForumPV_diis6m.mp4",
     productionUrl:
       "https://res.cloudinary.com/drqnfuqm1/video/upload/v1649875101/NUSForumPV_m2eaa8.mp4",
-    index: 0,
+    index: 1,
     largedesc: "Community based forum",
     prose: (
       <div>
@@ -74,7 +93,7 @@ export const allProjects: ProjectItemType[] = [
       "https://res.cloudinary.com/dhxecnaor/video/upload/v1649837395/SortAlgoPV_nilxrf.mp4",
     productionUrl:
       "https://res.cloudinary.com/drqnfuqm1/video/upload/v1649874993/SortAlgoPV_wnd4lg.mp4",
-    index: 1,
+    index: 2,
     largedesc: "Interactive algorithm visualizer",
     prose: (
       <div>
@@ -107,7 +126,7 @@ export const allProjects: ProjectItemType[] = [
       "https://res.cloudinary.com/dhxecnaor/video/upload/v1649841742/ModuleFuture_Promotional_Video_wprmw1.mp4",
     productionUrl:
       "https://res.cloudinary.com/drqnfuqm1/video/upload/v1649874995/ModuleFuture_Promotional_Video_njawfo.mp4",
-    index: 2,
+    index: 3,
     largedesc: "Native mobile app for planning",
     prose: (
       <div>
@@ -139,7 +158,7 @@ export const allProjects: ProjectItemType[] = [
       "https://res.cloudinary.com/dhxecnaor/video/upload/v1649872331/ChatroomPV_zmbhcl.mp4",
     productionUrl:
       "https://res.cloudinary.com/drqnfuqm1/video/upload/v1649874993/ChatroomPV_b8trez.mp4",
-    index: 3,
+    index: 4,
     largedesc: "Real-time Chatroom",
     prose: "Communication is never difficult anymore.",
     team: ["Sean Lum"],
@@ -158,7 +177,7 @@ export const allProjects: ProjectItemType[] = [
       "https://res.cloudinary.com/dhxecnaor/video/upload/v1649873760/FBClonePV_ujvalw.mp4",
     productionUrl:
       "https://res.cloudinary.com/drqnfuqm1/video/upload/v1649874993/FBClonePV_khmyny.mp4",
-    index: 4,
+    index: 5,
     largedesc: "Cloning facebook website",
     prose: "Mimics the looks of Facebook website.",
     team: ["Sean Lum"],
@@ -177,7 +196,7 @@ export const allProjects: ProjectItemType[] = [
       "https://res.cloudinary.com/dhxecnaor/video/upload/v1649874443/InternHunterPV_vejmqi.mp4",
     productionUrl:
       "https://res.cloudinary.com/drqnfuqm1/video/upload/v1649874993/InternHunterPV_e1nokp.mp4",
-    index: 5,
+    index: 6,
     largedesc: "Internship management app",
     prose: (
       <div>

@@ -66,11 +66,13 @@ const ProjectItem = ({
               imgSrc={ARROWIMGBLUE}
             />
           </a>
-          <WordArrowButton
-            text="Details"
-            onClick={() => goToProject(name)}
-            imgSrc={ARROWIMGBLUE}
-          />
+          {name !== "Blog" && (
+            <WordArrowButton
+              text="Details"
+              onClick={() => goToProject(name)}
+              imgSrc={ARROWIMGBLUE}
+            />
+          )}
         </div>
         <div className="gif-styling">
           <Suspense fallback={<LoadingAnimation />}>
@@ -127,11 +129,13 @@ const ProjectItem = ({
               imgSrc={ARROWIMGBLUE}
             />
           </a>
-          <WordArrowButton
-            text="Details"
-            onClick={() => goToProject(name)}
-            imgSrc={ARROWIMGBLUE}
-          />
+          {name !== "Blog" && (
+            <WordArrowButton
+              text="Details"
+              onClick={() => goToProject(name)}
+              imgSrc={ARROWIMGBLUE}
+            />
+          )}
         </div>
         <div className="project-icon-holder">
           <IconList iconList={stack} />

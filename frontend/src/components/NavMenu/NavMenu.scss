@@ -129,6 +129,15 @@
   background-color: c.$dropdown-hover-light;
 }
 
+.horizontal-tab,
+.vertical-tab {
+  text-decoration: none;
+}
+
+.tab-current {
+  color: c.$blue-primary !important;
+}
+
 @media only screen and (min-width: 860px) {
   .horizontal-tabs {
     display: flex;
@@ -160,6 +169,10 @@
     height: 1px;
     transition: all 0.4s;
     z-index: 999;
+  }
+
+  .horizontal-tab.tab-current::after {
+    background: c.$blue-primary !important;
   }
 
   .horizontal-tab:hover::after {

@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect, Fragment } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // hooks
 import { useWindowSize } from "@hooks";
@@ -15,15 +15,21 @@ import type { NavMenuTabsProps } from "./types";
 import "./NavMenu.scss";
 
 const tabs: NavMenuTabsProps[] = [
-  { href: "/About", name: "About", onClick: () => {} },
-  { href: "/Experience", name: "Experience", onClick: () => {} },
-  { href: "/Project", name: "Project", onClick: () => {} },
-  { href: "/Contact", name: "Contact", onClick: () => {} },
+  { href: "/About", name: "About", uuid: "about-key-special" },
+  { href: "/Experience", name: "Experience", uuid: "experience-key-special" },
+  { href: "/Project", name: "Project", uuid: "project-key-special" },
+  { href: "/Contact", name: "Contact", uuid: "contact-key-special" },
+  {
+    href: "https://blog.seanlumjy.com/",
+    name: "Blog",
+    uuid: "blog-key-special",
+  },
 ];
 
 const NavMenu = () => {
   const { width } = useWindowSize();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const [click, setClick] = useState(false);
   const [isMounted, setIsMounted] = useState(true);
 
@@ -55,6 +61,8 @@ const NavMenu = () => {
     };
   }, []);
 
+  const toggleClick = () => setClick(!click);
+
   const handleClick = (href?: string) => {
     // when clicking on the link remove all defaults
     if (href) {
@@ -64,7 +72,7 @@ const NavMenu = () => {
     }
 
     // all other cases
-    setClick(!click);
+    toggleClick();
   };
 
   const setValuesBasedOnWidth = () => {
@@ -90,13 +98,26 @@ const NavMenu = () => {
         </nav>
         <div className={`dropdown-list ${!click ? "inactive" : "active"}`}>
           {tabs.map((tab) => (
-            <p
-              className="vertical-tab"
-              onClick={() => handleClick(tab.href)}
-              key={tab.href}
-            >
-              {tab.name}
-            </p>
+            <Fragment key={tab.uuid}>
+              {tab.name !== "Blog" ? (
+                <p
+                  className="vertical-tab"
+                  onClick={() => handleClick(tab.href)}
+                >
+                  {tab.name}
+                </p>
+              ) : (
+                <a
+                  className="vertical-tab"
+                  onClick={() => setClick(false)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={tab.href}
+                >
+                  {tab.name}
+                </a>
+              )}
+            </Fragment>
           ))}
         </div>
       </>
@@ -111,18 +132,42 @@ const NavMenu = () => {
         </h1>
         <div className="horizontal-tabs">
           {tabs.map((tab) => (
-            <p
-              key={tab.href}
-              className="horizontal-tab"
-              onClick={() => handleClick(tab.href)}
-            >
-              {tab.name}
-            </p>
+            <Fragment key={tab.uuid}>
+              {tab.name !== "Blog" ? (
+                <p
+                  className={`horizontal-tab ${
+                    (pathname === tab.href ||
+                      (pathname === "/" && tab.href === "/About")) &&
+                    "tab-current"
+                  }`}
+                  onClick={() => handleClick(tab.href)}
+                >
+                  {tab.name}
+                </p>
+              ) : (
+                <a
+                  className={`horizontal-tab ${
+                    pathname === tab.href && "tab-current"
+                  }`}
+                  onClick={() => setClick(false)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={tab.href}
+                >
+                  {tab.name}
+                </a>
+              )}
+            </Fragment>
           ))}
         </div>
         <div className="socials">
-          {links.map((l, i) => (
-            <a href={l.link} target="_blank" rel="noopener noreferrer" key={i}>
+          {links.map((l) => (
+            <a
+              href={l.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={l.link}
+            >
               <RoundedButton icon={l.logo} onClick={() => {}} />
             </a>
           ))}

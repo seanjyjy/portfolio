@@ -23,6 +23,8 @@ import charkrauiSVG from "../images/chakra_ui.jpeg";
 import webpackSVG from "../images/webpack.svg";
 import cypressSVG from "../images/cypress.svg";
 import tailwindSVG from "../images/tailwind.svg";
+import remixSVG from "../images/remix.png";
+import hljsPNG from "../images/hljs.png";
 
 import { skillsInfo } from "@types";
 
@@ -109,6 +111,18 @@ export const reactIcon = { icon: reactSVG, name: "React", width: "2.4em" };
 export const javascriptIcon = {
   icon: javaScriptSVG,
   name: "JavaScript",
+  width: "1.9em",
+};
+
+export const remixIcon = {
+  icon: remixSVG,
+  name: "Remix",
+  width: "2em",
+};
+
+export const hljsIcon = {
+  icon: hljsPNG,
+  name: "HighlightJS",
   width: "1.9em",
 };
 
