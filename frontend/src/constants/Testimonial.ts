@@ -3,7 +3,7 @@ import { TestimonialInfo } from "@types";
 export const testimonials: TestimonialInfo[] = [
   {
     imgSrc:
-      "https://media-exp1.licdn.com/dms/image/C5603AQEinqTNRR8tuQ/profile-displayphoto-shrink_100_100/0/1621095037574?e=1656547200&v=beta&t=LkgjbLnQnkIcjI4tJgSIlJC7XV28CkxULViKF4cEdU4",
+      "https://media-exp1.licdn.com/dms/image/C5603AQEinqTNRR8tuQ/profile-displayphoto-shrink_800_800/0/1621095037574?e=1665014400&v=beta&t=9EK-qGzon3_iwhkdhQu6gJC7MHVRP67MOQUeo_Po3b4",
     name: "Yomanovian",
     role: "Expert Software Engineer at Shopee",
     comments:
@@ -11,7 +11,7 @@ export const testimonials: TestimonialInfo[] = [
   },
   {
     imgSrc:
-      "https://media-exp1.licdn.com/dms/image/C5603AQGUp5ICZJR6OA/profile-displayphoto-shrink_200_200/0/1516875287291?e=1655337600&v=beta&t=H73rbDFIqUR6iSt1zkEsHMtN0FlkrJvpo9xyr6cNKNE",
+      "https://media-exp1.licdn.com/dms/image/C4D03AQF1UUQCgSz_Gg/profile-displayphoto-shrink_800_800/0/1654867898466?e=1665014400&v=beta&t=j-5neLVemESDbwwdDMDG2BeXHrsFI7xR58INam2513U",
     name: "Qiang Wang",
     role: "Data Platform Team Lead at Motional",
     comments:
@@ -19,7 +19,7 @@ export const testimonials: TestimonialInfo[] = [
   },
   {
     imgSrc:
-      "https://media-exp1.licdn.com/dms/image/C5603AQEbxI2gnaaT8A/profile-displayphoto-shrink_200_200/0/1595501663497?e=1655337600&v=beta&t=UGDpXnICUYr_O9jUamCPuHCLDRlQbIlBPPrN0jYBwg0",
+      "https://media-exp1.licdn.com/dms/image/C5603AQEbxI2gnaaT8A/profile-displayphoto-shrink_800_800/0/1595501663497?e=1665014400&v=beta&t=N9bEyqZrcsdxcp_32C1LnN_GTbfX1HYNgXA-jIeB8Cw",
     name: "Thong Yong Jun",
     role: "Senior Software Engineer at Motional",
     comments:
@@ -27,7 +27,7 @@ export const testimonials: TestimonialInfo[] = [
   },
   {
     imgSrc:
-      "https://media-exp1.licdn.com/dms/image/C5603AQHrdpmfkhpBbA/profile-displayphoto-shrink_100_100/0/1627147938703?e=1655337600&v=beta&t=Ln-s9y-hzo1MYrCiTHxAKFZXIxl23M4UW0tQyLVqPbg",
+      "https://media-exp1.licdn.com/dms/image/D5635AQExnQNwSZPKoQ/profile-framedphoto-shrink_800_800/0/1649222048376?e=1660395600&v=beta&t=dM5Ip33L8PD9RgHRDHEFtpdlU5GXy091zVhnNaaT-sM",
     name: "Ashley Lau",
     role: "Software Enginner Intern at GIC",
     comments:

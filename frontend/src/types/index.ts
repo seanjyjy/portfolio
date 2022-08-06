@@ -33,6 +33,7 @@ export interface ExperienceObjProps {
   details?: string[];
   stack?: IconDef[];
   gif?: string;
+  link?: string;
 }
 
 export interface LightBoxImage {

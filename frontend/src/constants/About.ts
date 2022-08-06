@@ -20,7 +20,7 @@ export const aboutInfo2: aboutInfo[] = [
   {
     header: "Education",
     info:
-      "Currently I am a penultimate student studying computer science at the National University of Singapore (NUS) and I am specializing in Software Engineering as well as Database Systems.",
+      "Currently I am a final student studying computer science at the National University of Singapore (NUS) and I am specializing in Software Engineering as well as Database Systems.",
     imgSrc: EducationIcon,
   },
   {

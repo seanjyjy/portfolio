@@ -71,32 +71,17 @@ const Experience = () => {
                 }`}
               >
                 <h2 className="expCurrentText">
-                  Incoming Enterprise Engineer Intern
+                  Incoming Software Engineer Intern
                 </h2>
                 <div className="expCurrentRole">
-                  <img src={METAIMG} alt="meta" />
-                  Meta
+                  <img src={BDIMG} alt="byedance" loading="lazy" />
+                  ByteDance
                 </div>
                 <p className="expCurrentGoal">
-                  Empower the world with what we build. Make the world more open
-                  and connected. My goal is to continue working on interesting,
-                  useful and ground breaking projects to make an impact on
-                  others.
+                  Enable people to enjoy content powered by technology. We
+                  inform, entertain, and inspire people across language,
+                  culture, and geography.
                 </p>
-                <div className="expShouldShow">
-                  <h2 className="expCurrentText">
-                    Upcoming Software Engineer Intern
-                  </h2>
-                  <div className="expCurrentRole">
-                    <img src={BDIMG} alt="byedance" loading="lazy" />
-                    ByteDance
-                  </div>
-                  <p className="expCurrentGoal">
-                    Enable people to enjoy content powered by technology. We
-                    inform, entertain, and inspire people across language,
-                    culture, and geography.
-                  </p>
-                </div>
                 <div className="seeMoreExp">
                   <WordArrowButton
                     text="See past experiences"

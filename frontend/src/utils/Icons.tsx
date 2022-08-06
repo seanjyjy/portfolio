@@ -25,26 +25,36 @@ import cypressSVG from "../images/cypress.svg";
 import tailwindSVG from "../images/tailwind.svg";
 import remixSVG from "../images/remix.png";
 import hljsPNG from "../images/hljs.png";
+import flowSVG from "../images/flow.svg";
+import unduxSVG from "../images/undux.svg";
+import hackSVG from "../images/hack.svg";
+import relaySVG from "../images/relay.svg";
+import entSVG from "../images/ent.svg";
 
 import { skillsInfo } from "@types";
 
 export const frontend: skillsInfo[] = [
   { title: "JavaScript", img: javaScriptSVG },
   { title: "TypeScript", img: typeScriptSVG },
+  { title: "Flow", img: flowSVG },
   { title: "React", img: reactSVG },
+  { title: "Relay", img: relaySVG },
+  { title: "GraphQL", img: graphqlSVG },
   { title: "Redux", img: reduxSVG },
+  { title: "Undux", img: unduxSVG },
   { title: "Webpack", img: webpackSVG },
   { title: "Cypress", img: cypressSVG },
   { title: "Vue", img: vueSVG },
   { title: "SASS", img: sassSVG },
   { title: "CSS", img: cssSVG },
-  { title: "GraphQL", img: graphqlSVG },
   { title: "React-Query", img: reactquerySVG },
   { title: "RxJS", img: rxjsSVG },
   { title: "Redux-Observable", img: reduxObservableSVG },
 ];
 
 export const backend: skillsInfo[] = [
+  { title: "Hack", img: hackSVG },
+  { title: "Ent", img: entSVG },
   { title: "Java", img: javaSVG },
   { title: "NodeJS", img: nodejsSVG },
   { title: "Express", img: expressSVG },
@@ -161,4 +171,34 @@ export const mongodbIcon = {
   icon: mongoDBSVG,
   name: "MongoDB",
   width: "4.8em",
+};
+
+export const flowIcon = {
+  icon: flowSVG,
+  name: "Flow",
+  width: "2.2em",
+};
+
+export const relayIcon = {
+  icon: relaySVG,
+  name: "Relay",
+  width: "2.2em",
+};
+
+export const hackIcon = {
+  icon: hackSVG,
+  name: "Hack",
+  width: "2.2em",
+};
+
+export const entIcon = {
+  icon: entSVG,
+  name: "Ent",
+  width: "2.2em",
+};
+
+export const unduxIcon = {
+  icon: unduxSVG,
+  name: "Undux",
+  width: "2.2em",
 };

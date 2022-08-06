@@ -13,18 +13,40 @@ import {
   cypressIcon,
   webpackIcon,
   vueIcon,
+  relayIcon,
+  flowIcon,
+  hackIcon,
+  graphqlIcon,
+  entIcon,
+  unduxIcon,
 } from "../utils/Icons";
 
 import type { ExperienceObjProps } from "@types";
 
 export const experiences: ExperienceObjProps[] = [
-  // {
-  //   title: "Meta",
-  //   date: "May 2022 - Aug 2022",
-  //   role: "Enterprise Engineer Intern",
-  //   role2: "EE Intern",
-  //   gif: FaceBookGif,
-  // },
+  {
+    title: "Meta",
+    date: "May 2022 - Aug 2022",
+    role: "Enterprise Engineer Intern",
+    role2: "EE Intern",
+    vision:
+      "Give people the power to build community and bring the world closer together.",
+    details: [
+      "⪼	Spearheaded the announcement and notification internal tool used by teams worldwide",
+      "⪼	Developed data models, APIs and reusable user interfaces to support the announcements and notification",
+      "⪼  Led cross-functional efforts with XFN teams to plan, identify and brainstorm on features and requirements as well as timeline",
+    ],
+    stack: [
+      reactIcon,
+      flowIcon,
+      graphqlIcon,
+      relayIcon,
+      unduxIcon,
+      hackIcon,
+      entIcon,
+    ],
+    link: "https://about.facebook.com/",
+  },
   {
     title: "Shopee",
     role: "Software Engineer Intern",
@@ -49,6 +71,7 @@ export const experiences: ExperienceObjProps[] = [
       vueIcon,
       sassIcon,
     ],
+    link: "https://careers.shopee.sg/about",
   },
   {
     title: "Motional",
@@ -71,6 +94,7 @@ export const experiences: ExperienceObjProps[] = [
       reduxObservable,
       sassIcon,
     ],
+    link: "https://motional.com/about",
   },
   {
     title: "NUS",
@@ -82,5 +106,6 @@ export const experiences: ExperienceObjProps[] = [
       "⪼ Conducted and coordinated code and design documentation reviews as well as reviewing pull request from other members.",
     ],
     stack: [javaIcon, cssIcon, gradleIcon],
+    link: "https://se-education.org/docs/team.html#past-contributors",
   },
 ];

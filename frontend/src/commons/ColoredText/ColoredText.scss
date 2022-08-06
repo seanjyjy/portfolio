@@ -1,7 +1,6 @@
 .rainbow {
   text-align: center;
   text-rendering: optimizeLegibility;
-  text-transform: uppercase;
   letter-spacing: 2px;
 }
 
@@ -13,6 +12,11 @@
   background-size: 400% 100%;
   margin-left: 7px;
   font-family: Poppins, sans-serif;
+}
+
+.colored-text {
+  text-decoration: none;
+  padding-top: 2px;
 }
 
 @keyframes rainbow_animation {
@@ -27,6 +31,29 @@
 }
 
 // THIS IS FOR THE COMPANIES TEXT ANIMATION BACKGROUND HARDCODED
+.rainbow_text_animated.meta {
+  background: linear-gradient(
+    to right,
+    #187bef,
+    #4777bd,
+    #4654c9,
+    #707b90,
+    #ab8f22,
+    #ae5048,
+    #9c2e56,
+    #88258d,
+    #9c2e56,
+    #ae5048,
+    #ab8f22,
+    #707b90,
+    #4654c9,
+    #4777bd,
+    #187bef
+  );
+
+  @include textAnimation;
+}
+
 .rainbow_text_animated.motional {
   background: linear-gradient(
     to right,

@@ -30,6 +30,7 @@ const ExperienceCard = ({
   stack,
   vision,
   gif,
+  link,
 }: ExperienceObjProps) => {
   const { width } = useWindowSize();
 
@@ -43,7 +44,7 @@ const ExperienceCard = ({
           {gif ? (
             <img src={gif} alt="coding" className="exp-gif" loading="lazy" />
           ) : (
-            <ColoredText text={title} />
+            <ColoredText text={title} link={link} />
           )}
         </div>
       </div>

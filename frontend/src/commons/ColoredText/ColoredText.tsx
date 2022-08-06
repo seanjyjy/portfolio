@@ -2,11 +2,13 @@ import React from "react";
 
 import "./ColoredText.scss";
 
-const ColoredText = ({ text }: { text: string }) => {
+const ColoredText = ({ text, link }: { text: string; link?: string }) => {
   return (
-    <div className={`rainbow rainbow_text_animated ${text.toLowerCase()}`}>
-      {text}
-    </div>
+    <a href={link} rel="noreferrer noopener" className="colored-text">
+      <div className={`rainbow rainbow_text_animated ${text.toLowerCase()}`}>
+        {text}
+      </div>
+    </a>
   );
 };
 
