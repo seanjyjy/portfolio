@@ -8,8 +8,8 @@ import Keywords from "@commons/Keywords";
 import type { aboutInfo } from "@types";
 import { aboutInfo2 } from "../../constants";
 
-import SEANIMG from "../../images/sean.jpg";
-import SEANIMG2 from "../../images/sean.png";
+// import SEANIMG from "../../images/sean.jpg";
+// import SEANIMG2 from "../../images/sean.png";
 import ARROWIMGBLUE from "../../images/thin-arrow-blue.svg";
 
 import "./AboutInfoPageContainer.scss";
@@ -40,14 +40,12 @@ const AboutInfoPageContainer = () => {
       triggerOnce: true,
     }
   );
-  const {
-    ref: aboutInfoContainerRef,
-    inView: aboutInfoContainerRefInView,
-  } = useInView({
-    /* Optional options */
-    threshold: 0.4,
-    triggerOnce: true,
-  });
+  const { ref: aboutInfoContainerRef, inView: aboutInfoContainerRefInView } =
+    useInView({
+      /* Optional options */
+      threshold: 0.4,
+      triggerOnce: true,
+    });
 
   function scrollToSkills() {
     document.getElementById("skillsAnchor")?.scrollIntoView({
@@ -79,7 +77,7 @@ const AboutInfoPageContainer = () => {
         <div className="aboutSeanPng">
           <img
             className="seanImg1"
-            src={SEANIMG}
+            src={""}
             alt="sean lum"
             loading="lazy"
             height={943}
@@ -128,12 +126,7 @@ const AboutInfoPageContainer = () => {
           </div>
         </div>
         <div className="aboutSeanPng">
-          <img
-            src={SEANIMG2}
-            alt="sean lum"
-            loading="lazy"
-            className="seanImg2"
-          />
+          <img src={""} alt="sean lum" loading="lazy" className="seanImg2" />
         </div>
       </div>
     </section>
