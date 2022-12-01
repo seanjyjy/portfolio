@@ -30,8 +30,8 @@ const AboutPage = () => {
           <h5 className="aboutProseMini">
             {" "}
             I enjoy creating softwares that benefits others. Also, I enjoy
-            dabbling with new concepts regarding Frontend development and write
-            some blogs on Medium.
+            dabbling with new concepts regarding both Frontend and Backend
+            development and write some blogs.
           </h5>
           <div className="learnMore">
             <WordArrowButton

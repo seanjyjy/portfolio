@@ -41,6 +41,13 @@ import internhunter2 from "../images/InternHunter/ih-2.png";
 import internhunter3 from "../images/InternHunter/ih-3.png";
 import internhunter4 from "../images/InternHunter/ih-4.png";
 
+// CoCoder
+import cocoder1 from "../images/CoCoder/cocoder-1.png";
+import cocoder2 from "../images/CoCoder/cocoder-2.png";
+import cocoder3 from "../images/CoCoder/cocoder-3.png";
+import cocoder4 from "../images/CoCoder/cocoder-4.png";
+import cocoder5 from "../images/CoCoder/cocoder-5.png";
+
 export const sortAlgoImages: LightBoxImage[] = [
   {
     src: sortAlgo1,
@@ -206,6 +213,34 @@ export const internHunterImages: LightBoxImage[] = [
   },
 ];
 
+export const coCoderImages: LightBoxImage[] = [
+  {
+    src: cocoder1,
+    caption: "Landing page.",
+    thumbnail: cocoder1,
+  },
+  {
+    src: cocoder2,
+    caption: "Choose your difficulty, view statistical data and history",
+    thumbnail: cocoder2,
+  },
+  {
+    src: cocoder3,
+    caption: "Joining a room.",
+    thumbnail: cocoder3,
+  },
+  {
+    src: cocoder4,
+    caption: "Chat and code with one another",
+    thumbnail: cocoder4,
+  },
+  {
+    src: cocoder5,
+    caption: "Communicate via video chat!",
+    thumbnail: cocoder5,
+  },
+];
+
 export const projectObj: Record<string, LightBoxImage[]> = {
   SortAlgo: sortAlgoImages,
   NUSForum: nusforumImages,
@@ -213,4 +248,5 @@ export const projectObj: Record<string, LightBoxImage[]> = {
   Chatroom: chatroomImages,
   FacebookClone: facebookCloneImages,
   InternHunter: internHunterImages,
+  CoCoder: coCoderImages,
 };

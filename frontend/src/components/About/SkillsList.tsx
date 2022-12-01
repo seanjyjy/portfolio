@@ -14,11 +14,11 @@ const SkillsList = ({ skills }: SkillsListProps) => {
   return (
     <div className="skillsList">
       {skills.map((item) => (
-        <div key={item.title}>
+        <React.Fragment key={item.title}>
           <OverlayIcon overlayText={item.title}>
             <img src={item.img} alt="icon overlay image" loading="lazy" />
           </OverlayIcon>
-        </div>
+        </React.Fragment>
       ))}
     </div>
   );

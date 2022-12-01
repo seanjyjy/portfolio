@@ -3,7 +3,7 @@ import { TestimonialInfo } from "@types";
 export const testimonials: TestimonialInfo[] = [
   {
     imgSrc:
-      "https://media-exp1.licdn.com/dms/image/C5603AQEinqTNRR8tuQ/profile-displayphoto-shrink_800_800/0/1621095037574?e=1665014400&v=beta&t=9EK-qGzon3_iwhkdhQu6gJC7MHVRP67MOQUeo_Po3b4",
+      "https://media-exp1.licdn.com/dms/image/C5603AQEinqTNRR8tuQ/profile-displayphoto-shrink_100_100/0/1621095037574?e=1675296000&v=beta&t=rNHjDOujuYW796PridUPaP7wb6Pkr5mqiFEmJYIpzME",
     name: "Yomanovian",
     role: "Expert Software Engineer at Shopee",
     comments:
@@ -11,15 +11,15 @@ export const testimonials: TestimonialInfo[] = [
   },
   {
     imgSrc:
-      "https://media-exp1.licdn.com/dms/image/C4D03AQF1UUQCgSz_Gg/profile-displayphoto-shrink_800_800/0/1654867898466?e=1665014400&v=beta&t=j-5neLVemESDbwwdDMDG2BeXHrsFI7xR58INam2513U",
+      "https://media-exp1.licdn.com/dms/image/C4D03AQF1UUQCgSz_Gg/profile-displayphoto-shrink_100_100/0/1654867898466?e=1675296000&v=beta&t=1_gix5LDeu3dSdwpbe9MmgDHh-xnP-nNLaXillBqsLc",
     name: "Qiang Wang",
-    role: "Data Platform Team Lead at Motional",
+    role: "Data Platform Team Lead at Venti Technologies",
     comments:
       "Sean is one of the best intern I have ever work with. His integrity, intelligence and the attitude really impressed me during the whole internship from the first to the last hour. He pick up new skill set really fast, step in to the unfamiliar code base instantly and taking ownership of it. Keep focusing on implementing new features and and finally able to assist a really big production release. During the process, he also communicated with many different backend engineers and production owner to ensure the understanding and expectation and be excellent in the final release and also have great follow up after that. I hope to work with you again Sean and also wish a great future for you.",
   },
   {
     imgSrc:
-      "https://media-exp1.licdn.com/dms/image/C5603AQEbxI2gnaaT8A/profile-displayphoto-shrink_800_800/0/1595501663497?e=1665014400&v=beta&t=N9bEyqZrcsdxcp_32C1LnN_GTbfX1HYNgXA-jIeB8Cw",
+      "https://media-exp1.licdn.com/dms/image/C5603AQEbxI2gnaaT8A/profile-displayphoto-shrink_100_100/0/1595501663497?e=1675296000&v=beta&t=F9HJHo-Ha21f4isp89REbHdJ5c7aGViubkxca0_wZPQ",
     name: "Thong Yong Jun",
     role: "Senior Software Engineer at Motional",
     comments:
@@ -27,7 +27,7 @@ export const testimonials: TestimonialInfo[] = [
   },
   {
     imgSrc:
-      "https://media-exp1.licdn.com/dms/image/D5635AQExnQNwSZPKoQ/profile-framedphoto-shrink_800_800/0/1649222048376?e=1660395600&v=beta&t=dM5Ip33L8PD9RgHRDHEFtpdlU5GXy091zVhnNaaT-sM",
+      "https://media-exp1.licdn.com/dms/image/C5603AQHrdpmfkhpBbA/profile-displayphoto-shrink_100_100/0/1627147938703?e=1675296000&v=beta&t=hYdlRcZF4p3oF0td6K-lMqzhKsVZjxE6tDmsHZXBZGU",
     name: "Ashley Lau",
     role: "Software Enginner Intern at GIC",
     comments:

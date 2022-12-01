@@ -57,9 +57,11 @@ const ProjectPage = () => {
           </Suspense>
         </div>
         <h3 className="projectPageProduct">Product</h3>
-        <div className="projectPageImageContainer">
-          <LightBox images={projectObj[projectInfo.name]} />
-        </div>
+        {Boolean(projectObj[projectInfo.name]) && (
+          <div className="projectPageImageContainer">
+            <LightBox images={projectObj[projectInfo.name]} />
+          </div>
+        )}
       </div>
     </div>
   );

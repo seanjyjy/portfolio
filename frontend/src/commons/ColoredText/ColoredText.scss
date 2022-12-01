@@ -34,21 +34,13 @@
 .rainbow_text_animated.meta {
   background: linear-gradient(
     to right,
-    #187bef,
-    #4777bd,
-    #4654c9,
-    #707b90,
-    #ab8f22,
-    #ae5048,
-    #9c2e56,
-    #88258d,
-    #9c2e56,
-    #ae5048,
-    #ab8f22,
-    #707b90,
-    #4654c9,
-    #4777bd,
-    #187bef
+    #0063df,
+    #007df7,
+    #5f93e1,
+    #78a9f4,
+    #5f93e1,
+    #007df7,
+    #0063df
   );
 
   @include textAnimation;

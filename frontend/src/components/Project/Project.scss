@@ -1,5 +1,5 @@
-@use '../../styles/colors' as c;
-@use '../../styles/commonStyles' as cs;
+@use "../../styles/colors" as c;
+@use "../../styles/commonStyles" as cs;
 
 .projectPage {
   width: 100%;
@@ -35,12 +35,21 @@
 
 .showMoreLessContainer {
   @include cs.flexAlignCenter;
-  padding: 0px 20px;
+  margin-top: 12px;
+  gap: 10px;
 
   & > div {
     cursor: pointer;
     font-size: 1.1em;
   }
+}
+
+.projectSnippetGrid {
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 1.4rem;
+  grid-column-gap: 1.4rem;
+  display: grid;
+  width: 100%;
 }
 
 @media screen and (min-width: 860px) {

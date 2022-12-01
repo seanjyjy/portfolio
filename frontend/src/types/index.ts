@@ -3,18 +3,20 @@ import React from "react";
 export interface ProjectItemType {
   name: string;
   desc: string;
-  webLink: string;
+  webLink?: string;
   stack: IconDef[];
-  logo: string;
-  logosize: string;
+  logo?: string;
+  logosize?: string;
   index: number;
-  largedesc: string;
+  largedesc?: string;
   url?: string; // youtube url
   prose?: React.ReactNode;
   team?: string[];
   githubLink?: string;
   productionUrl?: string;
   developmentUrl?: string;
+  featureImg?: string;
+  npmLink?: string;
 }
 
 export interface IconDef {

@@ -13,6 +13,7 @@ import ARROWIMGBLUE from "../../images/thin-arrow-blue.svg";
 
 import "./ProjectItem.scss";
 import LoadingAnimation from "@commons/LoadingAnimation";
+import { noDetails } from "./constants";
 
 const LazyPlayer = React.lazy(() => import("@commons/Player"));
 
@@ -27,6 +28,7 @@ const ProjectItem = ({
   productionUrl,
   index,
   largedesc,
+  githubLink,
 }: ProjectItemType) => {
   const { width } = useWindowSize();
   const navigate = useNavigate();
@@ -59,14 +61,16 @@ const ProjectItem = ({
         <h1 className="project-description-large">{largedesc}</h1>
         <p className="project-description">{desc}</p>
         <div className="project-button-container">
-          <a href={webLink} target="_blank" rel="noopener noreferrer">
-            <WordArrowButton
-              text="Website"
-              onClick={() => {}}
-              imgSrc={ARROWIMGBLUE}
-            />
-          </a>
-          {name !== "Blog" && (
+          {Boolean(webLink) && (
+            <a href={webLink} target="_blank" rel="noopener noreferrer">
+              <WordArrowButton
+                text="Website"
+                onClick={() => {}}
+                imgSrc={ARROWIMGBLUE}
+              />
+            </a>
+          )}
+          {name && !noDetails.includes(name) && (
             <WordArrowButton
               text="Details"
               onClick={() => goToProject(name)}
@@ -122,14 +126,25 @@ const ProjectItem = ({
         <p className="project-description-large">{largedesc}</p>
         <p className="project-description">{desc}</p>
         <div className="project-button-container">
-          <a href={webLink} target="_blank" rel="noopener noreferrer">
-            <WordArrowButton
-              text="Website"
-              onClick={() => {}}
-              imgSrc={ARROWIMGBLUE}
-            />
-          </a>
-          {name !== "Blog" && (
+          {Boolean(webLink) && (
+            <a href={webLink} target="_blank" rel="noopener noreferrer">
+              <WordArrowButton
+                text="Website"
+                onClick={() => {}}
+                imgSrc={ARROWIMGBLUE}
+              />
+            </a>
+          )}
+          {Boolean(githubLink) && (
+            <a href={githubLink} target="_blank" rel="noopener noreferrer">
+              <WordArrowButton
+                text="Github"
+                onClick={() => {}}
+                imgSrc={ARROWIMGBLUE}
+              />
+            </a>
+          )}
+          {name && !noDetails.includes(name) && (
             <WordArrowButton
               text="Details"
               onClick={() => goToProject(name)}

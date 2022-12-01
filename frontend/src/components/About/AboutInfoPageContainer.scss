@@ -1,5 +1,5 @@
-@use '../../styles/colors' as c;
-@use '../../styles/commonStyles' as cs;
+@use "../../styles/colors" as c;
+@use "../../styles/commonStyles" as cs;
 
 .aboutInfo {
   font-size: 1.3em;
@@ -23,8 +23,8 @@
 }
 
 .aboutSeanPng {
-  height: 370px;
-  width: 340px;
+  height: 420px;
+  width: 292px;
   display: flex;
   align-items: flex-end;
   justify-content: center;

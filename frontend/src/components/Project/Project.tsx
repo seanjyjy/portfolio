@@ -13,11 +13,12 @@ import { allProjects } from "../../constants";
 import ARROWIMG from "../../images/thin-arrow.svg";
 
 import "./Project.scss";
+import ProjectSnippet from "./ProjectSnippet";
 
 const Project = () => {
   const location = useLocation();
   const { width } = useWindowSize();
-  const [len, setLen] = useState(3);
+  const [len, setLen] = useState(6);
 
   const isProjectOverallPage =
     location.pathname.toLowerCase() === "/Project".toLowerCase();
@@ -36,7 +37,8 @@ const Project = () => {
     return <Outlet />;
   }
 
-  const displayedProject = allProjects.slice(0, len);
+  const displayedProject = allProjects.slice(0, 3);
+  const otherProject = allProjects.slice(3, len);
 
   return (
     <>
@@ -61,6 +63,12 @@ const Project = () => {
           {displayedProject.map((project) => (
             <ProjectItem {...project} key={project.name} />
           ))}
+          <h3 className="featuredProjects">OTHER PROJECTS</h3>
+          <div className="projectSnippetGrid">
+            {otherProject.map((project) => (
+              <ProjectSnippet {...project} key={project.name} />
+            ))}
+          </div>
           <section className="showMoreLessContainer">
             {len < allProjects.length && (
               <RoundedButtonArrow

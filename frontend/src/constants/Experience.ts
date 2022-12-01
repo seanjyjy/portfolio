@@ -19,6 +19,7 @@ import {
   graphqlIcon,
   entIcon,
   unduxIcon,
+  mysqlIcon,
 } from "../utils/Icons";
 
 import type { ExperienceObjProps } from "@types";
@@ -32,9 +33,13 @@ export const experiences: ExperienceObjProps[] = [
     vision:
       "Give people the power to build community and bring the world closer together.",
     details: [
-      "⪼	Spearheaded the announcement and notification internal tool used by teams worldwide",
-      "⪼	Developed data models, APIs and reusable user interfaces to support the announcements and notification",
-      "⪼  Led cross-functional efforts with XFN teams to plan, identify and brainstorm on features and requirements as well as timeline",
+      "⪼	Spearheaded the announcement and notification feature in finance tool used by teams worldwide.",
+      "⪼	Developed data models, APIs for notification subscriptions using Hack, Ent, GraphQL, MySQL.",
+      "⪼  Developed reusable user interfaces to support customizable announcements and notification using React, Relay, GraphQL.",
+      "⪼  Optimized notification query by comparing through the spectrum of single SQL query to multiple SQL query.",
+      "⪼  Led cross-functional efforts with XFN teams to plan, identify and brainstorm on features and requirements as well as timeline.",
+      "⪼  Researched, create guide and presented to my team on how to use Type-Safe updaters in Relay and shared learning points on using Relay and GraphQL during the internship itself.",
+      "⪼  Utilized render-as-you-fetch model for frontend development to optimize and speed up page load.",
     ],
     stack: [
       reactIcon,
@@ -44,6 +49,7 @@ export const experiences: ExperienceObjProps[] = [
       unduxIcon,
       hackIcon,
       entIcon,
+      mysqlIcon,
     ],
     link: "https://about.facebook.com/",
   },
@@ -56,8 +62,8 @@ export const experiences: ExperienceObjProps[] = [
       "We believe online shopping should be accessible, easy and enjoyable.",
     details: [
       "⪼	Developed an event management web app using React, Sass, Webpack, Redux, Redux-Thunk, React-testing library, Express.",
-      "⪼	Enhanced and worked on an internal API tool to intercept APIs calls and mock data for the intercepted APIs and transfer the data from DevTools to an indicator to improve developers experience to know which APIs are currently intercepted.",
-      "⪼  Implemented and revamped end-to-end tests for multiple pages using Cypress and introduce multiple locale testing.",
+      "⪼	Built an internal tool to intercept APIs calls and mock data for the intercepted endpoints and display the intercept endpoints to improve developers experience using Chrome’s API, Node.",
+      "⪼  Implemented and refactored end-to-end tests for multiple pages using Cypress and introduce multiple locale testing.",
       "⪼  Developed scripts for developers to speed up their initial developments by generating the necessary configurations.",
       "⪼  Worked on client-facing checkout features as well as seller-facing finance features",
     ],

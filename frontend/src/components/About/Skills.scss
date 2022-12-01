@@ -1,5 +1,5 @@
-@use '../../styles/colors' as c;
-@use '../../styles/commonStyles' as cs;
+@use "../../styles/colors" as c;
+@use "../../styles/commonStyles" as cs;
 
 .skillsSection {
   position: relative;
@@ -72,11 +72,12 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  gap: 15px;
 
   & img {
     width: 2.5em;
     height: 2.5em;
-    margin: 15px 10px 15px 0;
+    // margin: 15px 10px 15px 0;
   }
 }
 
@@ -135,8 +136,8 @@
 
   .skillsList {
     & img {
-      width: 2.8em;
-      height: 2.8em;
+      width: 3.6em;
+      height: 3em;
     }
   }
 }

@@ -1,0 +1,60 @@
+@use "../../styles/colors" as c;
+@use "../../styles/commonStyles" as cs;
+
+.projectSnippet {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  word-break: break-word;
+  padding-bottom: 10px;
+}
+
+.projectSnippet__info {
+  padding: 0 1rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.projectSnippet__name {
+  font-size: 1.2em;
+  line-height: 33px;
+  font-weight: 600;
+  font-family: Inter;
+  color: c.$header-text;
+  margin-bottom: 10px;
+}
+
+.projectSnippet__desc {
+  color: c.$small-text;
+  font-size: 0.87em;
+  @include cs.bodyFont;
+  margin-bottom: 10px;
+}
+
+.projectSnippet__controls {
+  display: flex;
+  margin-bottom: auto;
+
+  & a {
+    text-decoration: none;
+  }
+}
+
+.projectSnippet__imageContainer {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  max-height: 270px;
+
+  & img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+}

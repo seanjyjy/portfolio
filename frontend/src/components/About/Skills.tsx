@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import Keywords from "@commons/Keywords";
 import SkillsList from "./SkillsList";
 
-import { frontend, backend, others } from "../../utils/Icons";
+import { frontend, backend, others, pl } from "../../utils/Icons";
 import WebIcon from "../../images/web.svg";
 import DataBaseIcon from "../../images/database.svg";
 import DesignIcon from "../../images/designIcon.svg";
@@ -12,6 +12,12 @@ import DesignIcon from "../../images/designIcon.svg";
 import "./Skills.scss";
 
 const array = [
+  {
+    type: "Programming Languages",
+    prose: "Programming languages that i speak",
+    skills: pl,
+    icon: WebIcon,
+  },
   {
     type: "Frontend",
     prose:
@@ -26,13 +32,13 @@ const array = [
     skills: backend,
     icon: DataBaseIcon,
   },
-  {
-    type: "Design",
-    prose:
-      "I enjoy working with AdobeXD to prototype my designs and getting user feebacks to improve on the design.",
-    skills: others,
-    icon: DesignIcon,
-  },
+  // {
+  //   type: "Design",
+  //   prose:
+  //     "I enjoy working with AdobeXD to prototype my designs and getting user feebacks to improve on the design.",
+  //   skills: others,
+  //   icon: DesignIcon,
+  // },
 ] as const;
 
 const Skills = () => {

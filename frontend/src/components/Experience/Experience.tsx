@@ -71,16 +71,15 @@ const Experience = () => {
                 }`}
               >
                 <h2 className="expCurrentText">
-                  Incoming Software Engineer Intern
+                  Currently nothing to update :O
                 </h2>
-                <div className="expCurrentRole">
+                {/* <div className="expCurrentRole">
                   <img src={BDIMG} alt="byedance" loading="lazy" />
                   ByteDance
-                </div>
+                </div> */}
                 <p className="expCurrentGoal">
-                  Enable people to enjoy content powered by technology. We
-                  inform, entertain, and inspire people across language,
-                  culture, and geography.
+                  Currently searching for new opportunities as well as taking
+                  this time to learn new technologies and new field of interest.
                 </p>
                 <div className="seeMoreExp">
                   <WordArrowButton
