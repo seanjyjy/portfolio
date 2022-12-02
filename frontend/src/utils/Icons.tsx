@@ -132,7 +132,7 @@ export const tailwindIcon = {
 export const typescriptIcon = {
   icon: typeScriptSVG,
   name: "Typescript",
-  width: "2em",
+  width: "2.2em",
 };
 export const vueIcon = {
   icon: vueSVG,
@@ -151,7 +151,7 @@ export const reactIcon = { icon: reactSVG, name: "React", width: "2.4em" };
 export const javascriptIcon = {
   icon: javaScriptSVG,
   name: "JavaScript",
-  width: "1.9em",
+  width: "2.2em",
 };
 
 export const remixIcon = {

@@ -45,11 +45,16 @@
 }
 
 .projectSnippetGrid {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   row-gap: 1.4rem;
-  grid-column-gap: 1.4rem;
   display: grid;
-  width: 100%;
+}
+
+@media screen and (min-width: 742px) {
+  .projectSnippetGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1.4rem;
+  }
 }
 
 @media screen and (min-width: 860px) {
@@ -88,6 +93,12 @@
 
   .projectProse {
     font-size: 1.6em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projectSnippetGrid {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 

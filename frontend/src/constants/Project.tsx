@@ -213,14 +213,14 @@ const allProjectsP = [
     name: "React Inject Reducer",
     desc: "Library to inject and eject reducers asynchronous to allow your redux store to grow / reduce dynamically.",
     npmLink: "https://www.npmjs.com/package/react-inject-reducer",
-    stack: [reactIcon, reduxIcon],
+    stack: [reactIcon, reduxIcon, typescriptIcon],
     featureImg: rid,
   },
   {
     name: "Fast Configs",
     desc: "Speed up initial development by bootstrapping configs such as eslint, prettier, husky.",
     npmLink: "https://www.npmjs.com/package/fast-configs",
-    stack: [listr2Icon, commanderIcon, chalkIcon, inquirerIcon],
+    stack: [listr2Icon, commanderIcon, chalkIcon, inquirerIcon, javascriptIcon],
     featureImg: fastConfigs,
   },
   {
