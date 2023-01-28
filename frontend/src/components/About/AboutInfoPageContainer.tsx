@@ -76,8 +76,8 @@ const AboutInfoPageContainer = () => {
         <div className="aboutSeanPng">
           <img
             className="seanImg1"
-            src={SEANIMG}
-            alt="sean lum"
+            src=""
+            alt="s"
             loading="lazy"
             height={943}
             width={1040}
@@ -125,12 +125,7 @@ const AboutInfoPageContainer = () => {
           </div>
         </div>
         <div className="aboutSeanPng">
-          <img
-            src={SEANIMG}
-            alt="sean lum"
-            loading="lazy"
-            className="seanImg2"
-          />
+          <img src="" alt="s" loading="lazy" className="seanImg2" />
         </div>
       </div>
     </section>
