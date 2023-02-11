@@ -8,7 +8,8 @@ import Keywords from "@commons/Keywords";
 import type { aboutInfo } from "@types";
 import { aboutInfo2 } from "../../constants";
 
-import SEANIMG from "../../images/sean3.jpg";
+// import SEANIMG from "../../images/sean3.jpg";
+import SEANIMG from "../../images/sean4.jpg";
 import ARROWIMGBLUE from "../../images/thin-arrow-blue.svg";
 
 import "./AboutInfoPageContainer.scss";
@@ -76,8 +77,8 @@ const AboutInfoPageContainer = () => {
         <div className="aboutSeanPng">
           <img
             className="seanImg1"
-            src=""
-            alt="s"
+            alt=""
+            src={SEANIMG}
             loading="lazy"
             height={943}
             width={1040}
@@ -125,7 +126,7 @@ const AboutInfoPageContainer = () => {
           </div>
         </div>
         <div className="aboutSeanPng">
-          <img src="" alt="s" loading="lazy" className="seanImg2" />
+          <img alt="" src={SEANIMG} loading="lazy" className="seanImg2" />
         </div>
       </div>
     </section>
